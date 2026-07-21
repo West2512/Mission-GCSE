@@ -8,442 +8,1103 @@
 
   <style>
     :root {
-      --background: #07111f;
-      --panel: #101d30;
-      --panel-light: #17263c;
-      --text: #f4f7fb;
-      --muted: #a8b3c7;
-      --blue: #38bdf8;
-      --green: #22c55e;
-      --gold: #fbbf24;
+      --bg: #090d14;
+      --sidebar: #0d121c;
+      --surface: #111824;
+      --surface-2: #171f2c;
+      --surface-3: #1d2735;
+      --border: rgba(255, 255, 255, 0.075);
+      --text: #f5f7fb;
+      --muted: #8f9aad;
+      --accent: #6ee7b7;
+      --accent-dark: #143c32;
+      --blue: #60a5fa;
       --purple: #a78bfa;
-      --border: rgba(255, 255, 255, 0.08);
+      --yellow: #f5c96a;
+      --danger: #ef7d7d;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top right, rgba(56, 189, 248, 0.15), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.10), transparent 25%),
-        var(--background);
+        radial-gradient(circle at 80% 0%, rgba(96, 165, 250, 0.11), transparent 30%),
+        radial-gradient(circle at 45% 100%, rgba(110, 231, 183, 0.07), transparent 28%),
+        var(--bg);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
     }
 
-    button {
+    button,
+    input {
       font: inherit;
     }
 
-    .app {
-      width: min(1180px, 94%);
-      margin: 0 auto;
-      padding: 28px 0 60px;
+    button {
+      border: 0;
     }
 
-    .topbar {
+    svg {
+      display: block;
+    }
+
+    .app-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 26px;
+      flex-direction: column;
+      padding: 26px 18px;
+      background: rgba(13, 18, 28, 0.92);
+      border-right: 1px solid var(--border);
+      backdrop-filter: blur(20px);
     }
 
-    .brand-small {
-      color: var(--blue);
-      font-size: 0.78rem;
-      font-weight: bold;
-      letter-spacing: 0.22rem;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 10px 26px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #07120e;
+      background: var(--accent);
+      box-shadow: 0 12px 35px rgba(110, 231, 183, 0.18);
+    }
+
+    .brand-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-subtitle {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.74rem;
+    }
+
+    .nav-label {
+      margin: 12px 12px 8px;
+      color: #657083;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-    h1 {
-      margin: 5px 0 0;
-      font-size: clamp(2rem, 5vw, 3.5rem);
+    .nav-list {
+      display: grid;
+      gap: 7px;
     }
 
-    .tagline {
-      margin: 7px 0 0;
+    .nav-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 12px 13px;
+      border-radius: 13px;
       color: var(--muted);
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
     }
 
-    .avatar {
-      width: 54px;
-      height: 54px;
-      border-radius: 17px;
+    .nav-button:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.045);
+      transform: translateX(2px);
+    }
+
+    .nav-button.active {
+      color: var(--text);
+      background: var(--surface-3);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 18px 12px 4px;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 12px;
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .profile-avatar {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, var(--blue), var(--purple));
-      font-size: 1.4rem;
-      font-weight: bold;
-      box-shadow: 0 12px 35px rgba(56, 189, 248, 0.22);
+      border-radius: 11px;
+      color: #09100d;
+      background: linear-gradient(135deg, var(--accent), #8dd8ff);
+      font-weight: 900;
     }
 
-    .hero {
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      background: linear-gradient(145deg, rgba(23, 38, 60, 0.96), rgba(11, 23, 40, 0.96));
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+    .profile-name {
+      font-size: 0.88rem;
+      font-weight: 750;
     }
 
-    .hero h2 {
-      margin: 0 0 8px;
-      font-size: clamp(1.5rem, 4vw, 2.3rem);
-    }
-
-    .hero p {
-      margin: 0;
+    .profile-level {
+      margin-top: 2px;
       color: var(--muted);
-      line-height: 1.6;
+      font-size: 0.73rem;
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 24px;
+    .main {
+      min-width: 0;
+      padding: 26px 32px 60px;
     }
 
-    .stat-card {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(7, 17, 31, 0.58);
-      border: 1px solid var(--border);
+    .topbar {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 25px;
     }
 
-    .stat-label {
+    .mobile-brand {
+      display: none;
+      font-weight: 800;
+    }
+
+    .date-line {
       color: var(--muted);
       font-size: 0.86rem;
     }
 
-    .stat-value {
-      margin-top: 7px;
-      font-size: 1.45rem;
-      font-weight: bold;
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .main-grid {
+    .icon-button {
+      width: 42px;
+      height: 42px;
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 22px;
-      margin-top: 22px;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition:
+        color 0.18s ease,
+        transform 0.18s ease,
+        background 0.18s ease;
+    }
+
+    .icon-button:hover {
+      color: var(--text);
+      background: var(--surface-2);
+      transform: translateY(-2px);
+    }
+
+    .content-section {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(7px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 290px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.8fr);
+      align-items: center;
+      gap: 30px;
+      padding: 38px;
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(23, 31, 44, 0.98), rgba(13, 20, 31, 0.98));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -105px;
+      top: -150px;
+      border-radius: 50%;
+      background: rgba(96, 165, 250, 0.11);
+      filter: blur(4px);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      right: 60px;
+      bottom: -155px;
+      border-radius: 50%;
+      background: rgba(110, 231, 183, 0.08);
+    }
+
+    .hero-copy,
+    .hero-progress {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.73rem;
+      font-weight: 850;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 14px 0 12px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-copy p {
+      max-width: 620px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 25px;
+    }
+
+    .primary-button,
+    .secondary-button,
+    .week-tab,
+    .mission-action,
+    .timer-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 13px;
+      cursor: pointer;
+      transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .primary-button {
+      padding: 13px 18px;
+      color: #07120e;
+      background: var(--accent);
+      font-weight: 850;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-2px);
+      background: #87f0c7;
+    }
+
+    .secondary-button {
+      padding: 13px 18px;
+      color: var(--text);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    .secondary-button:hover {
+      transform: translateY(-2px);
+      background: var(--surface-3);
+    }
+
+    .hero-progress {
+      display: flex;
+      justify-content: center;
+    }
+
+    .progress-ring {
+      --progress: 0deg;
+      width: 190px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background:
+        conic-gradient(var(--accent) var(--progress), rgba(255, 255, 255, 0.07) 0);
+      box-shadow:
+        0 0 0 1px var(--border),
+        0 22px 65px rgba(0, 0, 0, 0.25);
+    }
+
+    .progress-ring-inner {
+      width: 154px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 50%;
+      background: #111824;
+    }
+
+    .progress-number {
+      font-size: 2.55rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+    }
+
+    .progress-caption {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 18px;
+    }
+
+    .stat-card {
+      min-width: 0;
+      padding: 19px;
+      border-radius: 19px;
+      background: rgba(17, 24, 36, 0.92);
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 45px rgba(0, 0, 0, 0.13);
+    }
+
+    .stat-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .stat-icon {
+      color: var(--accent);
+    }
+
+    .stat-value {
+      margin-top: 11px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: clamp(1.2rem, 2.3vw, 1.75rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-note {
+      margin-top: 5px;
+      color: #697589;
+      font-size: 0.72rem;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr);
+      gap: 20px;
+      margin-top: 20px;
     }
 
     .panel {
       padding: 24px;
+      border-radius: 23px;
+      background: rgba(17, 24, 36, 0.92);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      background: rgba(16, 29, 48, 0.92);
-      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
     }
 
-    .panel-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 18px;
-    }
-
-    .panel h3 {
-      margin: 0;
-      font-size: 1.25rem;
-    }
-
-    .week-buttons {
-      display: flex;
-      gap: 8px;
-    }
-
-    .week-button,
-    .timer-button,
-    .reset-button {
-      border: 0;
-      border-radius: 12px;
-      padding: 10px 14px;
-      color: var(--text);
-      cursor: pointer;
-      background: var(--panel-light);
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-
-    .week-button:hover,
-    .timer-button:hover,
-    .reset-button:hover {
-      transform: translateY(-1px);
-    }
-
-    .week-button.active {
-      color: #04111d;
-      background: var(--blue);
-      font-weight: bold;
-    }
-
-    .day-card {
-      margin-bottom: 15px;
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(7, 17, 31, 0.58);
-      border: 1px solid var(--border);
-    }
-
-    .day-card:last-child {
-      margin-bottom: 0;
-    }
-
-    .day-heading {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .day-heading h4 {
-      margin: 0;
-      font-size: 1.05rem;
-    }
-
-    .day-total {
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    .mission {
+    .panel-heading {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      padding: 12px 0;
-      border-top: 1px solid var(--border);
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
     }
 
-    .mission:first-of-type {
-      border-top: 0;
+    .panel-title {
+      margin: 0;
+      font-size: 1.14rem;
+      letter-spacing: -0.02em;
     }
 
-    .mission input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .custom-check {
-      width: 23px;
-      height: 23px;
-      flex: 0 0 23px;
-      margin-top: 1px;
-      border: 2px solid #65758e;
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      transition: 0.2s;
-    }
-
-    .mission input:checked + .custom-check {
-      border-color: var(--green);
-      background: var(--green);
-    }
-
-    .mission input:checked + .custom-check::after {
-      content: "✓";
-      color: #052411;
-      font-weight: bold;
-    }
-
-    .mission-text {
-      flex: 1;
-      cursor: pointer;
-    }
-
-    .mission-title {
-      font-weight: bold;
-      line-height: 1.35;
-    }
-
-    .mission-detail {
-      margin-top: 4px;
+    .panel-subtitle {
+      margin: 6px 0 0;
       color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.45;
-    }
-
-    .mission input:checked ~ .mission-text .mission-title {
-      color: #83e8aa;
-    }
-
-    .mission input:checked ~ .mission-text .mission-detail {
-      color: #79978a;
-    }
-
-    .subject-pill {
-      display: inline-block;
-      margin-right: 7px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      color: #07111f;
-      background: var(--blue);
-      font-size: 0.72rem;
-      font-weight: bold;
-    }
-
-    .progress-track {
-      height: 12px;
-      overflow: hidden;
-      margin-top: 10px;
-      border-radius: 999px;
-      background: #07111f;
-    }
-
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--blue), var(--green));
-      transition: width 0.35s ease;
-    }
-
-    .progress-message {
-      min-height: 44px;
-      margin-top: 13px;
-      color: var(--muted);
+      font-size: 0.82rem;
       line-height: 1.5;
     }
 
-    .timer {
+    .week-tabs {
+      display: flex;
+      gap: 7px;
+      padding: 4px;
+      border-radius: 14px;
+      background: #0c121c;
+      border: 1px solid var(--border);
+    }
+
+    .week-tab {
+      padding: 9px 13px;
+      color: var(--muted);
+      background: transparent;
+      font-size: 0.78rem;
+      font-weight: 750;
+    }
+
+    .week-tab.active {
+      color: #06120e;
+      background: var(--accent);
+    }
+
+    .day-selector {
+      display: flex;
+      gap: 9px;
+      overflow-x: auto;
+      padding: 2px 0 12px;
+      scrollbar-width: thin;
+    }
+
+    .day-button {
+      min-width: 92px;
+      padding: 13px 12px;
+      border-radius: 15px;
+      color: var(--muted);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      text-align: left;
+      transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        color 0.18s ease;
+    }
+
+    .day-button:hover {
+      transform: translateY(-2px);
+      color: var(--text);
+    }
+
+    .day-button.active {
+      color: var(--text);
+      background: #20302d;
+      border-color: rgba(110, 231, 183, 0.28);
+      box-shadow: inset 0 0 0 1px rgba(110, 231, 183, 0.08);
+    }
+
+    .day-name {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .day-progress {
+      display: block;
+      margin-top: 5px;
+      color: #758197;
+      font-size: 0.69rem;
+    }
+
+    .mission-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 7px;
+    }
+
+    .mission-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 15px;
+      padding: 17px;
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .mission-card:hover {
+      transform: translateY(-2px);
+      background: #1b2533;
+    }
+
+    .mission-card.completed {
+      background: rgba(20, 60, 50, 0.52);
+      border-color: rgba(110, 231, 183, 0.26);
+    }
+
+    .mission-card.completed::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(90deg, rgba(110, 231, 183, 0.06), transparent);
+    }
+
+    .subject-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: var(--icon-colour);
+      background: var(--icon-bg);
+    }
+
+    .mission-meta {
+      min-width: 0;
+    }
+
+    .subject-name {
+      color: var(--subject-colour);
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .mission-title {
+      margin-top: 5px;
+      font-size: 0.98rem;
+      font-weight: 820;
+      letter-spacing: -0.015em;
+    }
+
+    .mission-detail {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.79rem;
+      line-height: 1.5;
+    }
+
+    .mission-time {
+      margin-top: 7px;
+      color: #697589;
+      font-size: 0.71rem;
+    }
+
+    .mission-action {
+      min-width: 92px;
+      padding: 10px 13px;
+      color: var(--text);
+      background: #0d141f;
+      border: 1px solid var(--border);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .mission-action:hover {
+      color: #06120e;
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .mission-card.completed .mission-action {
+      color: var(--accent);
+      background: rgba(110, 231, 183, 0.08);
+      border-color: rgba(110, 231, 183, 0.22);
+    }
+
+    .side-stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .focus-card {
       text-align: center;
     }
 
     .timer-display {
-      margin: 20px 0;
-      font-size: clamp(2.5rem, 6vw, 4.4rem);
-      font-weight: bold;
-      letter-spacing: 0.08rem;
+      margin: 18px 0 7px;
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+
+    .timer-label {
+      color: var(--muted);
+      font-size: 0.78rem;
     }
 
     .timer-controls {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 9px;
+      margin-top: 20px;
     }
 
-    .timer-button.primary {
-      color: #04111d;
-      background: var(--green);
-      font-weight: bold;
+    .timer-action {
+      padding: 11px 12px;
+      color: var(--text);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      font-size: 0.78rem;
+      font-weight: 800;
     }
 
-    .quote-card {
-      margin-top: 18px;
-      padding: 18px;
-      border-left: 4px solid var(--gold);
-      border-radius: 14px;
-      color: #f5df9b;
-      background: rgba(251, 191, 36, 0.08);
-      line-height: 1.55;
+    .timer-action.primary {
+      color: #07120e;
+      background: var(--accent);
     }
 
-    .achievement {
-      margin-top: 18px;
+    .timer-action:hover {
+      transform: translateY(-2px);
+    }
+
+    .encouragement {
       padding: 18px;
       border-radius: 17px;
-      background: linear-gradient(135deg, rgba(167, 139, 250, 0.17), rgba(56, 189, 248, 0.11));
-      border: 1px solid rgba(167, 139, 250, 0.25);
+      color: #dce5e1;
+      background:
+        linear-gradient(135deg, rgba(110, 231, 183, 0.11), rgba(96, 165, 250, 0.06));
+      border: 1px solid rgba(110, 231, 183, 0.13);
     }
 
-    .achievement-title {
-      font-weight: bold;
-      margin-bottom: 5px;
+    .encouragement-label {
+      color: var(--accent);
+      font-size: 0.67rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .achievement-text {
+    .encouragement-text {
+      margin-top: 9px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .badge-card {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .badge-mark {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      color: var(--yellow);
+      background: rgba(245, 201, 106, 0.1);
+      border: 1px solid rgba(245, 201, 106, 0.16);
+    }
+
+    .badge-title {
+      font-weight: 850;
+    }
+
+    .badge-description {
+      margin-top: 5px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.76rem;
       line-height: 1.45;
     }
 
-    .reset-button {
-      width: 100%;
-      margin-top: 18px;
+    .mini-progress {
+      height: 7px;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #090e16;
+    }
+
+    .mini-progress-fill {
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--yellow), var(--accent));
+      transition: width 0.35s ease;
+    }
+
+    .page-heading {
+      margin-bottom: 22px;
+    }
+
+    .page-heading h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.05em;
+    }
+
+    .page-heading p {
+      max-width: 680px;
+      margin: 10px 0 0;
       color: var(--muted);
-      background: transparent;
+      line-height: 1.65;
+    }
+
+    .subjects-grid,
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .subject-card,
+    .achievement-card {
+      padding: 22px;
+      border-radius: 21px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .subject-card:hover,
+    .achievement-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .subject-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .subject-card h3,
+    .achievement-card h3 {
+      margin: 18px 0 0;
+      font-size: 1.08rem;
+    }
+
+    .subject-card p,
+    .achievement-card p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+
+    .subject-card-progress {
+      margin-top: 18px;
+    }
+
+    .progress-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+
+    .achievement-card.locked {
+      opacity: 0.52;
+      filter: saturate(0.4);
+    }
+
+    .planner-wrap {
+      display: grid;
+      gap: 16px;
+    }
+
+    .planner-day {
+      padding: 20px;
+      border-radius: 20px;
+      background: var(--surface);
       border: 1px solid var(--border);
     }
 
-    .celebration {
-      position: fixed;
-      left: 50%;
-      bottom: 25px;
-      z-index: 10;
-      max-width: min(440px, 90%);
-      padding: 17px 22px;
-      border-radius: 16px;
-      color: #07111f;
-      background: var(--green);
-      font-weight: bold;
-      text-align: center;
-      transform: translate(-50%, 150%);
-      transition: transform 0.3s ease;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    .planner-day h3 {
+      margin: 0 0 13px;
     }
 
-    .celebration.show {
+    .planner-items {
+      display: grid;
+      gap: 9px;
+    }
+
+    .planner-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 13px;
+      border-radius: 14px;
+      background: var(--surface-2);
+    }
+
+    .planner-dot {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 8px;
+      border-radius: 50%;
+      background: var(--dot-colour);
+    }
+
+    .planner-item-text {
+      min-width: 0;
+      font-size: 0.84rem;
+    }
+
+    .planner-item-subject {
+      color: var(--muted);
+      font-size: 0.69rem;
+    }
+
+    .toast {
+      position: fixed;
+      z-index: 50;
+      left: 50%;
+      bottom: 28px;
+      width: min(420px, calc(100% - 30px));
+      padding: 16px 18px;
+      border-radius: 16px;
+      color: #07120e;
+      background: var(--accent);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+      font-weight: 850;
+      text-align: center;
+      transform: translate(-50%, 150%);
+      transition: transform 0.28s ease;
+    }
+
+    .toast.show {
       transform: translate(-50%, 0);
     }
 
-    .footer {
-      margin-top: 28px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.85rem;
+    .mobile-nav {
+      display: none;
     }
 
-    @media (max-width: 850px) {
-      .stats-grid {
+    @media (max-width: 1100px) {
+      .app-shell {
+        grid-template-columns: 210px minmax(0, 1fr);
+      }
+
+      .sidebar {
+        padding-inline: 12px;
+      }
+
+      .main {
+        padding-inline: 22px;
+      }
+
+      .stats-row {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .main-grid {
-        grid-template-columns: 1fr;
+      .subjects-grid,
+      .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 540px) {
-      .app {
-        width: min(94%, 500px);
-        padding-top: 18px;
+    @media (max-width: 820px) {
+      .app-shell {
+        display: block;
       }
 
-      .topbar {
-        align-items: flex-start;
+      .sidebar {
+        display: none;
       }
 
-      .hero,
-      .panel {
-        padding: 18px;
+      .main {
+        padding: 18px 16px 92px;
+      }
+
+      .mobile-brand {
+        display: block;
+      }
+
+      .date-line {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 27px 23px;
+      }
+
+      .hero-progress {
+        justify-content: flex-start;
+      }
+
+      .progress-ring {
+        width: 145px;
+      }
+
+      .progress-ring-inner {
+        width: 116px;
+      }
+
+      .progress-number {
+        font-size: 2rem;
+      }
+
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        z-index: 40;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 8px;
         border-radius: 19px;
+        background: rgba(14, 20, 30, 0.94);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 20px 55px rgba(0, 0, 0, 0.34);
       }
 
-      .stats-grid {
+      .mobile-nav-button {
+        display: grid;
+        justify-items: center;
+        gap: 4px;
+        padding: 8px 4px;
+        border-radius: 12px;
+        color: var(--muted);
+        background: transparent;
+        font-size: 0.64rem;
+      }
+
+      .mobile-nav-button.active {
+        color: var(--accent);
+        background: rgba(110, 231, 183, 0.07);
+      }
+    }
+
+    @media (max-width: 580px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .stats-row {
         grid-template-columns: 1fr 1fr;
       }
 
-      .panel-title-row {
-        align-items: flex-start;
+      .stat-card {
+        padding: 15px;
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .panel-heading {
         flex-direction: column;
       }
 
-      .week-buttons {
+      .week-tabs {
         width: 100%;
       }
 
-      .week-button {
+      .week-tab {
         flex: 1;
+      }
+
+      .mission-card {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .subject-icon {
+        width: 42px;
+        height: 42px;
+      }
+
+      .mission-action {
+        grid-column: 1 / -1;
+        width: 100%;
+      }
+
+      .subjects-grid,
+      .achievements-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -451,249 +1112,698 @@
 
 <body>
 
-  <main class="app">
+  <div class="app-shell">
 
-    <header class="topbar">
-      <div>
-        <div class="brand-small">Mission GCSE</div>
-        <h1>Level up, Alfie.</h1>
-        <p class="tagline">Small steps. Visible progress. No panic.</p>
-      </div>
+    <aside class="sidebar">
 
-      <div class="avatar">A</div>
-    </header>
+      <div class="brand">
+        <div class="brand-mark" data-icon="bolt"></div>
 
-    <section class="hero">
-      <h2 id="welcomeMessage">Welcome back 👋</h2>
-
-      <p>
-        Today's mission is simple: complete one block at a time.
-        Every session counts, even when it feels difficult.
-      </p>
-
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-label">Total XP</div>
-          <div class="stat-value"><span id="xpValue">0</span> XP</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-label">Missions completed</div>
-          <div class="stat-value" id="completedValue">0</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-label">Current level</div>
-          <div class="stat-value" id="levelValue">Starter</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-label">Weekly progress</div>
-          <div class="stat-value" id="percentageValue">0%</div>
+        <div>
+          <div class="brand-title">Mission GCSE</div>
+          <div class="brand-subtitle">Year 11 progress hub</div>
         </div>
       </div>
-    </section>
 
-    <div class="main-grid">
+      <div class="nav-label">Main</div>
 
-      <section class="panel">
-        <div class="panel-title-row">
+      <nav class="nav-list">
+        <button class="nav-button active" data-section="dashboard">
+          <span data-icon="home"></span>
+          Dashboard
+        </button>
+
+        <button class="nav-button" data-section="planner">
+          <span data-icon="calendar"></span>
+          Weekly plan
+        </button>
+
+        <button class="nav-button" data-section="subjects">
+          <span data-icon="book"></span>
+          Subjects
+        </button>
+
+        <button class="nav-button" data-section="achievements">
+          <span data-icon="award"></span>
+          Achievements
+        </button>
+      </nav>
+
+      <div class="nav-label">Progress</div>
+
+      <nav class="nav-list">
+        <button class="nav-button" id="focusShortcut">
+          <span data-icon="timer"></span>
+          Focus timer
+        </button>
+
+        <button class="nav-button" id="resetProgressButton">
+          <span data-icon="refresh"></span>
+          Reset progress
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="profile-card">
+          <div class="profile-avatar">A</div>
+
           <div>
-            <h3>🎯 Revision Missions</h3>
-          </div>
-
-          <div class="week-buttons">
-            <button class="week-button active" data-week="1">Week 1</button>
-            <button class="week-button" data-week="2">Week 2</button>
+            <div class="profile-name">Alfie</div>
+            <div class="profile-level" id="sidebarLevel">Starter level</div>
           </div>
         </div>
+      </div>
 
-        <div id="missionsContainer"></div>
+    </aside>
+
+    <main class="main">
+
+      <header class="topbar">
+        <div>
+          <div class="mobile-brand">Mission GCSE</div>
+          <div class="date-line" id="dateLine"></div>
+        </div>
+
+        <div class="top-actions">
+          <button class="icon-button" id="topTimerButton" aria-label="Open focus timer">
+            <span data-icon="timer"></span>
+          </button>
+        </div>
+      </header>
+
+      <section class="content-section active" id="dashboard">
+
+        <section class="hero">
+
+          <div class="hero-copy">
+            <div class="eyebrow">Your progress dashboard</div>
+
+            <h1 id="greeting">Good afternoon, Alfie.</h1>
+
+            <p id="heroMessage">
+              Keep today simple. One focused block, then the next.
+              You are building momentum rather than chasing perfection.
+            </p>
+
+            <div class="hero-actions">
+              <button class="primary-button" id="continueButton">
+                <span data-icon="play"></span>
+                Continue today's plan
+              </button>
+
+              <button class="secondary-button" data-open-section="planner">
+                View full week
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-progress">
+            <div class="progress-ring" id="progressRing">
+              <div class="progress-ring-inner">
+                <div>
+                  <div class="progress-number" id="weekPercentage">0%</div>
+                  <div class="progress-caption">week complete</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="stats-row">
+
+          <article class="stat-card">
+            <div class="stat-topline">
+              <div class="stat-label">Total XP</div>
+              <div class="stat-icon" data-icon="spark"></div>
+            </div>
+
+            <div class="stat-value" id="xpValue">0</div>
+            <div class="stat-note">10 XP per completed block</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-topline">
+              <div class="stat-label">Blocks completed</div>
+              <div class="stat-icon" data-icon="checkCircle"></div>
+            </div>
+
+            <div class="stat-value" id="completedValue">0</div>
+            <div class="stat-note">Every focused session counts</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-topline">
+              <div class="stat-label">Current level</div>
+              <div class="stat-icon" data-icon="layers"></div>
+            </div>
+
+            <div class="stat-value" id="levelValue">Starter</div>
+            <div class="stat-note">Built through steady progress</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-topline">
+              <div class="stat-label">Next target</div>
+              <div class="stat-icon" data-icon="target"></div>
+            </div>
+
+            <div class="stat-value" id="nextTargetValue">50 XP</div>
+            <div class="stat-note" id="nextTargetNote">50 XP remaining</div>
+          </article>
+
+        </section>
+
+        <section class="section-grid">
+
+          <div class="panel" id="missionPanel">
+
+            <div class="panel-heading">
+              <div>
+                <h2 class="panel-title">Today's plan</h2>
+                <p class="panel-subtitle" id="daySummary">
+                  Three manageable blocks. Work through them in any order.
+                </p>
+              </div>
+
+              <div class="week-tabs">
+                <button class="week-tab active" data-week="1">Week 1</button>
+                <button class="week-tab" data-week="2">Week 2</button>
+              </div>
+            </div>
+
+            <div class="day-selector" id="daySelector"></div>
+            <div class="mission-list" id="missionList"></div>
+
+          </div>
+
+          <div class="side-stack">
+
+            <section class="panel focus-card" id="focusTimerPanel">
+              <div class="eyebrow">Focus session</div>
+              <div class="timer-display" id="timerDisplay">20:00</div>
+              <div class="timer-label">One block at a time</div>
+
+              <div class="timer-controls">
+                <button class="timer-action primary" id="startTimer">Start</button>
+                <button class="timer-action" id="pauseTimer">Pause</button>
+                <button class="timer-action" id="resetTimer">Reset</button>
+                <button class="timer-action" id="setTenMinutes">10 mins</button>
+              </div>
+            </section>
+
+            <section class="encouragement">
+              <div class="encouragement-label">Today's reminder</div>
+              <div class="encouragement-text" id="encouragementText"></div>
+            </section>
+
+            <section class="panel">
+              <div class="badge-card">
+                <div class="badge-mark" data-icon="award"></div>
+
+                <div>
+                  <div class="badge-title" id="badgeTitle">First Step</div>
+                  <div class="badge-description" id="badgeDescription">
+                    Complete your first focused block.
+                  </div>
+                </div>
+              </div>
+
+              <div class="mini-progress">
+                <div class="mini-progress-fill" id="badgeProgress"></div>
+              </div>
+            </section>
+
+          </div>
+
+        </section>
+
       </section>
 
-      <aside>
+      <section class="content-section" id="planner">
 
-        <section class="panel">
-          <h3>📈 Mission Progress</h3>
+        <div class="page-heading">
+          <div class="eyebrow">Two-week overview</div>
+          <h2>Weekly plan</h2>
+          <p>
+            The plan is already mapped out, so there is no decision-making
+            needed when it is time to begin.
+          </p>
+        </div>
 
-          <div class="progress-track">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
+        <div class="week-tabs" style="width: fit-content; margin-bottom: 18px;">
+          <button class="week-tab planner-week active" data-week="1">Week 1</button>
+          <button class="week-tab planner-week" data-week="2">Week 2</button>
+        </div>
 
-          <div class="progress-message" id="progressMessage">
-            Your first mission is ready whenever you are.
-          </div>
+        <div class="planner-wrap" id="plannerWrap"></div>
 
-          <div class="achievement">
-            <div class="achievement-title" id="achievementTitle">
-              🏅 Ready to Begin
-            </div>
+      </section>
 
-            <div class="achievement-text" id="achievementText">
-              Starting is often the hardest part. Opening the page already counts as a positive step.
-            </div>
-          </div>
-        </section>
+      <section class="content-section" id="subjects">
 
-        <section class="panel timer" style="margin-top: 22px;">
-          <h3>⏱️ Focus Timer</h3>
-          <div class="timer-display" id="timerDisplay">20:00</div>
+        <div class="page-heading">
+          <div class="eyebrow">Subject overview</div>
+          <h2>Subjects</h2>
+          <p>
+            This area will eventually hold quizzes, exam questions,
+            topic checklists and tutor tasks for each course.
+          </p>
+        </div>
 
-          <div class="timer-controls">
-            <button class="timer-button primary" id="startTimer">Start</button>
-            <button class="timer-button" id="pauseTimer">Pause</button>
-            <button class="timer-button" id="resetTimer">Reset</button>
-          </div>
+        <div class="subjects-grid" id="subjectsGrid"></div>
 
-          <div class="quote-card" id="positiveQuote">
-            You do not need to finish everything at once. Just complete the next small step.
-          </div>
+      </section>
 
-          <button class="reset-button" id="clearProgress">
-            Reset all progress
-          </button>
-        </section>
+      <section class="content-section" id="achievements">
 
-      </aside>
-    </div>
+        <div class="page-heading">
+          <div class="eyebrow">Positive milestones</div>
+          <h2>Achievements</h2>
+          <p>
+            These celebrate effort, consistency and willingness to keep going.
+            There are no leaderboards and no comparisons with anyone else.
+          </p>
+        </div>
 
-    <footer class="footer">
-      Built for progress, confidence and a calmer Year 11.
-    </footer>
+        <div class="achievements-grid" id="achievementsGrid"></div>
 
-  </main>
+      </section>
 
-  <div class="celebration" id="celebrationMessage">
-    Mission complete — brilliant consistency! +10 XP
+    </main>
+
   </div>
 
+  <nav class="mobile-nav">
+    <button class="mobile-nav-button active" data-section="dashboard">
+      <span data-icon="home"></span>
+      Home
+    </button>
+
+    <button class="mobile-nav-button" data-section="planner">
+      <span data-icon="calendar"></span>
+      Plan
+    </button>
+
+    <button class="mobile-nav-button" data-section="subjects">
+      <span data-icon="book"></span>
+      Subjects
+    </button>
+
+    <button class="mobile-nav-button" data-section="achievements">
+      <span data-icon="award"></span>
+      Awards
+    </button>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+
   <script>
+    const icons = {
+      bolt: `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path>
+        </svg>`,
+
+      home: `
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="m3 11 9-8 9 8"></path>
+          <path d="M5 10v10h14V10"></path>
+          <path d="M9 20v-6h6v6"></path>
+        </svg>`,
+
+      calendar: `
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+          <path d="M16 2v4M8 2v4M3 10h18"></path>
+        </svg>`,
+
+      book: `
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path>
+        </svg>`,
+
+      award: `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="8" r="6"></circle>
+          <path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"></path>
+        </svg>`,
+
+      timer: `
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="13" r="8"></circle>
+          <path d="M12 9v4l2 2M9 2h6M12 2v3"></path>
+        </svg>`,
+
+      refresh: `
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 4v5h5"></path>
+          <path d="M4 13a8.1 8.1 0 0 0 15.5 2M20 20v-5h-5"></path>
+        </svg>`,
+
+      play: `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="m8 5 11 7-11 7V5Z"></path>
+        </svg>`,
+
+      spark: `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="m12 3-1.7 4.3L6 9l4.3 1.7L12 15l1.7-4.3L18 9l-4.3-1.7L12 3Z"></path>
+          <path d="m5 15-.8 2.2L2 18l2.2.8L5 21l.8-2.2L8 18l-2.2-.8L5 15Z"></path>
+        </svg>`,
+
+      checkCircle: `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="m8 12 2.5 2.5L16 9"></path>
+        </svg>`,
+
+      layers: `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="m12 2 9 5-9 5-9-5 9-5Z"></path>
+          <path d="m3 12 9 5 9-5M3 17l9 5 9-5"></path>
+        </svg>`,
+
+      target: `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"></circle>
+          <circle cx="12" cy="12" r="5"></circle>
+          <circle cx="12" cy="12" r="1"></circle>
+        </svg>`,
+
+      calculator: `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+          <path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"></path>
+        </svg>`,
+
+      english: `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M4 5h16M4 10h16M4 15h10M4 20h7"></path>
+        </svg>`,
+
+      biology: `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M7 3c5 4 5 14 10 18"></path>
+          <path d="M17 3C12 7 12 17 7 21"></path>
+          <path d="M8.5 7h7M8.5 17h7M10 12h4"></path>
+        </svg>`,
+
+      chemistry: `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"></path>
+          <path d="M7.5 16h9"></path>
+        </svg>`,
+
+      physics: `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+          <ellipse cx="12" cy="12" rx="9" ry="3.5"></ellipse>
+          <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"></ellipse>
+          <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"></ellipse>
+        </svg>`,
+
+      computer: `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <rect width="14" height="14" x="5" y="5" rx="2"></rect>
+          <path d="M9 1v4M15 1v4M9 19v4M15 19v4M19 9h4M19 14h4M1 9h4M1 14h4M9 9h6v6H9z"></path>
+        </svg>`,
+
+      electronics: `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M3 12h4l2-5 4 10 2-5h6"></path>
+          <circle cx="3" cy="12" r="1"></circle>
+          <circle cx="21" cy="12" r="1"></circle>
+        </svg>`,
+
+      recharge: `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M12 3a9 9 0 1 0 9 9"></path>
+          <path d="M21 3v6h-6"></path>
+        </svg>`
+    };
+
+    function injectIcons() {
+      document.querySelectorAll("[data-icon]").forEach(element => {
+        const iconName = element.dataset.icon;
+
+        if (icons[iconName]) {
+          element.innerHTML = icons[iconName];
+        }
+      });
+    }
+
+    const subjectStyles = {
+      English: {
+        icon: "english",
+        colour: "#f5c96a",
+        background: "rgba(245, 201, 106, 0.10)"
+      },
+
+      Maths: {
+        icon: "calculator",
+        colour: "#60a5fa",
+        background: "rgba(96, 165, 250, 0.10)"
+      },
+
+      Biology: {
+        icon: "biology",
+        colour: "#6ee7b7",
+        background: "rgba(110, 231, 183, 0.10)"
+      },
+
+      Chemistry: {
+        icon: "chemistry",
+        colour: "#a78bfa",
+        background: "rgba(167, 139, 250, 0.10)"
+      },
+
+      Physics: {
+        icon: "physics",
+        colour: "#7dd3fc",
+        background: "rgba(125, 211, 252, 0.10)"
+      },
+
+      "Computer Science": {
+        icon: "computer",
+        colour: "#fb7185",
+        background: "rgba(251, 113, 133, 0.10)"
+      },
+
+      Electronics: {
+        icon: "electronics",
+        colour: "#f59e0b",
+        background: "rgba(245, 158, 11, 0.10)"
+      },
+
+      Recharge: {
+        icon: "recharge",
+        colour: "#94a3b8",
+        background: "rgba(148, 163, 184, 0.10)"
+      },
+
+      Review: {
+        icon: "refresh",
+        colour: "#c084fc",
+        background: "rgba(192, 132, 252, 0.10)"
+      }
+    };
+
     const revisionPlan = {
       1: [
         {
           day: "Monday",
-          total: "60 minutes",
+          short: "Mon",
+          total: "3 blocks",
           missions: [
             {
               subject: "English",
-              title: "Language: retrieving information",
-              detail: "Read a short article or extract. Write down five clear facts using your own words."
+              title: "Retrieving clear information",
+              detail: "Read a short article or extract and record five clear facts in your own words.",
+              minutes: 20
             },
             {
               subject: "Biology",
-              title: "Cell Biology foundations",
-              detail: "Revise animal and plant cell structures, then recall their functions without looking."
+              title: "Cell biology foundations",
+              detail: "Recall animal and plant cell structures and explain the function of each.",
+              minutes: 20
             },
             {
               subject: "Maths",
               title: "Fractions, decimals and percentages",
-              detail: "Complete a mixed set of questions, including converting between all three forms."
+              detail: "Complete a mixed set of conversions and comparison questions.",
+              minutes: 20
             }
           ]
         },
+
         {
           day: "Tuesday",
-          total: "60 minutes",
+          short: "Tue",
+          total: "3 blocks",
           missions: [
             {
               subject: "English",
               title: "Language techniques",
-              detail: "Find five examples of interesting vocabulary or imagery and explain the effect of each."
+              detail: "Identify five language choices and explain the effect of each one.",
+              minutes: 20
             },
             {
               subject: "Chemistry",
               title: "Atomic structure",
-              detail: "Revise protons, neutrons, electrons, atomic number and mass number using active recall."
+              detail: "Revise protons, neutrons, electrons, atomic number and mass number.",
+              minutes: 20
             },
             {
               subject: "Computer Science",
               title: "Systems architecture",
-              detail: "Create a quick memory map of the CPU, ALU, control unit, cache and registers."
+              detail: "Create a memory map of the CPU, ALU, control unit, cache and registers.",
+              minutes: 20
             }
           ]
         },
+
         {
           day: "Wednesday",
-          total: "60 minutes",
+          short: "Wed",
+          total: "3 blocks",
           missions: [
             {
               subject: "English",
-              title: "Powerful paragraph practice",
-              detail: "Write one PEE or PETAL paragraph explaining how a writer creates an effect."
+              title: "One strong analytical paragraph",
+              detail: "Write one clear paragraph explaining how a writer creates an effect.",
+              minutes: 20
             },
             {
               subject: "Physics",
               title: "Energy stores and transfers",
-              detail: "Recall the main energy stores and identify energy transfers in five everyday examples."
+              detail: "Recall the main energy stores and apply them to everyday examples.",
+              minutes: 20
             },
             {
               subject: "Maths",
-              title: "Solving linear equations",
-              detail: "Practise one-step, two-step and equations with unknowns on both sides."
+              title: "Linear equations",
+              detail: "Practise one-step, two-step and equations with unknowns on both sides.",
+              minutes: 20
             }
           ]
         },
+
         {
           day: "Thursday",
-          total: "60 minutes",
+          short: "Thu",
+          total: "3 blocks",
           missions: [
             {
               subject: "English",
               title: "Creative description",
-              detail: "Describe one setting using precise verbs, sensory detail and varied sentence openings."
+              detail: "Describe one setting using precise verbs, sensory detail and varied openings.",
+              minutes: 20
             },
             {
               subject: "Biology",
               title: "Organisation",
-              detail: "Revise cells, tissues, organs and organ systems. Explain the sequence aloud."
+              detail: "Explain the sequence from cells to tissues, organs and organ systems.",
+              minutes: 20
             },
             {
               subject: "Electronics",
               title: "Circuit foundations",
-              detail: "Review common circuit symbols and explain the purpose of each component."
+              detail: "Review common circuit symbols and the purpose of each component.",
+              minutes: 20
             }
           ]
         },
+
         {
           day: "Friday",
-          total: "60 minutes",
+          short: "Fri",
+          total: "3 blocks",
           missions: [
             {
               subject: "English",
-              title: "Weekly retrieval challenge",
-              detail: "Without notes, write down everything remembered from this week's English sessions."
+              title: "Weekly retrieval check",
+              detail: "Without notes, record what you remember from this week's English work.",
+              minutes: 20
             },
             {
               subject: "Chemistry",
               title: "The periodic table",
-              detail: "Revise groups, periods, metals and non-metals, then test yourself from memory."
+              detail: "Review groups, periods, metals and non-metals using active recall.",
+              minutes: 20
             },
             {
               subject: "Maths",
               title: "Ratio and proportion",
-              detail: "Complete mixed ratio questions and check each answer carefully."
+              detail: "Complete a mixed set of ratio problems and check each answer.",
+              minutes: 20
             }
           ]
         },
+
         {
           day: "Saturday",
+          short: "Sat",
           total: "Rest day",
           missions: [
             {
               subject: "Recharge",
               title: "Work, rest and reset",
-              detail: "No scheduled revision today. Rest is part of a sustainable plan."
+              detail: "No scheduled revision today. Rest supports consistency.",
+              minutes: 0
             }
           ]
         },
+
         {
           day: "Sunday",
-          total: "Review session",
+          short: "Sun",
+          total: "Review",
           missions: [
             {
-              subject: "Weekly Review",
-              title: "Celebrate this week's progress",
-              detail: "Choose one subject, complete a short set of exam questions and note one thing that feels easier."
+              subject: "Review",
+              title: "Weekly progress check",
+              detail: "Complete a short exam task and record one thing that feels easier.",
+              minutes: 30
             }
           ]
         }
@@ -702,252 +1812,267 @@
       2: [
         {
           day: "Monday",
-          total: "60 minutes",
+          short: "Mon",
+          total: "3 blocks",
           missions: [
             {
               subject: "English",
               title: "Language structure",
-              detail: "Track how a text changes from beginning to end and explain why the writer organised it that way."
+              detail: "Track how a text changes and explain why it has been organised that way.",
+              minutes: 20
             },
             {
               subject: "Biology",
               title: "Infection and response",
-              detail: "Revise pathogens, communicable diseases and the body's first lines of defence."
+              detail: "Review pathogens, communicable disease and the body's first defences.",
+              minutes: 20
             },
             {
               subject: "Maths",
               title: "Coordinates and straight-line graphs",
-              detail: "Practise plotting coordinates and recognising gradient and intercept."
+              detail: "Plot coordinates and identify gradient and intercept.",
+              minutes: 20
             }
           ]
         },
+
         {
           day: "Tuesday",
-          total: "60 minutes",
+          short: "Tue",
+          total: "3 blocks",
           missions: [
             {
               subject: "English",
               title: "Evaluation practice",
-              detail: "Choose one statement about a text and explain clearly how far you agree."
+              detail: "Respond to a statement about a text and explain how far you agree.",
+              minutes: 20
             },
             {
               subject: "Chemistry",
-              title: "Bonding basics",
-              detail: "Compare ionic, covalent and metallic bonding using a simple three-column table."
+              title: "Bonding",
+              detail: "Compare ionic, covalent and metallic bonding using a clear table.",
+              minutes: 20
             },
             {
               subject: "Computer Science",
               title: "Memory and storage",
-              detail: "Revise RAM, ROM, secondary storage and units of data."
+              detail: "Review RAM, ROM, secondary storage and units of data.",
+              minutes: 20
             }
           ]
         },
+
         {
           day: "Wednesday",
-          total: "60 minutes",
+          short: "Wed",
+          total: "3 blocks",
           missions: [
             {
               subject: "English",
               title: "Transactional writing",
-              detail: "Plan a persuasive speech with a clear viewpoint, three arguments and a strong ending."
+              detail: "Plan a persuasive speech with a viewpoint, three arguments and a strong ending.",
+              minutes: 20
             },
             {
               subject: "Physics",
               title: "Electric circuits",
-              detail: "Revise current, potential difference and resistance, including their measuring devices."
+              detail: "Review current, potential difference, resistance and measuring devices.",
+              minutes: 20
             },
             {
               subject: "Maths",
               title: "Sequences",
-              detail: "Find missing terms and generate nth-term rules for linear sequences."
+              detail: "Find missing terms and generate nth-term rules for linear sequences.",
+              minutes: 20
             }
           ]
         },
+
         {
           day: "Thursday",
-          total: "60 minutes",
+          short: "Thu",
+          total: "3 blocks",
           missions: [
             {
               subject: "English",
-              title: "Literature quotation recall",
-              detail: "Choose one studied text and recall five useful quotations with their key ideas."
+              title: "Quotation recall",
+              detail: "Recall five useful quotations and connect each to a key idea.",
+              minutes: 20
             },
             {
               subject: "Biology",
               title: "Bioenergetics",
-              detail: "Revise photosynthesis and respiration, then explain both processes aloud."
+              detail: "Review photosynthesis and respiration, then explain both aloud.",
+              minutes: 20
             },
             {
               subject: "Electronics",
               title: "Input and output devices",
-              detail: "Sort common components into input, process and output categories."
+              detail: "Sort common components into input, process and output categories.",
+              minutes: 20
             }
           ]
         },
+
         {
           day: "Friday",
-          total: "60 minutes",
+          short: "Fri",
+          total: "3 blocks",
           missions: [
             {
               subject: "English",
-              title: "Confidence paragraph",
-              detail: "Improve one paragraph from this fortnight, focusing on precision rather than length."
+              title: "Improve one paragraph",
+              detail: "Redraft one earlier paragraph, focusing on precision rather than length.",
+              minutes: 20
             },
             {
               subject: "Chemistry",
               title: "Quantitative chemistry",
-              detail: "Revise relative formula mass and complete a small set of calculation questions."
+              detail: "Review relative formula mass and complete a small calculation set.",
+              minutes: 20
             },
             {
               subject: "Maths",
               title: "Area, perimeter and volume",
-              detail: "Complete a mixed set of shape and measure questions."
+              detail: "Complete a mixed set of shape and measure questions.",
+              minutes: 20
             }
           ]
         },
+
         {
           day: "Saturday",
+          short: "Sat",
           total: "Rest day",
           missions: [
             {
               subject: "Recharge",
               title: "Work, rest and reset",
-              detail: "No scheduled revision today. A proper break protects next week's motivation."
+              detail: "No scheduled revision today. A proper break protects motivation.",
+              minutes: 0
             }
           ]
         },
+
         {
           day: "Sunday",
-          total: "Review session",
+          short: "Sun",
+          total: "Review",
           missions: [
             {
-              subject: "Weekly Review",
+              subject: "Review",
               title: "Two-week progress check",
-              detail: "Complete one short exam section, mark it kindly and choose one topic to revisit next week."
+              detail: "Complete one short exam section and choose one topic to revisit.",
+              minutes: 30
             }
           ]
         }
       ]
     };
 
-    const positiveQuotes = [
-      "You do not need to finish everything at once. Just complete the next small step.",
-      "Progress is built from ordinary sessions completed consistently.",
-      "Getting something wrong gives you a useful target for next time.",
-      "Twenty focused minutes is a proper achievement.",
-      "You are not competing with anyone else. You are building your own progress.",
-      "A difficult question attempted is better than an easy question avoided.",
-      "Consistency beats one enormous revision session.",
-      "You have already started. Keep the next step small."
+    const subjectDescriptions = {
+      English: "AQA Language and Literature practice with regular short writing.",
+      Maths: "Edexcel Maths retrieval, skills practice and mixed exam questions.",
+      Biology: "AQA Separate Biology topic recall and exam application.",
+      Chemistry: "AQA Separate Chemistry knowledge and calculation practice.",
+      Physics: "AQA Separate Physics concepts, formulae and exam questions.",
+      "Computer Science": "OCR Computer Science knowledge and programming concepts.",
+      Electronics: "Eduqas Electronics components, circuits and systems."
+    };
+
+    const achievements = [
+      {
+        title: "First Step",
+        description: "Complete one focused revision block.",
+        target: 1
+      },
+      {
+        title: "Momentum Builder",
+        description: "Complete five focused revision blocks.",
+        target: 5
+      },
+      {
+        title: "Consistency Counts",
+        description: "Complete ten focused revision blocks.",
+        target: 10
+      },
+      {
+        title: "Challenge Accepted",
+        description: "Complete twenty focused revision blocks.",
+        target: 20
+      },
+      {
+        title: "Knowledge Hunter",
+        description: "Earn 300 XP through regular revision.",
+        target: 30
+      },
+      {
+        title: "Mission Complete",
+        description: "Complete every block across both weeks.",
+        target: 32
+      }
     ];
 
-    let activeWeek = Number(localStorage.getItem("missionGcseActiveWeek")) || 1;
+    const encouragements = [
+      "You do not need to feel motivated before you start. Beginning often creates the motivation.",
+      "A difficult question attempted is still useful progress.",
+      "Twenty focused minutes is a proper achievement.",
+      "You are building a habit, not proving anything to anyone.",
+      "One completed block is better than an ambitious plan left untouched.",
+      "Getting something wrong gives you a clear target for next time.",
+      "Today only needs to be a small step forward.",
+      "Consistency matters more than having one perfect revision day."
+    ];
+
+    let activeWeek =
+      Number(localStorage.getItem("missionGcseActiveWeek")) || 1;
+
+    let activeDay =
+      Number(localStorage.getItem("missionGcseActiveDay"));
+
+    let plannerWeek = 1;
     let timerSeconds = 20 * 60;
     let timerInterval = null;
 
-    const missionsContainer = document.getElementById("missionsContainer");
-    const xpValue = document.getElementById("xpValue");
-    const completedValue = document.getElementById("completedValue");
-    const percentageValue = document.getElementById("percentageValue");
-    const levelValue = document.getElementById("levelValue");
-    const progressFill = document.getElementById("progressFill");
-    const progressMessage = document.getElementById("progressMessage");
-    const achievementTitle = document.getElementById("achievementTitle");
-    const achievementText = document.getElementById("achievementText");
-    const celebrationMessage = document.getElementById("celebrationMessage");
-    const timerDisplay = document.getElementById("timerDisplay");
-    const positiveQuote = document.getElementById("positiveQuote");
+    if (Number.isNaN(activeDay)) {
+      const currentDay = new Date().getDay();
+      activeDay = currentDay === 0 ? 6 : currentDay - 1;
+    }
+
+    const daySelector = document.getElementById("daySelector");
+    const missionList = document.getElementById("missionList");
+    const plannerWrap = document.getElementById("plannerWrap");
+    const subjectsGrid = document.getElementById("subjectsGrid");
+    const achievementsGrid = document.getElementById("achievementsGrid");
 
     function missionKey(week, dayIndex, missionIndex) {
-      return `mission-gcse-week-${week}-day-${dayIndex}-mission-${missionIndex}`;
+      return `mission-gcse-v2-week-${week}-day-${dayIndex}-mission-${missionIndex}`;
     }
 
-    function renderWeek() {
-      missionsContainer.innerHTML = "";
-
-      document.querySelectorAll(".week-button").forEach(button => {
-        button.classList.toggle(
-          "active",
-          Number(button.dataset.week) === activeWeek
-        );
-      });
-
-      revisionPlan[activeWeek].forEach((day, dayIndex) => {
-        const dayCard = document.createElement("article");
-        dayCard.className = "day-card";
-
-        const heading = document.createElement("div");
-        heading.className = "day-heading";
-        heading.innerHTML = `
-          <h4>${day.day}</h4>
-          <span class="day-total">${day.total}</span>
-        `;
-
-        dayCard.appendChild(heading);
-
-        day.missions.forEach((mission, missionIndex) => {
-          const key = missionKey(activeWeek, dayIndex, missionIndex);
-          const completed = localStorage.getItem(key) === "true";
-
-          const label = document.createElement("label");
-          label.className = "mission";
-
-          label.innerHTML = `
-            <input
-              type="checkbox"
-              data-key="${key}"
-              ${completed ? "checked" : ""}
-            >
-
-            <span class="custom-check"></span>
-
-            <span class="mission-text">
-              <span class="mission-title">
-                <span class="subject-pill">${mission.subject}</span>
-                ${mission.title}
-              </span>
-
-              <span class="mission-detail">
-                ${mission.detail}
-              </span>
-            </span>
-          `;
-
-          dayCard.appendChild(label);
-        });
-
-        missionsContainer.appendChild(dayCard);
-      });
-
-      document.querySelectorAll('.mission input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener("change", handleMissionChange);
-      });
-
-      updateDashboard();
+    function isMissionComplete(week, dayIndex, missionIndex) {
+      return localStorage.getItem(
+        missionKey(week, dayIndex, missionIndex)
+      ) === "true";
     }
 
-    function handleMissionChange(event) {
-      const checkbox = event.target;
-      localStorage.setItem(checkbox.dataset.key, checkbox.checked);
-
-      if (checkbox.checked) {
-        showCelebration();
-      }
-
-      updateDashboard();
+    function setMissionComplete(week, dayIndex, missionIndex, complete) {
+      localStorage.setItem(
+        missionKey(week, dayIndex, missionIndex),
+        complete
+      );
     }
 
-    function getWeekStats() {
+    function getWeekStats(week) {
       let total = 0;
       let completed = 0;
 
-      revisionPlan[activeWeek].forEach((day, dayIndex) => {
+      revisionPlan[week].forEach((day, dayIndex) => {
         day.missions.forEach((mission, missionIndex) => {
+          if (mission.subject === "Recharge") return;
+
           total++;
 
-          const key = missionKey(activeWeek, dayIndex, missionIndex);
-
-          if (localStorage.getItem(key) === "true") {
+          if (isMissionComplete(week, dayIndex, missionIndex)) {
             completed++;
           }
         });
@@ -956,120 +2081,475 @@
       return {
         total,
         completed,
-        percentage: total === 0 ? 0 : Math.round((completed / total) * 100)
+        percentage: total
+          ? Math.round((completed / total) * 100)
+          : 0
       };
     }
 
-    function getAllCompleted() {
+    function getAllStats() {
+      let total = 0;
       let completed = 0;
 
       Object.keys(revisionPlan).forEach(week => {
         revisionPlan[week].forEach((day, dayIndex) => {
           day.missions.forEach((mission, missionIndex) => {
-            const key = missionKey(week, dayIndex, missionIndex);
+            if (mission.subject === "Recharge") return;
 
-            if (localStorage.getItem(key) === "true") {
+            total++;
+
+            if (isMissionComplete(week, dayIndex, missionIndex)) {
               completed++;
             }
           });
         });
       });
 
-      return completed;
+      return {
+        total,
+        completed,
+        xp: completed * 10
+      };
     }
 
     function getLevel(xp) {
-      if (xp >= 300) return "Mission Master";
-      if (xp >= 200) return "Knowledge Hunter";
-      if (xp >= 100) return "Momentum Builder";
+      if (xp >= 300) return "Knowledge Hunter";
+      if (xp >= 200) return "Focused";
+      if (xp >= 100) return "Momentum";
       if (xp >= 50) return "Getting Started";
       return "Starter";
     }
 
+    function getNextTarget(xp) {
+      const targets = [50, 100, 200, 300, 500];
+      return targets.find(target => target > xp) || 750;
+    }
+
+    function renderDaySelector() {
+      daySelector.innerHTML = "";
+
+      revisionPlan[activeWeek].forEach((day, index) => {
+        const completed = day.missions.filter((mission, missionIndex) =>
+          mission.subject !== "Recharge" &&
+          isMissionComplete(activeWeek, index, missionIndex)
+        ).length;
+
+        const countable = day.missions.filter(
+          mission => mission.subject !== "Recharge"
+        ).length;
+
+        const button = document.createElement("button");
+        button.className = `day-button ${index === activeDay ? "active" : ""}`;
+
+        button.innerHTML = `
+          <span class="day-name">${day.short}</span>
+          <span class="day-progress">
+            ${
+              day.total === "Rest day"
+                ? "Rest day"
+                : `${completed}/${countable} complete`
+            }
+          </span>
+        `;
+
+        button.addEventListener("click", () => {
+          activeDay = index;
+          localStorage.setItem("missionGcseActiveDay", activeDay);
+          renderDaySelector();
+          renderMissions();
+        });
+
+        daySelector.appendChild(button);
+      });
+    }
+
+    function renderMissions() {
+      missionList.innerHTML = "";
+
+      const day = revisionPlan[activeWeek][activeDay];
+
+      document.getElementById("daySummary").textContent =
+        day.total === "Rest day"
+          ? "No scheduled work today. Rest supports sustainable progress."
+          : `${day.day}: ${day.total}. Complete them in any order.`;
+
+      day.missions.forEach((mission, missionIndex) => {
+        const complete = isMissionComplete(
+          activeWeek,
+          activeDay,
+          missionIndex
+        );
+
+        const style = subjectStyles[mission.subject];
+        const card = document.createElement("article");
+
+        card.className = `mission-card ${complete ? "completed" : ""}`;
+
+        card.innerHTML = `
+          <div
+            class="subject-icon"
+            style="
+              --icon-colour: ${style.colour};
+              --icon-bg: ${style.background};
+            "
+          >
+            ${icons[style.icon]}
+          </div>
+
+          <div class="mission-meta">
+            <div
+              class="subject-name"
+              style="--subject-colour: ${style.colour};"
+            >
+              ${mission.subject}
+            </div>
+
+            <div class="mission-title">${mission.title}</div>
+
+            <div class="mission-detail">${mission.detail}</div>
+
+            <div class="mission-time">
+              ${
+                mission.minutes
+                  ? `${mission.minutes} minute block`
+                  : "No timer needed"
+              }
+            </div>
+          </div>
+
+          <button class="mission-action">
+            ${complete ? "Completed" : "Mark complete"}
+          </button>
+        `;
+
+        card
+          .querySelector(".mission-action")
+          .addEventListener("click", () => {
+            const newValue = !complete;
+
+            setMissionComplete(
+              activeWeek,
+              activeDay,
+              missionIndex,
+              newValue
+            );
+
+            if (newValue) {
+              showToast("Block complete. Another step forward. +10 XP");
+            }
+
+            renderEverything();
+          });
+
+        missionList.appendChild(card);
+      });
+    }
+
+    function renderPlanner() {
+      plannerWrap.innerHTML = "";
+
+      revisionPlan[plannerWeek].forEach((day, dayIndex) => {
+        const wrapper = document.createElement("article");
+        wrapper.className = "planner-day";
+
+        const items = day.missions.map((mission, missionIndex) => {
+          const style = subjectStyles[mission.subject];
+          const complete = isMissionComplete(
+            plannerWeek,
+            dayIndex,
+            missionIndex
+          );
+
+          return `
+            <div class="planner-item">
+              <div
+                class="planner-dot"
+                style="--dot-colour: ${
+                  complete ? "#6ee7b7" : style.colour
+                };"
+              ></div>
+
+              <div class="planner-item-text">
+                <div>${mission.title}</div>
+                <div class="planner-item-subject">
+                  ${mission.subject}
+                  ${mission.minutes ? ` · ${mission.minutes} mins` : ""}
+                  ${complete ? " · Completed" : ""}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        wrapper.innerHTML = `
+          <h3>${day.day}</h3>
+          <div class="planner-items">${items}</div>
+        `;
+
+        plannerWrap.appendChild(wrapper);
+      });
+    }
+
+    function renderSubjects() {
+      subjectsGrid.innerHTML = "";
+
+      Object.keys(subjectDescriptions).forEach(subject => {
+        let total = 0;
+        let completed = 0;
+
+        Object.keys(revisionPlan).forEach(week => {
+          revisionPlan[week].forEach((day, dayIndex) => {
+            day.missions.forEach((mission, missionIndex) => {
+              if (mission.subject !== subject) return;
+
+              total++;
+
+              if (isMissionComplete(week, dayIndex, missionIndex)) {
+                completed++;
+              }
+            });
+          });
+        });
+
+        const percentage = total
+          ? Math.round((completed / total) * 100)
+          : 0;
+
+        const style = subjectStyles[subject];
+        const card = document.createElement("article");
+
+        card.className = "subject-card";
+
+        card.innerHTML = `
+          <div class="subject-card-top">
+            <div
+              class="subject-icon"
+              style="
+                --icon-colour: ${style.colour};
+                --icon-bg: ${style.background};
+              "
+            >
+              ${icons[style.icon]}
+            </div>
+
+            <div style="color: ${style.colour}; font-size: 0.75rem; font-weight: 800;">
+              ${percentage}%
+            </div>
+          </div>
+
+          <h3>${subject}</h3>
+          <p>${subjectDescriptions[subject]}</p>
+
+          <div class="subject-card-progress">
+            <div class="progress-row">
+              <span>${completed} blocks complete</span>
+              <span>${total} planned</span>
+            </div>
+
+            <div class="mini-progress">
+              <div
+                class="mini-progress-fill"
+                style="width: ${percentage}%; background: ${style.colour};"
+              ></div>
+            </div>
+          </div>
+        `;
+
+        subjectsGrid.appendChild(card);
+      });
+    }
+
+    function renderAchievements() {
+      const { completed } = getAllStats();
+
+      achievementsGrid.innerHTML = "";
+
+      achievements.forEach(achievement => {
+        const unlocked = completed >= achievement.target;
+        const percentage = Math.min(
+          100,
+          Math.round((completed / achievement.target) * 100)
+        );
+
+        const card = document.createElement("article");
+        card.className =
+          `achievement-card ${unlocked ? "" : "locked"}`;
+
+        card.innerHTML = `
+          <div class="badge-mark">
+            ${icons.award}
+          </div>
+
+          <h3>${achievement.title}</h3>
+          <p>${achievement.description}</p>
+
+          <div class="subject-card-progress">
+            <div class="progress-row">
+              <span>${unlocked ? "Unlocked" : `${completed}/${achievement.target}`}</span>
+              <span>${percentage}%</span>
+            </div>
+
+            <div class="mini-progress">
+              <div
+                class="mini-progress-fill"
+                style="width: ${percentage}%"
+              ></div>
+            </div>
+          </div>
+        `;
+
+        achievementsGrid.appendChild(card);
+      });
+    }
+
     function updateDashboard() {
-      const stats = getWeekStats();
-      const allCompleted = getAllCompleted();
-      const xp = allCompleted * 10;
+      const weekStats = getWeekStats(activeWeek);
+      const allStats = getAllStats();
+      const nextTarget = getNextTarget(allStats.xp);
+      const level = getLevel(allStats.xp);
 
-      xpValue.textContent = xp;
-      completedValue.textContent = allCompleted;
-      percentageValue.textContent = `${stats.percentage}%`;
-      levelValue.textContent = getLevel(xp);
-      progressFill.style.width = `${stats.percentage}%`;
+      document.getElementById("xpValue").textContent =
+        allStats.xp;
 
-      if (stats.completed === 0) {
-        progressMessage.textContent =
-          "Your first mission is ready whenever you are.";
+      document.getElementById("completedValue").textContent =
+        allStats.completed;
 
-        achievementTitle.textContent = "🏅 Ready to Begin";
-        achievementText.textContent =
-          "Starting is often the hardest part. Opening the page already counts as a positive step.";
-      } else if (stats.percentage < 25) {
-        progressMessage.textContent =
-          "You have started building momentum. One completed session is always better than none.";
+      document.getElementById("levelValue").textContent =
+        level;
 
-        achievementTitle.textContent = "🚀 Mission Started";
-        achievementText.textContent =
-          "You took action instead of waiting for the perfect moment.";
-      } else if (stats.percentage < 50) {
-        progressMessage.textContent =
-          "Strong start. Your completed missions are already adding up.";
+      document.getElementById("sidebarLevel").textContent =
+        `${level} level`;
 
-        achievementTitle.textContent = "🔥 Momentum Builder";
-        achievementText.textContent =
-          "Regular effort is becoming part of your routine.";
-      } else if (stats.percentage < 75) {
-        progressMessage.textContent =
-          "You are over halfway through this week's missions. That is genuine progress.";
+      document.getElementById("weekPercentage").textContent =
+        `${weekStats.percentage}%`;
 
-        achievementTitle.textContent = "🎯 Halfway Hero";
-        achievementText.textContent =
-          "You have kept going across several different subjects.";
-      } else if (stats.percentage < 100) {
-        progressMessage.textContent =
-          "Nearly there. Look at everything you have already completed this week.";
+      document.getElementById("progressRing").style.setProperty(
+        "--progress",
+        `${weekStats.percentage * 3.6}deg`
+      );
 
-        achievementTitle.textContent = "⭐ Consistency Champion";
-        achievementText.textContent =
-          "You have shown up repeatedly, even when revision may not have felt exciting.";
+      document.getElementById("nextTargetValue").textContent =
+        `${nextTarget} XP`;
+
+      document.getElementById("nextTargetNote").textContent =
+        `${nextTarget - allStats.xp} XP remaining`;
+
+      const nextAchievement =
+        achievements.find(item => allStats.completed < item.target) ||
+        achievements[achievements.length - 1];
+
+      const badgePercentage = Math.min(
+        100,
+        Math.round(
+          (allStats.completed / nextAchievement.target) * 100
+        )
+      );
+
+      document.getElementById("badgeTitle").textContent =
+        allStats.completed >= achievements[achievements.length - 1].target
+          ? "Mission Complete"
+          : nextAchievement.title;
+
+      document.getElementById("badgeDescription").textContent =
+        allStats.completed >= achievements[achievements.length - 1].target
+          ? "Every planned block across both weeks is complete."
+          : nextAchievement.description;
+
+      document.getElementById("badgeProgress").style.width =
+        `${badgePercentage}%`;
+
+      if (weekStats.percentage === 0) {
+        document.getElementById("heroMessage").textContent =
+          "Keep today simple. One focused block, then the next. You are building momentum rather than chasing perfection.";
+      } else if (weekStats.percentage < 50) {
+        document.getElementById("heroMessage").textContent =
+          "You have started building momentum. Every completed block is evidence that you can keep moving forward.";
+      } else if (weekStats.percentage < 100) {
+        document.getElementById("heroMessage").textContent =
+          "You are well into this week's plan. Notice what you have completed, not only what remains.";
       } else {
-        progressMessage.textContent =
-          "Every mission in this week is complete. Brilliant work — take a moment to enjoy that.";
-
-        achievementTitle.textContent = "🏆 Week Complete";
-        achievementText.textContent =
-          "You completed the whole revision plan one manageable step at a time.";
+        document.getElementById("heroMessage").textContent =
+          "This week's plan is complete. That consistency matters far more than one perfect result.";
       }
     }
 
-    function showCelebration() {
-      const messages = [
-        "Mission complete — brilliant consistency! +10 XP",
-        "Nice work — another small step banked! +10 XP",
-        "Completed! Your effort is adding up. +10 XP",
-        "Strong work — you showed up and did it. +10 XP",
-        "That session counts. Keep building. +10 XP"
-      ];
+    function renderEverything() {
+      document.querySelectorAll(".week-tab:not(.planner-week)").forEach(tab => {
+        tab.classList.toggle(
+          "active",
+          Number(tab.dataset.week) === activeWeek
+        );
+      });
 
-      celebrationMessage.textContent =
-        messages[Math.floor(Math.random() * messages.length)];
+      document.querySelectorAll(".planner-week").forEach(tab => {
+        tab.classList.toggle(
+          "active",
+          Number(tab.dataset.week) === plannerWeek
+        );
+      });
 
-      celebrationMessage.classList.add("show");
+      renderDaySelector();
+      renderMissions();
+      renderPlanner();
+      renderSubjects();
+      renderAchievements();
+      updateDashboard();
+    }
+
+    function showSection(sectionId) {
+      document.querySelectorAll(".content-section").forEach(section => {
+        section.classList.toggle(
+          "active",
+          section.id === sectionId
+        );
+      });
+
+      document
+        .querySelectorAll("[data-section]")
+        .forEach(button => {
+          button.classList.toggle(
+            "active",
+            button.dataset.section === sectionId
+          );
+        });
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(window.toastTimeout);
+
+      window.toastTimeout = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2500);
+    }
+
+    function scrollToTimer() {
+      showSection("dashboard");
 
       setTimeout(() => {
-        celebrationMessage.classList.remove("show");
-      }, 2400);
+        document
+          .getElementById("focusTimerPanel")
+          .scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+      }, 100);
     }
 
     function updateTimerDisplay() {
       const minutes = Math.floor(timerSeconds / 60);
       const seconds = timerSeconds % 60;
 
-      timerDisplay.textContent =
+      document.getElementById("timerDisplay").textContent =
         `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
     }
 
-    document.getElementById("startTimer").addEventListener("click", () => {
+    function startTimer() {
       if (timerInterval) return;
 
       timerInterval = setInterval(() => {
@@ -1079,71 +2559,143 @@
         } else {
           clearInterval(timerInterval);
           timerInterval = null;
-
-          celebrationMessage.textContent =
-            "Twenty focused minutes complete — excellent work.";
-
-          celebrationMessage.classList.add("show");
-
-          setTimeout(() => {
-            celebrationMessage.classList.remove("show");
-          }, 3000);
+          showToast("Focus block complete. Take a breath before the next step.");
         }
       }, 1000);
-    });
+    }
 
-    document.getElementById("pauseTimer").addEventListener("click", () => {
+    function pauseTimer() {
       clearInterval(timerInterval);
       timerInterval = null;
-    });
+    }
 
-    document.getElementById("resetTimer").addEventListener("click", () => {
-      clearInterval(timerInterval);
-      timerInterval = null;
-      timerSeconds = 20 * 60;
+    function resetTimer(minutes = 20) {
+      pauseTimer();
+      timerSeconds = minutes * 60;
       updateTimerDisplay();
-    });
+    }
 
-    document.querySelectorAll(".week-button").forEach(button => {
+    document.querySelectorAll("[data-section]").forEach(button => {
       button.addEventListener("click", () => {
-        activeWeek = Number(button.dataset.week);
-        localStorage.setItem("missionGcseActiveWeek", activeWeek);
-        renderWeek();
+        showSection(button.dataset.section);
       });
     });
 
-    document.getElementById("clearProgress").addEventListener("click", () => {
-      const confirmed = confirm(
-        "Reset all completed missions and XP? This cannot be undone."
-      );
-
-      if (!confirmed) return;
-
-      Object.keys(localStorage)
-        .filter(key => key.startsWith("mission-gcse-week-"))
-        .forEach(key => localStorage.removeItem(key));
-
-      renderWeek();
+    document.querySelectorAll("[data-open-section]").forEach(button => {
+      button.addEventListener("click", () => {
+        showSection(button.dataset.openSection);
+      });
     });
 
-    function setWelcomeMessage() {
+    document.querySelectorAll(".week-tab:not(.planner-week)").forEach(tab => {
+      tab.addEventListener("click", () => {
+        activeWeek = Number(tab.dataset.week);
+        localStorage.setItem("missionGcseActiveWeek", activeWeek);
+        renderEverything();
+      });
+    });
+
+    document.querySelectorAll(".planner-week").forEach(tab => {
+      tab.addEventListener("click", () => {
+        plannerWeek = Number(tab.dataset.week);
+        renderEverything();
+      });
+    });
+
+    document
+      .getElementById("continueButton")
+      .addEventListener("click", () => {
+        document
+          .getElementById("missionPanel")
+          .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+      });
+
+    document
+      .getElementById("focusShortcut")
+      .addEventListener("click", scrollToTimer);
+
+    document
+      .getElementById("topTimerButton")
+      .addEventListener("click", scrollToTimer);
+
+    document
+      .getElementById("startTimer")
+      .addEventListener("click", startTimer);
+
+    document
+      .getElementById("pauseTimer")
+      .addEventListener("click", pauseTimer);
+
+    document
+      .getElementById("resetTimer")
+      .addEventListener("click", () => resetTimer(20));
+
+    document
+      .getElementById("setTenMinutes")
+      .addEventListener("click", () => resetTimer(10));
+
+    document
+      .getElementById("resetProgressButton")
+      .addEventListener("click", () => {
+        const confirmed = confirm(
+          "Reset all completed blocks and XP? This cannot be undone."
+        );
+
+        if (!confirmed) return;
+
+        Object.keys(localStorage)
+          .filter(key => key.startsWith("mission-gcse-v2-"))
+          .forEach(key => localStorage.removeItem(key));
+
+        showToast("Progress has been reset.");
+        renderEverything();
+      });
+
+    function setGreeting() {
       const hour = new Date().getHours();
-      let greeting = "Welcome back";
+      let greeting = "Good evening";
 
-      if (hour < 12) greeting = "Good morning";
-      else if (hour < 18) greeting = "Good afternoon";
-      else greeting = "Good evening";
+      if (hour < 12) {
+        greeting = "Good morning";
+      } else if (hour < 18) {
+        greeting = "Good afternoon";
+      }
 
-      document.getElementById("welcomeMessage").textContent =
-        `${greeting}, Alfie 👋`;
+      document.getElementById("greeting").textContent =
+        `${greeting}, Alfie.`;
     }
 
-    positiveQuote.textContent =
-      positiveQuotes[Math.floor(Math.random() * positiveQuotes.length)];
+    function setDate() {
+      const formatted = new Intl.DateTimeFormat(
+        "en-GB",
+        {
+          weekday: "long",
+          day: "numeric",
+          month: "long"
+        }
+      ).format(new Date());
 
-    setWelcomeMessage();
+      document.getElementById("dateLine").textContent =
+        formatted;
+    }
+
+    function setEncouragement() {
+      const index =
+        new Date().getDate() % encouragements.length;
+
+      document.getElementById("encouragementText").textContent =
+        encouragements[index];
+    }
+
+    injectIcons();
+    setGreeting();
+    setDate();
+    setEncouragement();
     updateTimerDisplay();
-    renderWeek();
+    renderEverything();
   </script>
 
 </body>
