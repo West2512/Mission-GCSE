@@ -17,4 +17,4 @@ const todaysMissions = [
     detail: "Complete a short set of mixed conversion questions.",
     letter: "M"
   }
-]; 
+];
