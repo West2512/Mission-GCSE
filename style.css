@@ -184,9 +184,11 @@ textarea:focus-visible {
 
 .main-content {
   grid-column: 2;
-  width: 100%;
+  width: auto;
+  min-width: 0;
   max-width: 1600px;
   padding: 24px 34px 54px;
+  box-sizing: border-box;
 }
 
 .topbar {
