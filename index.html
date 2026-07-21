@@ -2,142 +2,349 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Mission GCSE — Alfie's personalised Year 11 revision hub."
+  >
 
   <title>Mission GCSE</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
 
-  <div class="app">
+  <div class="app-shell">
 
     <aside class="sidebar">
 
-      <div class="brand">
-        <div class="brand-mark">M</div>
+      <a class="brand" href="#" aria-label="Mission GCSE dashboard">
+        <span class="brand-logo">M</span>
 
-        <div>
-          <div class="brand-title">Mission GCSE</div>
-          <div class="brand-subtitle">Year 11 revision hub</div>
-        </div>
-      </div>
+        <span class="brand-copy">
+          <strong>Mission GCSE</strong>
+          <small>Revision headquarters</small>
+        </span>
+      </a>
 
-      <nav class="navigation">
-        <button class="nav-button active">Dashboard</button>
-        <button class="nav-button">Weekly Plan</button>
-        <button class="nav-button">Subjects</button>
-        <button class="nav-button">Achievements</button>
+      <nav class="main-navigation" aria-label="Main navigation">
+
+        <button class="nav-item active" data-view="dashboard">
+          <span class="nav-icon">01</span>
+          <span>Dashboard</span>
+        </button>
+
+        <button class="nav-item" data-view="plan">
+          <span class="nav-icon">02</span>
+          <span>Weekly plan</span>
+        </button>
+
+        <button class="nav-item" data-view="subjects">
+          <span class="nav-icon">03</span>
+          <span>Subjects</span>
+        </button>
+
+        <button class="nav-item" data-view="achievements">
+          <span class="nav-icon">04</span>
+          <span>Achievements</span>
+        </button>
+
       </nav>
 
-      <div class="profile">
-        <div class="profile-avatar">A</div>
+      <div class="sidebar-bottom">
 
-        <div>
-          <div class="profile-name">Alfie</div>
-          <div class="profile-level">Starter level</div>
+        <div class="mini-streak">
+          <span class="mini-streak-number" id="sidebarStreak">0</span>
+
+          <span>
+            <strong>Day streak</strong>
+            <small>Keep building momentum</small>
+          </span>
         </div>
+
+        <div class="profile-card">
+          <span class="avatar">A</span>
+
+          <span class="profile-copy">
+            <strong>Alfie</strong>
+            <small id="sidebarLevel">Level 1 · Rookie</small>
+          </span>
+        </div>
+
       </div>
 
     </aside>
 
-    <main class="main-content">
+    <main class="main-area">
 
       <header class="topbar">
+
         <div>
-          <div class="date" id="currentDate"></div>
-          <div class="welcome">Welcome back, Alfie</div>
-        </div>
-      </header>
-
-      <section class="hero">
-
-        <div class="hero-copy">
-          <div class="eyebrow">Today’s progress</div>
-
-          <h1>One focused block at a time.</h1>
-
-          <p>
-            Small, consistent sessions will build confidence and make
-            Year 11 feel much more manageable.
-          </p>
-
-          <button class="primary-button">Continue today’s plan</button>
+          <p class="current-date" id="currentDate"></p>
+          <h2 id="pageGreeting">Welcome back, Alfie</h2>
         </div>
 
-        <div class="progress-card">
-          <div class="progress-number">0%</div>
-          <div class="progress-label">today complete</div>
-        </div>
+        <div class="topbar-actions">
 
-      </section>
-
-      <section class="stats">
-
-        <article class="stat-card">
-          <div class="stat-label">Total XP</div>
-          <div class="stat-value">0</div>
-          <div class="stat-note">10 XP per completed block</div>
-        </article>
-
-        <article class="stat-card">
-          <div class="stat-label">Blocks completed</div>
-          <div class="stat-value">0</div>
-          <div class="stat-note">Every focused session counts</div>
-        </article>
-
-        <article class="stat-card">
-          <div class="stat-label">Current level</div>
-          <div class="stat-value">Starter</div>
-          <div class="stat-note">Built through steady progress</div>
-        </article>
-
-        <article class="stat-card">
-          <div class="stat-label">Next target</div>
-          <div class="stat-value">50 XP</div>
-          <div class="stat-note">First achievement milestone</div>
-        </article>
-
-      </section>
-
-      <section class="dashboard-grid">
-
-        <section class="panel">
-          <div class="panel-heading">
-            <div>
-              <div class="eyebrow">Monday</div>
-              <h2>Today’s plan</h2>
-            </div>
-
-            <div class="panel-note">3 focused blocks</div>
+          <div class="topbar-xp">
+            <span>XP</span>
+            <strong id="topbarXp">0</strong>
           </div>
 
-          <div class="mission-list" id="missionList"></div>
+          <button
+            class="icon-button"
+            id="resetProgressButton"
+            aria-label="Reset progress"
+            title="Reset progress"
+          >
+            ↺
+          </button>
+
+        </div>
+
+      </header>
+
+      <section class="app-view active-view" id="dashboardView">
+
+        <section class="hero-card">
+
+          <div class="hero-content">
+
+            <p class="eyebrow">Today’s mission</p>
+
+            <h1>
+              Three focused blocks.<br>
+              One stronger day.
+            </h1>
+
+            <p class="hero-description">
+              Complete each short session, collect XP and keep moving.
+              Nothing here needs to be perfect — it just needs to be started.
+            </p>
+
+            <div class="hero-actions">
+
+              <button class="primary-button" id="continueButton">
+                Continue today’s plan
+              </button>
+
+              <span class="hero-time">
+                3 blocks · 20 minutes each
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="daily-progress">
+
+            <div
+              class="progress-ring"
+              id="dailyProgressRing"
+              style="--progress: 0deg;"
+            >
+              <div class="progress-ring-centre">
+                <strong id="dailyProgressNumber">0%</strong>
+                <span>today complete</span>
+              </div>
+            </div>
+
+            <p id="dailyProgressMessage">
+              Complete your first mission to begin.
+            </p>
+
+          </div>
+
         </section>
 
-        <aside class="side-column">
+        <section class="stat-grid">
 
-          <section class="panel timer-panel">
-            <div class="eyebrow">Focus timer</div>
-            <div class="timer" id="timerDisplay">20:00</div>
-
-            <div class="timer-buttons">
-              <button id="startTimer">Start</button>
-              <button id="pauseTimer">Pause</button>
-              <button id="resetTimer">Reset</button>
+          <article class="stat-card">
+            <div class="stat-top">
+              <span>Total XP</span>
+              <span class="stat-code">XP</span>
             </div>
+
+            <strong class="stat-number" id="totalXp">0</strong>
+            <p>Earned through completed revision blocks</p>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <span>Current level</span>
+              <span class="stat-code">LVL</span>
+            </div>
+
+            <strong class="stat-number stat-text" id="currentLevel">
+              Rookie
+            </strong>
+
+            <p id="levelProgressText">50 XP until the next level</p>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <span>Weekly progress</span>
+              <span class="stat-code">WK</span>
+            </div>
+
+            <strong class="stat-number" id="weeklyProgress">0%</strong>
+            <p id="weeklyBlocksText">0 of 18 weekly blocks complete</p>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <span>Current streak</span>
+              <span class="stat-code">DAY</span>
+            </div>
+
+            <strong class="stat-number" id="currentStreak">0</strong>
+            <p>Consecutive active revision days</p>
+          </article>
+
+        </section>
+
+        <section class="dashboard-layout">
+
+          <section class="panel missions-panel">
+
+            <div class="panel-heading">
+
+              <div>
+                <p class="eyebrow" id="todayName">Today</p>
+                <h2>Your mission list</h2>
+              </div>
+
+              <span class="panel-status" id="missionCount">
+                0 of 3 complete
+              </span>
+
+            </div>
+
+            <div class="mission-list" id="missionList"></div>
+
           </section>
 
-          <section class="panel encouragement-panel">
-            <div class="eyebrow">Today’s reminder</div>
+          <aside class="dashboard-side">
 
-            <p>
-              You do not need a perfect session. Starting is enough.
-            </p>
-          </section>
+            <section class="panel timer-panel">
 
-        </aside>
+              <div class="panel-heading compact-heading">
+                <div>
+                  <p class="eyebrow">Focus mode</p>
+                  <h2>Session timer</h2>
+                </div>
+
+                <span class="timer-status" id="timerStatus">Ready</span>
+              </div>
+
+              <div class="timer-display" id="timerDisplay">20:00</div>
+
+              <div class="timer-progress-track">
+                <div
+                  class="timer-progress-fill"
+                  id="timerProgressFill"
+                ></div>
+              </div>
+
+              <div class="timer-controls">
+
+                <button class="timer-primary" id="startTimer">
+                  Start
+                </button>
+
+                <button id="pauseTimer">Pause</button>
+                <button id="resetTimer">Reset</button>
+
+              </div>
+
+            </section>
+
+            <section class="panel next-level-panel">
+
+              <p class="eyebrow">Level progress</p>
+
+              <div class="level-heading">
+                <strong id="levelName">Rookie</strong>
+                <span id="levelXpLabel">0 / 50 XP</span>
+              </div>
+
+              <div class="level-track">
+                <div class="level-fill" id="levelFill"></div>
+              </div>
+
+              <p id="nextLevelMessage">
+                Complete focused blocks to reach Rising.
+              </p>
+
+            </section>
+
+            <section class="panel reminder-panel">
+
+              <p class="eyebrow">Mission reminder</p>
+
+              <blockquote id="dailyReminder">
+                You don’t need to feel ready. Starting creates momentum.
+              </blockquote>
+
+            </section>
+
+          </aside>
+
+        </section>
+
+      </section>
+
+      <section class="app-view" id="planView">
+
+        <div class="view-heading">
+          <p class="eyebrow">Six-week programme</p>
+          <h1>Your weekly plan</h1>
+
+          <p>
+            Three focused sessions each weekday, Saturday off,
+            then a Sunday review.
+          </p>
+        </div>
+
+        <div class="weekly-grid" id="weeklyGrid"></div>
+
+      </section>
+
+      <section class="app-view" id="subjectsView">
+
+        <div class="view-heading">
+          <p class="eyebrow">Revision library</p>
+          <h1>Choose a subject</h1>
+
+          <p>
+            Each subject area will contain short activities,
+            recall missions and exam-board-specific practice.
+          </p>
+        </div>
+
+        <div class="subject-grid" id="subjectGrid"></div>
+
+      </section>
+
+      <section class="app-view" id="achievementsView">
+
+        <div class="view-heading">
+          <p class="eyebrow">Progress cabinet</p>
+          <h1>Achievements</h1>
+
+          <p>
+            Every badge celebrates effort, consistency and focused work.
+          </p>
+        </div>
+
+        <div class="achievement-grid" id="achievementGrid"></div>
 
       </section>
 
@@ -145,8 +352,48 @@
 
   </div>
 
-  <script src="data.js"></script>
-<script src="app.js?v=2"></script>
+  <div
+    class="completion-toast"
+    id="completionToast"
+    role="status"
+    aria-live="polite"
+  >
+    <span class="toast-symbol">+</span>
+
+    <div>
+      <p>Mission complete</p>
+      <strong id="toastTitle">+10 XP earned</strong>
+      <span id="toastMessage">Another focused block finished.</span>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="resetModal">
+
+    <div class="modal-card">
+
+      <p class="eyebrow">Reset progress</p>
+      <h2>Start again from zero?</h2>
+
+      <p>
+        This removes completed missions, XP, levels and achievements
+        saved on this device.
+      </p>
+
+      <div class="modal-actions">
+        <button class="secondary-button" id="cancelReset">
+          Keep progress
+        </button>
+
+        <button class="danger-button" id="confirmReset">
+          Reset everything
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="app.js?v=4"></script>
 
 </body>
 </html>
