@@ -10,47 +10,62 @@
 
   <meta
     name="description"
-    content="Mission GCSE — Alfie's personalised Year 11 revision hub."
+    content="Mission GCSE revision dashboard"
   >
 
   <title>Mission GCSE</title>
 
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
-
   <div class="app-shell">
 
     <aside class="sidebar">
 
-      <a class="brand" href="#" aria-label="Mission GCSE dashboard">
-        <span class="brand-logo">M</span>
+      <div class="brand">
+        <div class="brand-logo">MG</div>
 
-        <span class="brand-copy">
+        <div class="brand-copy">
           <strong>Mission GCSE</strong>
-          <small>Revision headquarters</small>
-        </span>
-      </a>
+          <small>Revision Command Centre</small>
+        </div>
+      </div>
 
-      <nav class="main-navigation" aria-label="Main navigation">
+      <nav class="main-navigation">
 
-        <button class="nav-item active" data-view="dashboard">
+        <button
+          class="nav-item active"
+          data-view="dashboard"
+          type="button"
+        >
           <span class="nav-icon">01</span>
           <span>Dashboard</span>
         </button>
 
-        <button class="nav-item" data-view="plan">
+        <button
+          class="nav-item"
+          data-view="plan"
+          type="button"
+        >
           <span class="nav-icon">02</span>
           <span>Weekly plan</span>
         </button>
 
-        <button class="nav-item" data-view="subjects">
+        <button
+          class="nav-item"
+          data-view="subjects"
+          type="button"
+        >
           <span class="nav-icon">03</span>
           <span>Subjects</span>
         </button>
 
-        <button class="nav-item" data-view="achievements">
+        <button
+          class="nav-item"
+          data-view="achievements"
+          type="button"
+        >
           <span class="nav-icon">04</span>
           <span>Achievements</span>
         </button>
@@ -60,21 +75,29 @@
       <div class="sidebar-bottom">
 
         <div class="mini-streak">
-          <span class="mini-streak-number" id="sidebarStreak">0</span>
+          <span
+            class="mini-streak-number"
+            id="sidebarStreak"
+          >
+            0
+          </span>
 
           <span>
             <strong>Day streak</strong>
-            <small>Keep building momentum</small>
+            <small>Keep the momentum going</small>
           </span>
         </div>
 
         <div class="profile-card">
-          <span class="avatar">A</span>
+          <div class="avatar">A</div>
 
-          <span class="profile-copy">
+          <div class="profile-copy">
             <strong>Alfie</strong>
-            <small id="sidebarLevel">Level 1 · Rookie</small>
-          </span>
+
+            <small id="sidebarLevel">
+              Level 1 · Rookie
+            </small>
+          </div>
         </div>
 
       </div>
@@ -86,8 +109,16 @@
       <header class="topbar">
 
         <div>
-          <p class="current-date" id="currentDate"></p>
-          <h2 id="pageGreeting">Welcome back, Alfie</h2>
+          <p
+            class="current-date"
+            id="currentDate"
+          >
+            Loading date...
+          </p>
+
+          <h2 id="topbarGreeting">
+            Good evening, Alfie
+          </h2>
         </div>
 
         <div class="topbar-actions">
@@ -100,38 +131,49 @@
           <button
             class="icon-button"
             id="resetProgressButton"
+            type="button"
             aria-label="Reset progress"
             title="Reset progress"
           >
-            ↺
+            ↻
           </button>
 
         </div>
 
       </header>
 
-      <section class="app-view active-view" id="dashboardView">
+      <!-- DASHBOARD -->
 
-        <section class="hero-card">
+      <section
+        class="app-view active-view"
+        id="dashboardView"
+      >
+
+        <article class="hero-card">
 
           <div class="hero-content">
 
-            <p class="eyebrow">Today’s mission</p>
+            <p class="eyebrow">
+              Mission control
+            </p>
 
             <h1>
-              Three focused blocks.<br>
-              One stronger day.
+              Ready for today’s mission?
             </h1>
 
             <p class="hero-description">
-              Complete each short session, collect XP and keep moving.
-              Nothing here needs to be perfect — it just needs to be started.
+              Complete three focused revision blocks, earn XP and
+              strengthen the knowledge you will need for your GCSEs.
             </p>
 
             <div class="hero-actions">
 
-              <button class="primary-button" id="continueButton">
-                Continue today’s plan
+              <button
+                class="primary-button"
+                id="continueButton"
+                type="button"
+              >
+                Continue mission
               </button>
 
               <span class="hero-time">
@@ -150,8 +192,13 @@
               style="--progress: 0deg;"
             >
               <div class="progress-ring-centre">
-                <strong id="dailyProgressNumber">0%</strong>
+
+                <strong id="dailyProgressNumber">
+                  0%
+                </strong>
+
                 <span>today complete</span>
+
               </div>
             </div>
 
@@ -161,90 +208,151 @@
 
           </div>
 
-        </section>
+        </article>
 
         <section class="stat-grid">
 
           <article class="stat-card">
+
             <div class="stat-top">
               <span>Total XP</span>
               <span class="stat-code">XP</span>
             </div>
 
-            <strong class="stat-number" id="totalXp">0</strong>
-            <p>Earned through completed revision blocks</p>
+            <strong
+              class="stat-number"
+              id="totalXp"
+            >
+              0
+            </strong>
+
+            <p>
+              Earned through completed missions
+            </p>
+
           </article>
 
           <article class="stat-card">
+
+            <div class="stat-top">
+              <span>Current streak</span>
+              <span class="stat-code">STK</span>
+            </div>
+
+            <strong
+              class="stat-number"
+              id="currentStreak"
+            >
+              0
+            </strong>
+
+            <p>
+              Consecutive active revision days
+            </p>
+
+          </article>
+
+          <article class="stat-card">
+
             <div class="stat-top">
               <span>Current level</span>
               <span class="stat-code">LVL</span>
             </div>
 
-            <strong class="stat-number stat-text" id="currentLevel">
+            <strong
+              class="stat-number stat-text"
+              id="currentLevel"
+            >
               Rookie
             </strong>
 
-            <p id="levelProgressText">50 XP until the next level</p>
+            <p>
+              Your current Mission GCSE rank
+            </p>
+
           </article>
 
           <article class="stat-card">
+
             <div class="stat-top">
               <span>Weekly progress</span>
               <span class="stat-code">WK</span>
             </div>
 
-            <strong class="stat-number" id="weeklyProgress">0%</strong>
-            <p id="weeklyBlocksText">0 of 18 weekly blocks complete</p>
-          </article>
+            <strong
+              class="stat-number"
+              id="weeklyProgress"
+            >
+              0%
+            </strong>
 
-          <article class="stat-card">
-            <div class="stat-top">
-              <span>Current streak</span>
-              <span class="stat-code">DAY</span>
-            </div>
+            <p id="weeklyBlocksText">
+              0 of 18 weekly blocks complete
+            </p>
 
-            <strong class="stat-number" id="currentStreak">0</strong>
-            <p>Consecutive active revision days</p>
           </article>
 
         </section>
 
         <section class="dashboard-layout">
 
-          <section class="panel missions-panel">
+          <article class="panel missions-panel">
 
             <div class="panel-heading">
 
               <div>
-                <p class="eyebrow" id="todayName">Today</p>
-                <h2>Your mission list</h2>
+                <p class="eyebrow">
+                  Daily plan
+                </p>
+
+                <h2>
+                  <span id="todayName">Today</span>’s missions
+                </h2>
               </div>
 
-              <span class="panel-status" id="missionCount">
+              <span
+                class="panel-status"
+                id="missionCount"
+              >
                 0 of 3 complete
               </span>
 
             </div>
 
-            <div class="mission-list" id="missionList"></div>
+            <div
+              class="mission-list"
+              id="missionList"
+            ></div>
 
-          </section>
+          </article>
 
           <aside class="dashboard-side">
 
-            <section class="panel timer-panel">
+            <article class="panel timer-panel">
 
               <div class="panel-heading compact-heading">
+
                 <div>
-                  <p class="eyebrow">Focus mode</p>
-                  <h2>Session timer</h2>
+                  <p class="eyebrow">
+                    Focus timer
+                  </p>
                 </div>
 
-                <span class="timer-status" id="timerStatus">Ready</span>
+                <span
+                  class="timer-status"
+                  id="timerStatus"
+                >
+                  Ready
+                </span>
+
               </div>
 
-              <div class="timer-display" id="timerDisplay">20:00</div>
+              <div
+                class="timer-display"
+                id="timerDisplay"
+              >
+                20:00
+              </div>
 
               <div class="timer-progress-track">
                 <div
@@ -255,45 +363,76 @@
 
               <div class="timer-controls">
 
-                <button class="timer-primary" id="startTimer">
+                <button
+                  class="timer-primary"
+                  id="startTimer"
+                  type="button"
+                >
                   Start
                 </button>
 
-                <button id="pauseTimer">Pause</button>
-                <button id="resetTimer">Reset</button>
+                <button
+                  id="pauseTimer"
+                  type="button"
+                >
+                  Pause
+                </button>
+
+                <button
+                  id="resetTimer"
+                  type="button"
+                >
+                  Reset
+                </button>
 
               </div>
 
-            </section>
+            </article>
 
-            <section class="panel next-level-panel">
+            <article class="panel next-level-panel">
 
-              <p class="eyebrow">Level progress</p>
+              <p class="eyebrow">
+                Level progress
+              </p>
 
               <div class="level-heading">
-                <strong id="levelName">Rookie</strong>
-                <span id="levelXpLabel">0 / 50 XP</span>
+                <strong id="levelName">
+                  Rookie
+                </strong>
+
+                <span id="levelProgressText">
+                  50 XP until Rising
+                </span>
               </div>
 
               <div class="level-track">
-                <div class="level-fill" id="levelFill"></div>
+                <div
+                  class="level-fill"
+                  id="levelFill"
+                ></div>
               </div>
+
+              <p id="levelXpLabel">
+                0 / 50 XP
+              </p>
 
               <p id="nextLevelMessage">
                 Complete focused blocks to reach Rising.
               </p>
 
-            </section>
+            </article>
 
-            <section class="panel reminder-panel">
+            <article class="panel reminder-panel">
 
-              <p class="eyebrow">Mission reminder</p>
+              <p class="eyebrow">
+                Today’s reminder
+              </p>
 
               <blockquote id="dailyReminder">
-                You don’t need to feel ready. Starting creates momentum.
+                Starting creates momentum.
               </blockquote>
 
-            </section>
+            </article>
 
           </aside>
 
@@ -301,50 +440,482 @@
 
       </section>
 
-      <section class="app-view" id="planView">
+      <!-- WEEKLY PLAN -->
+
+      <section
+        class="app-view"
+        id="planView"
+      >
 
         <div class="view-heading">
-          <p class="eyebrow">Six-week programme</p>
-          <h1>Your weekly plan</h1>
+
+          <p class="eyebrow">
+            Weekly mission map
+          </p>
+
+          <h1>
+            The week ahead
+          </h1>
 
           <p>
-            Three focused sessions each weekday, Saturday off,
-            then a Sunday review.
+            Three focused blocks each weekday, a rest day on Saturday
+            and a review session on Sunday.
           </p>
+
         </div>
 
-        <div class="weekly-grid" id="weeklyGrid"></div>
+        <div
+          class="weekly-grid"
+          id="weeklyGrid"
+        ></div>
 
       </section>
 
-      <section class="app-view" id="subjectsView">
+      <!-- SUBJECTS -->
+
+      <section
+        class="app-view"
+        id="subjectsView"
+      >
 
         <div class="view-heading">
-          <p class="eyebrow">Revision library</p>
-          <h1>Choose a subject</h1>
+
+          <p class="eyebrow">
+            Subject library
+          </p>
+
+          <h1>
+            Choose your mission
+          </h1>
 
           <p>
-            Each subject area will contain short activities,
-            recall missions and exam-board-specific practice.
+            Open a subject to explore revision activities, topic
+            progress and focused challenges.
           </p>
+
         </div>
 
-        <div class="subject-grid" id="subjectGrid"></div>
+        <div
+          class="subject-grid"
+          id="subjectGrid"
+        ></div>
 
       </section>
 
-      <section class="app-view" id="achievementsView">
+      <!-- ENGLISH HUB -->
 
-        <div class="view-heading">
-          <p class="eyebrow">Progress cabinet</p>
-          <h1>Achievements</h1>
+      <section
+        class="app-view"
+        id="englishView"
+      >
 
-          <p>
-            Every badge celebrates effort, consistency and focused work.
-          </p>
+        <button
+          class="back-button"
+          id="backToSubjects"
+          type="button"
+        >
+          ← Back to subjects
+        </button>
+
+        <article class="english-hero">
+
+          <div class="english-hero-content">
+
+            <p class="eyebrow">
+              AQA English
+            </p>
+
+            <h1>
+              English Command Centre
+            </h1>
+
+            <p>
+              Build confidence through short retrieval activities,
+              quotation practice and guided exam responses.
+            </p>
+
+            <div class="english-hero-actions">
+
+              <button
+                class="primary-button"
+                id="continueEnglishButton"
+                type="button"
+              >
+                Continue English
+              </button>
+
+              <span id="englishHeroProgress">
+                0 activities complete
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="english-orbit">
+
+            <div class="english-orbit-ring"></div>
+
+            <div class="english-core">
+              <span>EN</span>
+              <strong id="englishProgressPercent">
+                0%
+              </strong>
+            </div>
+
+            <span class="orbit-item orbit-one">
+              AO1
+            </span>
+
+            <span class="orbit-item orbit-two">
+              AO2
+            </span>
+
+            <span class="orbit-item orbit-three">
+              AO3
+            </span>
+
+          </div>
+
+        </article>
+
+        <section class="english-summary-grid">
+
+          <article class="english-summary-card">
+
+            <span>English XP</span>
+
+            <strong id="englishXp">
+              0
+            </strong>
+
+            <small>
+              Earned through English activities
+            </small>
+
+          </article>
+
+          <article class="english-summary-card">
+
+            <span>Activities complete</span>
+
+            <strong id="englishCompletedCount">
+              0
+            </strong>
+
+            <small>
+              Across language and literature
+            </small>
+
+          </article>
+
+          <article class="english-summary-card">
+
+            <span>Current mastery</span>
+
+            <strong id="englishMastery">
+              Starting
+            </strong>
+
+            <small>
+              Based on completed challenges
+            </small>
+
+          </article>
+
+        </section>
+
+        <section class="english-content-section">
+
+          <div class="section-title-row">
+
+            <div>
+              <p class="eyebrow">
+                Continue learning
+              </p>
+
+              <h2>
+                English pathways
+              </h2>
+            </div>
+
+            <span class="section-caption">
+              Choose a pathway to begin
+            </span>
+
+          </div>
+
+          <div
+            class="english-pathway-grid"
+            id="englishPathwayGrid"
+          ></div>
+
+        </section>
+
+        <section class="english-content-section">
+
+          <div class="section-title-row">
+
+            <div>
+              <p class="eyebrow">
+                Quick practice
+              </p>
+
+              <h2>
+                Daily challenges
+              </h2>
+            </div>
+
+          </div>
+
+          <div
+            class="quick-challenge-grid"
+            id="quickChallengeGrid"
+          ></div>
+
+        </section>
+
+      </section>
+
+      <!-- ENGLISH PATHWAY -->
+
+      <section
+        class="app-view"
+        id="englishPathwayView"
+      >
+
+        <button
+          class="back-button"
+          id="backToEnglishHub"
+          type="button"
+        >
+          ← Back to English
+        </button>
+
+        <article class="pathway-hero">
+
+          <div>
+
+            <p
+              class="eyebrow"
+              id="pathwayEyebrow"
+            >
+              English pathway
+            </p>
+
+            <h1 id="pathwayTitle">
+              Macbeth
+            </h1>
+
+            <p id="pathwayDescription">
+              Explore characters, themes, quotations and exam
+              responses.
+            </p>
+
+            <div class="pathway-meta">
+
+              <span id="pathwayActivityCount">
+                0 activities
+              </span>
+
+              <span id="pathwayXpReward">
+                0 XP available
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="pathway-progress-card">
+
+            <span>Pathway progress</span>
+
+            <strong id="pathwayProgressPercent">
+              0%
+            </strong>
+
+            <div class="pathway-progress-track">
+
+              <div
+                class="pathway-progress-fill"
+                id="pathwayProgressFill"
+              ></div>
+
+            </div>
+
+            <small id="pathwayProgressText">
+              0 of 0 complete
+            </small>
+
+          </div>
+
+        </article>
+
+        <section class="activity-section">
+
+          <div class="section-title-row">
+
+            <div>
+              <p class="eyebrow">
+                Mission sequence
+              </p>
+
+              <h2>
+                Activities
+              </h2>
+            </div>
+
+          </div>
+
+          <div
+            class="activity-card-grid"
+            id="pathwayActivityGrid"
+          ></div>
+
+        </section>
+
+      </section>
+
+      <!-- ACTIVITY SCREEN -->
+
+      <section
+        class="app-view"
+        id="activityView"
+      >
+
+        <button
+          class="back-button"
+          id="backToPathway"
+          type="button"
+        >
+          ← Leave activity
+        </button>
+
+        <div class="activity-shell">
+
+          <header class="activity-header">
+
+            <div>
+
+              <p
+                class="eyebrow"
+                id="activitySubjectLabel"
+              >
+                Macbeth
+              </p>
+
+              <h1 id="activityTitle">
+                Quote Challenge
+              </h1>
+
+            </div>
+
+            <div class="activity-header-stats">
+
+              <div>
+                <span>Question</span>
+
+                <strong id="activityQuestionNumber">
+                  1 / 5
+                </strong>
+              </div>
+
+              <div>
+                <span>Score</span>
+
+                <strong id="activityScore">
+                  0
+                </strong>
+              </div>
+
+              <div>
+                <span>Reward</span>
+
+                <strong id="activityReward">
+                  +20 XP
+                </strong>
+              </div>
+
+            </div>
+
+          </header>
+
+          <div class="activity-progress-track">
+
+            <div
+              class="activity-progress-fill"
+              id="activityProgressFill"
+            ></div>
+
+          </div>
+
+          <article class="activity-stage">
+
+            <div
+              class="activity-question-area"
+              id="activityQuestionArea"
+            ></div>
+
+            <div
+              class="activity-feedback"
+              id="activityFeedback"
+            ></div>
+
+            <div class="activity-controls">
+
+              <button
+                class="secondary-button"
+                id="activityHintButton"
+                type="button"
+              >
+                Show hint
+              </button>
+
+              <button
+                class="primary-button"
+                id="activityNextButton"
+                type="button"
+                disabled
+              >
+                Next question
+              </button>
+
+            </div>
+
+          </article>
+
         </div>
 
-        <div class="achievement-grid" id="achievementGrid"></div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+
+      <section
+        class="app-view"
+        id="achievementsView"
+      >
+
+        <div class="view-heading">
+
+          <p class="eyebrow">
+            Achievement collection
+          </p>
+
+          <h1>
+            Progress worth celebrating
+          </h1>
+
+          <p>
+            Achievements unlock as missions are completed, XP is earned
+            and revision becomes part of the weekly routine.
+          </p>
+
+        </div>
+
+        <div
+          class="achievement-grid"
+          id="achievementGrid"
+        ></div>
 
       </section>
 
@@ -352,48 +923,76 @@
 
   </div>
 
-  <div
+  <!-- TOAST -->
+
+  <aside
     class="completion-toast"
     id="completionToast"
-    role="status"
     aria-live="polite"
   >
-    <span class="toast-symbol">+</span>
+
+    <span class="toast-symbol">✓</span>
 
     <div>
-      <p>Mission complete</p>
-      <strong id="toastTitle">+10 XP earned</strong>
-      <span id="toastMessage">Another focused block finished.</span>
+      <p>Mission update</p>
+
+      <strong id="toastTitle">
+        Mission complete
+      </strong>
+
+      <span id="toastMessage">
+        XP earned
+      </span>
     </div>
-  </div>
 
-  <div class="modal-backdrop" id="resetModal">
+  </aside>
 
-    <div class="modal-card">
+  <!-- RESET MODAL -->
 
-      <p class="eyebrow">Reset progress</p>
-      <h2>Start again from zero?</h2>
+  <div
+    class="modal-backdrop"
+    id="resetModal"
+  >
+
+    <article class="modal-card">
+
+      <p class="eyebrow">
+        Reset Mission GCSE
+      </p>
+
+      <h2>
+        Start again?
+      </h2>
 
       <p>
-        This removes completed missions, XP, levels and achievements
-        saved on this device.
+        This will remove completed missions, English activity progress,
+        XP and streak information saved on this device.
       </p>
 
       <div class="modal-actions">
-        <button class="secondary-button" id="cancelReset">
+
+        <button
+          class="secondary-button"
+          id="cancelReset"
+          type="button"
+        >
           Keep progress
         </button>
 
-        <button class="danger-button" id="confirmReset">
+        <button
+          class="danger-button"
+          id="confirmReset"
+          type="button"
+        >
           Reset everything
         </button>
+
       </div>
 
-    </div>
+    </article>
 
   </div>
 
-  <script src="app.js?v=4"></script>
-
+  <script src="app.js?v=5"></script>
 </body>
 </html>
