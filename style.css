@@ -1259,3 +1259,26 @@ textarea:focus-visible {
     flex-direction: column;
   }
 }
+/* FINAL LAYOUT FIX */
+
+.app-shell {
+  display: block;
+  min-height: 100vh;
+}
+
+.main-content {
+  display: block;
+  width: calc(100% - var(--sidebar));
+  max-width: none;
+  min-width: 0;
+  margin-left: var(--sidebar);
+  padding: 24px 34px 54px;
+}
+
+@media (max-width: 820px) {
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 18px 18px 44px;
+  }
+}
