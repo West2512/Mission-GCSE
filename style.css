@@ -429,4 +429,30 @@ h1 {
   .mission-button {
     grid-column: 1 / -1;
   }
+}.mission-card.completed {
+  opacity: 0.72;
+  border-color: rgba(110, 231, 183, 0.28);
+}
+
+.mission-card.completed .mission-icon {
+  color: #07100d;
+  background: var(--accent);
+}
+
+.mission-button:disabled {
+  color: var(--accent);
+  background: rgba(110, 231, 183, 0.08);
+  cursor: default;
+}
+
+.mission-card {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(110, 231, 183, 0.22);
 }
