@@ -3821,4 +3821,4 @@ function initialiseApp() {
   showView("dashboard");
 }
 
-initialiseApp();
+initialiseApp(); 
