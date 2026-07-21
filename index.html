@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mission GCSE</title>
+
+  <style>
+    :root {
+      --background: #07111f;
+      --panel: #101d30;
+      --panel-light: #17263c;
+      --text: #f4f7fb;
+      --muted: #a8b3c7;
+      --blue: #38bdf8;
+      --green: #22c55e;
+      --gold: #fbbf24;
+      --purple: #a78bfa;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.15), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.10), transparent 25%),
+        var(--background);
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .app {
+      width: min(1180px, 94%);
+      margin: 0 auto;
+      padding: 28px 0 60px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+
+    .brand-small {
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: bold;
+      letter-spacing: 0.22rem;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 5px 0 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .tagline {
+      margin: 7px 0 0;
+      color: var(--muted);
+    }
+
+    .avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      font-size: 1.4rem;
+      font-weight: bold;
+      box-shadow: 0 12px 35px rgba(56, 189, 248, 0.22);
+    }
+
+    .hero {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background: linear-gradient(145deg, rgba(23, 38, 60, 0.96), rgba(11, 23, 40, 0.96));
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 4vw, 2.3rem);
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .stat-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(7, 17, 31, 0.58);
+      border: 1px solid var(--border);
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .stat-value {
+      margin-top: 7px;
+      font-size: 1.45rem;
+      font-weight: bold;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .panel {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(16, 29, 48, 0.92);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18);
+    }
+
+    .panel-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .panel h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .week-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .week-button,
+    .timer-button,
+    .reset-button {
+      border: 0;
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: var(--text);
+      cursor: pointer;
+      background: var(--panel-light);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .week-button:hover,
+    .timer-button:hover,
+    .reset-button:hover {
+      transform: translateY(-1px);
+    }
+
+    .week-button.active {
+      color: #04111d;
+      background: var(--blue);
+      font-weight: bold;
+    }
+
+    .day-card {
+      margin-bottom: 15px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(7, 17, 31, 0.58);
+      border: 1px solid var(--border);
+    }
+
+    .day-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .day-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .day-heading h4 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .day-total {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .mission {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .mission:first-of-type {
+      border-top: 0;
+    }
+
+    .mission input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .custom-check {
+      width: 23px;
+      height: 23px;
+      flex: 0 0 23px;
+      margin-top: 1px;
+      border: 2px solid #65758e;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      transition: 0.2s;
+    }
+
+    .mission input:checked + .custom-check {
+      border-color: var(--green);
+      background: var(--green);
+    }
+
+    .mission input:checked + .custom-check::after {
+      content: "✓";
+      color: #052411;
+      font-weight: bold;
+    }
+
+    .mission-text {
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .mission-title {
+      font-weight: bold;
+      line-height: 1.35;
+    }
+
+    .mission-detail {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .mission input:checked ~ .mission-text .mission-title {
+      color: #83e8aa;
+    }
+
+    .mission input:checked ~ .mission-text .mission-detail {
+      color: #79978a;
+    }
+
+    .subject-pill {
+      display: inline-block;
+      margin-right: 7px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      color: #07111f;
+      background: var(--blue);
+      font-size: 0.72rem;
+      font-weight: bold;
+    }
+
+    .progress-track {
+      height: 12px;
+      overflow: hidden;
+      margin-top: 10px;
+      border-radius: 999px;
+      background: #07111f;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      transition: width 0.35s ease;
+    }
+
+    .progress-message {
+      min-height: 44px;
+      margin-top: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .timer {
+      text-align: center;
+    }
+
+    .timer-display {
+      margin: 20px 0;
+      font-size: clamp(2.5rem, 6vw, 4.4rem);
+      font-weight: bold;
+      letter-spacing: 0.08rem;
+    }
+
+    .timer-controls {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .timer-button.primary {
+      color: #04111d;
+      background: var(--green);
+      font-weight: bold;
+    }
+
+    .quote-card {
+      margin-top: 18px;
+      padding: 18px;
+      border-left: 4px solid var(--gold);
+      border-radius: 14px;
+      color: #f5df9b;
+      background: rgba(251, 191, 36, 0.08);
+      line-height: 1.55;
+    }
+
+    .achievement {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 17px;
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.17), rgba(56, 189, 248, 0.11));
+      border: 1px solid rgba(167, 139, 250, 0.25);
+    }
+
+    .achievement-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .achievement-text {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .reset-button {
+      width: 100%;
+      margin-top: 18px;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--border);
+    }
+
+    .celebration {
+      position: fixed;
+      left: 50%;
+      bottom: 25px;
+      z-index: 10;
+      max-width: min(440px, 90%);
+      padding: 17px 22px;
+      border-radius: 16px;
+      color: #07111f;
+      background: var(--green);
+      font-weight: bold;
+      text-align: center;
+      transform: translate(-50%, 150%);
+      transition: transform 0.3s ease;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .celebration.show {
+      transform: translate(-50%, 0);
+    }
+
+    .footer {
+      margin-top: 28px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 850px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .app {
+        width: min(94%, 500px);
+        padding-top: 18px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .hero,
+      .panel {
+        padding: 18px;
+        border-radius: 19px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .panel-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .week-buttons {
+        width: 100%;
+      }
+
+      .week-button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="app">
+
+    <header class="topbar">
+      <div>
+        <div class="brand-small">Mission GCSE</div>
+        <h1>Level up, Alfie.</h1>
+        <p class="tagline">Small steps. Visible progress. No panic.</p>
+      </div>
+
+      <div class="avatar">A</div>
+    </header>
+
+    <section class="hero">
+      <h2 id="welcomeMessage">Welcome back 👋</h2>
+
+      <p>
+        Today's mission is simple: complete one block at a time.
+        Every session counts, even when it feels difficult.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total XP</div>
+          <div class="stat-value"><span id="xpValue">0</span> XP</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Missions completed</div>
+          <div class="stat-value" id="completedValue">0</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Current level</div>
+          <div class="stat-value" id="levelValue">Starter</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Weekly progress</div>
+          <div class="stat-value" id="percentageValue">0%</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="main-grid">
+
+      <section class="panel">
+        <div class="panel-title-row">
+          <div>
+            <h3>🎯 Revision Missions</h3>
+          </div>
+
+          <div class="week-buttons">
+            <button class="week-button active" data-week="1">Week 1</button>
+            <button class="week-button" data-week="2">Week 2</button>
+          </div>
+        </div>
+
+        <div id="missionsContainer"></div>
+      </section>
+
+      <aside>
+
+        <section class="panel">
+          <h3>📈 Mission Progress</h3>
+
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+
+          <div class="progress-message" id="progressMessage">
+            Your first mission is ready whenever you are.
+          </div>
+
+          <div class="achievement">
+            <div class="achievement-title" id="achievementTitle">
+              🏅 Ready to Begin
+            </div>
+
+            <div class="achievement-text" id="achievementText">
+              Starting is often the hardest part. Opening the page already counts as a positive step.
+            </div>
+          </div>
+        </section>
+
+        <section class="panel timer" style="margin-top: 22px;">
+          <h3>⏱️ Focus Timer</h3>
+          <div class="timer-display" id="timerDisplay">20:00</div>
+
+          <div class="timer-controls">
+            <button class="timer-button primary" id="startTimer">Start</button>
+            <button class="timer-button" id="pauseTimer">Pause</button>
+            <button class="timer-button" id="resetTimer">Reset</button>
+          </div>
+
+          <div class="quote-card" id="positiveQuote">
+            You do not need to finish everything at once. Just complete the next small step.
+          </div>
+
+          <button class="reset-button" id="clearProgress">
+            Reset all progress
+          </button>
+        </section>
+
+      </aside>
+    </div>
+
+    <footer class="footer">
+      Built for progress, confidence and a calmer Year 11.
+    </footer>
+
+  </main>
+
+  <div class="celebration" id="celebrationMessage">
+    Mission complete — brilliant consistency! +10 XP
+  </div>
+
+  <script>
+    const revisionPlan = {
+      1: [
+        {
+          day: "Monday",
+          total: "60 minutes",
+          missions: [
+            {
+              subject: "English",
+              title: "Language: retrieving information",
+              detail: "Read a short article or extract. Write down five clear facts using your own words."
+            },
+            {
+              subject: "Biology",
+              title: "Cell Biology foundations",
+              detail: "Revise animal and plant cell structures, then recall their functions without looking."
+            },
+            {
+              subject: "Maths",
+              title: "Fractions, decimals and percentages",
+              detail: "Complete a mixed set of questions, including converting between all three forms."
+            }
+          ]
+        },
+        {
+          day: "Tuesday",
+          total: "60 minutes",
+          missions: [
+            {
+              subject: "English",
+              title: "Language techniques",
+              detail: "Find five examples of interesting vocabulary or imagery and explain the effect of each."
+            },
+            {
+              subject: "Chemistry",
+              title: "Atomic structure",
+              detail: "Revise protons, neutrons, electrons, atomic number and mass number using active recall."
+            },
+            {
+              subject: "Computer Science",
+              title: "Systems architecture",
+              detail: "Create a quick memory map of the CPU, ALU, control unit, cache and registers."
+            }
+          ]
+        },
+        {
+          day: "Wednesday",
+          total: "60 minutes",
+          missions: [
+            {
+              subject: "English",
+              title: "Powerful paragraph practice",
+              detail: "Write one PEE or PETAL paragraph explaining how a writer creates an effect."
+            },
+            {
+              subject: "Physics",
+              title: "Energy stores and transfers",
+              detail: "Recall the main energy stores and identify energy transfers in five everyday examples."
+            },
+            {
+              subject: "Maths",
+              title: "Solving linear equations",
+              detail: "Practise one-step, two-step and equations with unknowns on both sides."
+            }
+          ]
+        },
+        {
+          day: "Thursday",
+          total: "60 minutes",
+          missions: [
+            {
+              subject: "English",
+              title: "Creative description",
+              detail: "Describe one setting using precise verbs, sensory detail and varied sentence openings."
+            },
+            {
+              subject: "Biology",
+              title: "Organisation",
+              detail: "Revise cells, tissues, organs and organ systems. Explain the sequence aloud."
+            },
+            {
+              subject: "Electronics",
+              title: "Circuit foundations",
+              detail: "Review common circuit symbols and explain the purpose of each component."
+            }
+          ]
+        },
+        {
+          day: "Friday",
+          total: "60 minutes",
+          missions: [
+            {
+              subject: "English",
+              title: "Weekly retrieval challenge",
+              detail: "Without notes, write down everything remembered from this week's English sessions."
+            },
+            {
+              subject: "Chemistry",
+              title: "The periodic table",
+              detail: "Revise groups, periods, metals and non-metals, then test yourself from memory."
+            },
+            {
+              subject: "Maths",
+              title: "Ratio and proportion",
+              detail: "Complete mixed ratio questions and check each answer carefully."
+            }
+          ]
+        },
+        {
+          day: "Saturday",
+          total: "Rest day",
+          missions: [
+            {
+              subject: "Recharge",
+              title: "Work, rest and reset",
+              detail: "No scheduled revision today. Rest is part of a sustainable plan."
+            }
+          ]
+        },
+        {
+          day: "Sunday",
+          total: "Review session",
+          missions: [
+            {
+              subject: "Weekly Review",
+              title: "Celebrate this week's progress",
+              detail: "Choose one subject, complete a short set of exam questions and note one thing that feels easier."
+            }
+          ]
+        }
+      ],
+
+      2: [
+        {
+          day: "Monday",
+          total: "60 minutes",
+          missions: [
+            {
+              subject: "English",
+              title: "Language structure",
+              detail: "Track how a text changes from beginning to end and explain why the writer organised it that way."
+            },
+            {
+              subject: "Biology",
+              title: "Infection and response",
+              detail: "Revise pathogens, communicable diseases and the body's first lines of defence."
+            },
+            {
+              subject: "Maths",
+              title: "Coordinates and straight-line graphs",
+              detail: "Practise plotting coordinates and recognising gradient and intercept."
+            }
+          ]
+        },
+        {
+          day: "Tuesday",
+          total: "60 minutes",
+          missions: [
+            {
+              subject: "English",
+              title: "Evaluation practice",
+              detail: "Choose one statement about a text and explain clearly how far you agree."
+            },
+            {
+              subject: "Chemistry",
+              title: "Bonding basics",
+              detail: "Compare ionic, covalent and metallic bonding using a simple three-column table."
+            },
+            {
+              subject: "Computer Science",
+              title: "Memory and storage",
+              detail: "Revise RAM, ROM, secondary storage and units of data."
+            }
+          ]
+        },
+        {
+          day: "Wednesday",
+          total: "60 minutes",
+          missions: [
+            {
+              subject: "English",
+              title: "Transactional writing",
+              detail: "Plan a persuasive speech with a clear viewpoint, three arguments and a strong ending."
+            },
+            {
+              subject: "Physics",
+              title: "Electric circuits",
+              detail: "Revise current, potential difference and resistance, including their measuring devices."
+            },
+            {
+              subject: "Maths",
+              title: "Sequences",
+              detail: "Find missing terms and generate nth-term rules for linear sequences."
+            }
+          ]
+        },
+        {
+          day: "Thursday",
+          total: "60 minutes",
+          missions: [
+            {
+              subject: "English",
+              title: "Literature quotation recall",
+              detail: "Choose one studied text and recall five useful quotations with their key ideas."
+            },
+            {
+              subject: "Biology",
+              title: "Bioenergetics",
+              detail: "Revise photosynthesis and respiration, then explain both processes aloud."
+            },
+            {
+              subject: "Electronics",
+              title: "Input and output devices",
+              detail: "Sort common components into input, process and output categories."
+            }
+          ]
+        },
+        {
+          day: "Friday",
+          total: "60 minutes",
+          missions: [
+            {
+              subject: "English",
+              title: "Confidence paragraph",
+              detail: "Improve one paragraph from this fortnight, focusing on precision rather than length."
+            },
+            {
+              subject: "Chemistry",
+              title: "Quantitative chemistry",
+              detail: "Revise relative formula mass and complete a small set of calculation questions."
+            },
+            {
+              subject: "Maths",
+              title: "Area, perimeter and volume",
+              detail: "Complete a mixed set of shape and measure questions."
+            }
+          ]
+        },
+        {
+          day: "Saturday",
+          total: "Rest day",
+          missions: [
+            {
+              subject: "Recharge",
+              title: "Work, rest and reset",
+              detail: "No scheduled revision today. A proper break protects next week's motivation."
+            }
+          ]
+        },
+        {
+          day: "Sunday",
+          total: "Review session",
+          missions: [
+            {
+              subject: "Weekly Review",
+              title: "Two-week progress check",
+              detail: "Complete one short exam section, mark it kindly and choose one topic to revisit next week."
+            }
+          ]
+        }
+      ]
+    };
+
+    const positiveQuotes = [
+      "You do not need to finish everything at once. Just complete the next small step.",
+      "Progress is built from ordinary sessions completed consistently.",
+      "Getting something wrong gives you a useful target for next time.",
+      "Twenty focused minutes is a proper achievement.",
+      "You are not competing with anyone else. You are building your own progress.",
+      "A difficult question attempted is better than an easy question avoided.",
+      "Consistency beats one enormous revision session.",
+      "You have already started. Keep the next step small."
+    ];
+
+    let activeWeek = Number(localStorage.getItem("missionGcseActiveWeek")) || 1;
+    let timerSeconds = 20 * 60;
+    let timerInterval = null;
+
+    const missionsContainer = document.getElementById("missionsContainer");
+    const xpValue = document.getElementById("xpValue");
+    const completedValue = document.getElementById("completedValue");
+    const percentageValue = document.getElementById("percentageValue");
+    const levelValue = document.getElementById("levelValue");
+    const progressFill = document.getElementById("progressFill");
+    const progressMessage = document.getElementById("progressMessage");
+    const achievementTitle = document.getElementById("achievementTitle");
+    const achievementText = document.getElementById("achievementText");
+    const celebrationMessage = document.getElementById("celebrationMessage");
+    const timerDisplay = document.getElementById("timerDisplay");
+    const positiveQuote = document.getElementById("positiveQuote");
+
+    function missionKey(week, dayIndex, missionIndex) {
+      return `mission-gcse-week-${week}-day-${dayIndex}-mission-${missionIndex}`;
+    }
+
+    function renderWeek() {
+      missionsContainer.innerHTML = "";
+
+      document.querySelectorAll(".week-button").forEach(button => {
+        button.classList.toggle(
+          "active",
+          Number(button.dataset.week) === activeWeek
+        );
+      });
+
+      revisionPlan[activeWeek].forEach((day, dayIndex) => {
+        const dayCard = document.createElement("article");
+        dayCard.className = "day-card";
+
+        const heading = document.createElement("div");
+        heading.className = "day-heading";
+        heading.innerHTML = `
+          <h4>${day.day}</h4>
+          <span class="day-total">${day.total}</span>
+        `;
+
+        dayCard.appendChild(heading);
+
+        day.missions.forEach((mission, missionIndex) => {
+          const key = missionKey(activeWeek, dayIndex, missionIndex);
+          const completed = localStorage.getItem(key) === "true";
+
+          const label = document.createElement("label");
+          label.className = "mission";
+
+          label.innerHTML = `
+            <input
+              type="checkbox"
+              data-key="${key}"
+              ${completed ? "checked" : ""}
+            >
+
+            <span class="custom-check"></span>
+
+            <span class="mission-text">
+              <span class="mission-title">
+                <span class="subject-pill">${mission.subject}</span>
+                ${mission.title}
+              </span>
+
+              <span class="mission-detail">
+                ${mission.detail}
+              </span>
+            </span>
+          `;
+
+          dayCard.appendChild(label);
+        });
+
+        missionsContainer.appendChild(dayCard);
+      });
+
+      document.querySelectorAll('.mission input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener("change", handleMissionChange);
+      });
+
+      updateDashboard();
+    }
+
+    function handleMissionChange(event) {
+      const checkbox = event.target;
+      localStorage.setItem(checkbox.dataset.key, checkbox.checked);
+
+      if (checkbox.checked) {
+        showCelebration();
+      }
+
+      updateDashboard();
+    }
+
+    function getWeekStats() {
+      let total = 0;
+      let completed = 0;
+
+      revisionPlan[activeWeek].forEach((day, dayIndex) => {
+        day.missions.forEach((mission, missionIndex) => {
+          total++;
+
+          const key = missionKey(activeWeek, dayIndex, missionIndex);
+
+          if (localStorage.getItem(key) === "true") {
+            completed++;
+          }
+        });
+      });
+
+      return {
+        total,
+        completed,
+        percentage: total === 0 ? 0 : Math.round((completed / total) * 100)
+      };
+    }
+
+    function getAllCompleted() {
+      let completed = 0;
+
+      Object.keys(revisionPlan).forEach(week => {
+        revisionPlan[week].forEach((day, dayIndex) => {
+          day.missions.forEach((mission, missionIndex) => {
+            const key = missionKey(week, dayIndex, missionIndex);
+
+            if (localStorage.getItem(key) === "true") {
+              completed++;
+            }
+          });
+        });
+      });
+
+      return completed;
+    }
+
+    function getLevel(xp) {
+      if (xp >= 300) return "Mission Master";
+      if (xp >= 200) return "Knowledge Hunter";
+      if (xp >= 100) return "Momentum Builder";
+      if (xp >= 50) return "Getting Started";
+      return "Starter";
+    }
+
+    function updateDashboard() {
+      const stats = getWeekStats();
+      const allCompleted = getAllCompleted();
+      const xp = allCompleted * 10;
+
+      xpValue.textContent = xp;
+      completedValue.textContent = allCompleted;
+      percentageValue.textContent = `${stats.percentage}%`;
+      levelValue.textContent = getLevel(xp);
+      progressFill.style.width = `${stats.percentage}%`;
+
+      if (stats.completed === 0) {
+        progressMessage.textContent =
+          "Your first mission is ready whenever you are.";
+
+        achievementTitle.textContent = "🏅 Ready to Begin";
+        achievementText.textContent =
+          "Starting is often the hardest part. Opening the page already counts as a positive step.";
+      } else if (stats.percentage < 25) {
+        progressMessage.textContent =
+          "You have started building momentum. One completed session is always better than none.";
+
+        achievementTitle.textContent = "🚀 Mission Started";
+        achievementText.textContent =
+          "You took action instead of waiting for the perfect moment.";
+      } else if (stats.percentage < 50) {
+        progressMessage.textContent =
+          "Strong start. Your completed missions are already adding up.";
+
+        achievementTitle.textContent = "🔥 Momentum Builder";
+        achievementText.textContent =
+          "Regular effort is becoming part of your routine.";
+      } else if (stats.percentage < 75) {
+        progressMessage.textContent =
+          "You are over halfway through this week's missions. That is genuine progress.";
+
+        achievementTitle.textContent = "🎯 Halfway Hero";
+        achievementText.textContent =
+          "You have kept going across several different subjects.";
+      } else if (stats.percentage < 100) {
+        progressMessage.textContent =
+          "Nearly there. Look at everything you have already completed this week.";
+
+        achievementTitle.textContent = "⭐ Consistency Champion";
+        achievementText.textContent =
+          "You have shown up repeatedly, even when revision may not have felt exciting.";
+      } else {
+        progressMessage.textContent =
+          "Every mission in this week is complete. Brilliant work — take a moment to enjoy that.";
+
+        achievementTitle.textContent = "🏆 Week Complete";
+        achievementText.textContent =
+          "You completed the whole revision plan one manageable step at a time.";
+      }
+    }
+
+    function showCelebration() {
+      const messages = [
+        "Mission complete — brilliant consistency! +10 XP",
+        "Nice work — another small step banked! +10 XP",
+        "Completed! Your effort is adding up. +10 XP",
+        "Strong work — you showed up and did it. +10 XP",
+        "That session counts. Keep building. +10 XP"
+      ];
+
+      celebrationMessage.textContent =
+        messages[Math.floor(Math.random() * messages.length)];
+
+      celebrationMessage.classList.add("show");
+
+      setTimeout(() => {
+        celebrationMessage.classList.remove("show");
+      }, 2400);
+    }
+
+    function updateTimerDisplay() {
+      const minutes = Math.floor(timerSeconds / 60);
+      const seconds = timerSeconds % 60;
+
+      timerDisplay.textContent =
+        `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    }
+
+    document.getElementById("startTimer").addEventListener("click", () => {
+      if (timerInterval) return;
+
+      timerInterval = setInterval(() => {
+        if (timerSeconds > 0) {
+          timerSeconds--;
+          updateTimerDisplay();
+        } else {
+          clearInterval(timerInterval);
+          timerInterval = null;
+
+          celebrationMessage.textContent =
+            "Twenty focused minutes complete — excellent work.";
+
+          celebrationMessage.classList.add("show");
+
+          setTimeout(() => {
+            celebrationMessage.classList.remove("show");
+          }, 3000);
+        }
+      }, 1000);
+    });
+
+    document.getElementById("pauseTimer").addEventListener("click", () => {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    });
+
+    document.getElementById("resetTimer").addEventListener("click", () => {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      timerSeconds = 20 * 60;
+      updateTimerDisplay();
+    });
+
+    document.querySelectorAll(".week-button").forEach(button => {
+      button.addEventListener("click", () => {
+        activeWeek = Number(button.dataset.week);
+        localStorage.setItem("missionGcseActiveWeek", activeWeek);
+        renderWeek();
+      });
+    });
+
+    document.getElementById("clearProgress").addEventListener("click", () => {
+      const confirmed = confirm(
+        "Reset all completed missions and XP? This cannot be undone."
+      );
+
+      if (!confirmed) return;
+
+      Object.keys(localStorage)
+        .filter(key => key.startsWith("mission-gcse-week-"))
+        .forEach(key => localStorage.removeItem(key));
+
+      renderWeek();
+    });
+
+    function setWelcomeMessage() {
+      const hour = new Date().getHours();
+      let greeting = "Welcome back";
+
+      if (hour < 12) greeting = "Good morning";
+      else if (hour < 18) greeting = "Good afternoon";
+      else greeting = "Good evening";
+
+      document.getElementById("welcomeMessage").textContent =
+        `${greeting}, Alfie 👋`;
+    }
+
+    positiveQuote.textContent =
+      positiveQuotes[Math.floor(Math.random() * positiveQuotes.length)];
+
+    setWelcomeMessage();
+    updateTimerDisplay();
+    renderWeek();
+  </script>
+
+</body>
+</html>
