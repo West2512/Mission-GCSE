@@ -1,6 +1,8 @@
+<<<<<<< HEAD
 /* =========================================================
-   MISSION GCSE — GENERAL HELPERS
+   GENERAL HELPERS
    ========================================================= */
+=======
 
 function getTodayName() {
   return DAYS[new Date().getDay()];
