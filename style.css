@@ -1588,3 +1588,66 @@ button:disabled {
     min-width: 0;
   }
 }
+
+/* =========================================================
+   LEARNING CARDS
+   ========================================================= */
+
+.learning-card-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.learning-card {
+  min-height: 190px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background:
+    linear-gradient(145deg, rgba(255, 143, 143, 0.09), transparent 58%),
+    rgba(255, 255, 255, 0.025);
+}
+
+.learning-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.learning-card-topline span {
+  color: #ffb1b1;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.learning-card-topline strong {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.learning-card h3 {
+  margin: 18px 0 9px;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.learning-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+@media (max-width: 760px) {
+  .learning-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-card {
+    min-height: auto;
+  }
+}

@@ -832,6 +832,38 @@ const ENGLISH_PATHWAYS = [
         description:
           "Explore how Shakespeare establishes Macbeth as a celebrated warrior before his tragic decline.",
         xp: 40,
+        learningCards: [
+          {
+            eyebrow: "Character",
+            title: "Macbeth begins as a hero",
+            body: "Before Macbeth appears on stage, the wounded Captain describes him as Scotland’s fearless defender. Shakespeare gives him an honourable starting point so that his later fall feels genuinely tragic."
+          },
+          {
+            eyebrow: "Key quotation",
+            title: "“For brave Macbeth — well he deserves that name”",
+            body: "The adjective “brave” presents Macbeth as courageous, loyal and respected. The Captain’s extra comment — “well he deserves that name” — makes the praise sound certain and earned."
+          },
+          {
+            eyebrow: "Writer’s method",
+            title: "“Disdaining fortune, with his brandished steel”",
+            body: "“Disdaining” suggests proud contempt. Macbeth seems so fearless that he rejects the danger and uncertainty personified by Fortune. His “brandished steel” creates a vivid image of energetic, decisive action."
+          },
+          {
+            eyebrow: "Deeper interpretation",
+            title: "Heroic violence can become destructive",
+            body: "Images such as “smoked with bloody execution” and “unseam’d him” celebrate Macbeth’s success in battle, but they also reveal his capacity for extreme violence. Shakespeare plants the seeds of the tyrant inside the admired soldier."
+          },
+          {
+            eyebrow: "Context",
+            title: "Duncan’s trust makes the betrayal worse",
+            body: "Duncan rewards Macbeth with the title Thane of Cawdor. A Jacobean audience would also connect kingship with the Divine Right of Kings, so Macbeth’s later regicide breaks personal loyalty, political order and sacred order."
+          },
+          {
+            eyebrow: "Exam-ready thesis",
+            title: "A strong whole-play argument",
+            body: "Shakespeare presents Macbeth as a celebrated warrior whose courage becomes dangerous when ambition removes his moral restraint. This contrast makes his transformation into a tyrant both shocking and tragic."
+          }
+        ],
         questions: [
           {
             type: "multipleChoice",
@@ -2052,6 +2084,7 @@ let activityQuestionIndex = 0;
 let activityScore = 0;
 let activityAnswered = false;
 let activityAwarded = false;
+let activityStudyMode = false;
 
 let timerSeconds = 20 * 60;
 let timerInterval = null;
@@ -3171,6 +3204,11 @@ function openActivity(pathwayId, activityId) {
   activityScore = 0;
   activityAnswered = false;
   activityAwarded = false;
+  activityStudyMode = Array.isArray(activity.learningCards) &&
+    activity.learningCards.length > 0;
+
+  elements.activityHintButton.style.display = "";
+  elements.activityNextButton.style.display = "";
 
   elements.activitySubjectLabel.textContent =
     pathway.title;
@@ -3194,6 +3232,11 @@ function renderActivityQuestion() {
     );
 
   if (!activity) {
+    return;
+  }
+
+  if (activityStudyMode) {
+    renderLearningCards(activity);
     return;
   }
 
@@ -3240,6 +3283,57 @@ function renderActivityQuestion() {
   if (question.type === "multipleChoice") {
     renderMultipleChoiceQuestion(question);
   }
+}
+
+function renderLearningCards(activity) {
+  elements.activityQuestionNumber.textContent =
+    "Learn";
+
+  elements.activityScore.textContent =
+    activityScore;
+
+  elements.activityProgressFill.style.width =
+    "8%";
+
+  elements.activityFeedback.innerHTML = "";
+
+  elements.activityHintButton.style.display =
+    "none";
+
+  elements.activityNextButton.style.display =
+    "";
+
+  elements.activityNextButton.disabled = false;
+  elements.activityNextButton.textContent =
+    "Start the questions";
+
+  elements.activityQuestionArea.innerHTML = `
+    <span class="question-type-label">
+      Mission briefing
+    </span>
+
+    <h2>Learn the essentials first</h2>
+
+    <p class="question-support">
+      Read the six cards, then test what you can remember.
+    </p>
+
+    <div class="learning-card-grid">
+      ${activity.learningCards.map((card, index) => {
+        return `
+          <article class="learning-card">
+            <div class="learning-card-topline">
+              <span>${card.eyebrow}</span>
+              <strong>${String(index + 1).padStart(2, "0")}</strong>
+            </div>
+
+            <h3>${card.title}</h3>
+            <p>${card.body}</p>
+          </article>
+        `;
+      }).join("")}
+    </div>
+  `;
 }
 
 function renderMultipleChoiceQuestion(question) {
@@ -3366,6 +3460,13 @@ function showActivityHint() {
 }
 
 function moveToNextQuestion() {
+  if (activityStudyMode) {
+    activityStudyMode = false;
+    elements.activityHintButton.style.display = "";
+    renderActivityQuestion();
+    return;
+  }
+
   if (!activityAnswered) {
     return;
   }
