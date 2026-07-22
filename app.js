@@ -827,101 +827,191 @@ const ENGLISH_PATHWAYS = [
     activities: [
       {
         id: "macbeth-characters",
-        type: "Retrieval",
-        title: "Character Check",
+        type: "Mission 1 · Retrieval",
+        title: "The Brave Soldier",
         description:
-          "Test your knowledge of Macbeth, Lady Macbeth, Banquo and Macduff.",
-        xp: 20,
+          "Explore how Shakespeare establishes Macbeth as a celebrated warrior before his tragic decline.",
+        xp: 40,
         questions: [
           {
             type: "multipleChoice",
             prompt:
-              "Who describes Macbeth as ‘brave Macbeth’ near the beginning of the play?",
+              "Who gives Duncan the first detailed account of Macbeth's actions in battle?",
             support:
-              "Think about the report from the battlefield.",
+              "The speaker is wounded and reports what happened against Macdonwald.",
             options: [
-              "Lady Macbeth",
+              "Ross",
               "The Captain",
               "Banquo",
-              "Macduff"
+              "Malcolm"
             ],
             answer: 1,
             explanation:
-              "The Captain calls him ‘brave Macbeth’, establishing him as a respected warrior.",
+              "The wounded Captain reports Macbeth's courage. Shakespeare therefore establishes Macbeth's heroic reputation before Macbeth first appears on stage.",
             hint:
-              "This character reports Macbeth’s success in battle."
+              "He is described as bleeding when Malcolm introduces him."
           },
           {
             type: "multipleChoice",
             prompt:
-              "What is Lady Macbeth’s initial response to Macbeth’s letter?",
+              "Why is the description ‘brave Macbeth’ dramatically important?",
             support:
-              "Think about her reaction to the prophecy.",
+              "Think beyond the simple fact that Macbeth is courageous.",
             options: [
-              "She dismisses it",
-              "She immediately fears Macduff",
-              "She begins planning how Macbeth can become king",
-              "She decides to leave Scotland"
+              "It proves Macbeth has always wanted to murder Duncan",
+              "It creates a heroic starting point from which Macbeth can tragically fall",
+              "It shows Macbeth is physically stronger than every other character",
+              "It tells the audience that Macbeth will remain loyal throughout the play"
+            ],
+            answer: 1,
+            explanation:
+              "Shakespeare presents Macbeth as admired and honourable at the beginning, making his later transformation into a tyrant more shocking and tragic.",
+            hint:
+              "Consider the contrast between Macbeth at the beginning and at the end."
+          },
+          {
+            type: "multipleChoice",
+            prompt:
+              "What does the adjective ‘brave’ initially suggest about Macbeth?",
+            support:
+              "Choose the interpretation most firmly supported by the battlefield report.",
+            options: [
+              "He is loyal, courageous and respected",
+              "He is secretly frightened of Duncan",
+              "He is already cruel to innocent people",
+              "He is unwilling to fight for Scotland"
+            ],
+            answer: 0,
+            explanation:
+              "The adjective presents Macbeth as courageous and worthy of admiration. At this point, his violence is used in loyal service to Scotland.",
+            hint:
+              "Duncan rewards him after hearing the report."
+          },
+          {
+            type: "multipleChoice",
+            prompt:
+              "In the image ‘Disdaining fortune, with his brandished steel’, what does Macbeth appear to reject?",
+            support:
+              "Focus on the verb ‘disdaining’ and the personification of Fortune.",
+            options: [
+              "The authority of King Duncan",
+              "The danger and uncertainty of the battle",
+              "The witches' supernatural power",
+              "Lady Macbeth's influence"
+            ],
+            answer: 1,
+            explanation:
+              "‘Disdaining’ suggests proud contempt. Macbeth seems fearless enough to reject the danger and uncertainty represented by Fortune.",
+            hint:
+              "He behaves as though chance cannot control or frighten him."
+          },
+          {
+            type: "multipleChoice",
+            prompt:
+              "Which interpretation of ‘smoked with bloody execution’ is strongest?",
+            support:
+              "A strong AO2 response considers both Macbeth's effectiveness and the disturbing imagery.",
+            options: [
+              "Macbeth's sword is ineffective because it is hidden by smoke",
+              "Macbeth is presented as an efficient warrior, but the violent imagery foreshadows his capacity for brutality",
+              "Macbeth refuses to participate in the battle",
+              "The quotation proves the battle takes place inside Macbeth's castle"
+            ],
+            answer: 1,
+            explanation:
+              "The image celebrates Macbeth's success in battle while also associating him with blood and ruthless violence, qualities that later become destructive.",
+            hint:
+              "Look for an answer that recognises two possible effects."
+          },
+          {
+            type: "multipleChoice",
+            prompt:
+              "What does the Captain's description of Macbeth ‘unseam[ing]’ Macdonwald suggest?",
+            support:
+              "Consider the precision and extremity of the verb.",
+            options: [
+              "Macbeth defeats him with controlled but exceptionally brutal violence",
+              "Macbeth repairs Macdonwald's armour",
+              "Macbeth allows Macdonwald to escape",
+              "Macbeth persuades Macdonwald to surrender peacefully"
+            ],
+            answer: 0,
+            explanation:
+              "The verb makes Macbeth's violence sound precise and horrifying. In battle it is praised, but it also foreshadows how readily he can use extreme violence.",
+            hint:
+              "The image suggests splitting something along a seam."
+          },
+          {
+            type: "multipleChoice",
+            prompt:
+              "How does Duncan respond to the reports of Macbeth's loyalty?",
+            support:
+              "Recall the title taken from the former traitor.",
+            options: [
+              "He arrests Macbeth",
+              "He names Macbeth Prince of Cumberland",
+              "He rewards Macbeth with the title Thane of Cawdor",
+              "He sends Macbeth into exile"
             ],
             answer: 2,
             explanation:
-              "Lady Macbeth quickly begins planning how Macbeth can take the crown.",
+              "Duncan gives Macbeth the title Thane of Cawdor. The reward establishes Duncan's trust and makes Macbeth's later betrayal especially serious.",
             hint:
-              "She sees the prophecy as an opportunity."
+              "The witches have already used this title in their greeting."
           },
           {
             type: "multipleChoice",
             prompt:
-              "Which character acts as a moral contrast to Macbeth?",
+              "Why would Macbeth's later murder of Duncan be especially shocking to a Jacobean audience?",
             support:
-              "This character hears prophecies but does not murder to achieve them.",
+              "Use relevant context rather than a vague statement about people being religious.",
             options: [
-              "Banquo",
-              "Duncan",
-              "Malcolm",
-              "The Porter"
+              "A king was believed to rule with God's authority, so regicide violated divine and political order",
+              "Soldiers were legally forbidden from entering castles",
+              "Jacobean audiences believed every nobleman should become king",
+              "Duncan was historically Shakespeare's patron"
             ],
             answer: 0,
             explanation:
-              "Banquo is cautious and does not act violently to force the prophecy to happen.",
+              "Belief in the Divine Right of Kings meant that killing an anointed monarch could be viewed as an offence against God and the natural order.",
             hint:
-              "He is also given a prophecy by the witches."
+              "Think about the religious and political status of a king."
           },
           {
             type: "multipleChoice",
             prompt:
-              "Why does Macduff become Macbeth’s enemy?",
+              "Which statement best connects Macbeth's heroic beginning to his tragic development?",
             support:
-              "Consider what Macbeth orders.",
+              "Choose the response that offers a clear interpretation of Shakespeare's whole-play method.",
             options: [
-              "Macbeth steals his horse",
-              "Macbeth murders his family",
-              "Macbeth refuses to attend a feast",
-              "Macbeth supports Malcolm"
+              "Macbeth never changes because he remains brave in every situation",
+              "Shakespeare shows that qualities admired in war can become destructive when ambition removes moral restraint",
+              "Macbeth becomes evil only because Duncan refuses to reward him",
+              "Shakespeare presents all forms of courage as morally wrong"
             ],
             answer: 1,
             explanation:
-              "Macbeth orders the murder of Macduff’s wife and children.",
+              "Macbeth's courage and capacity for violence initially protect Scotland. Once directed by unchecked ambition, those same qualities contribute to tyranny and destruction.",
             hint:
-              "The conflict becomes deeply personal."
+              "Think about how the same quality can be used for good or evil."
           },
           {
             type: "multipleChoice",
             prompt:
-              "How does Macbeth change across the play?",
+              "Which thesis would best answer ‘How does Shakespeare present Macbeth as a hero at the beginning of the play?’",
             support:
-              "Choose the most accurate overall description.",
+              "A strong thesis should make a conceptual argument and acknowledge Shakespeare's wider design.",
             options: [
-              "From respected warrior to violent tyrant",
-              "From king to servant",
-              "From coward to loyal friend",
-              "From villain to comic character"
+              "Macbeth is a character in a play written by Shakespeare.",
+              "Macbeth is brave because the Captain calls him brave.",
+              "Shakespeare initially constructs Macbeth as Scotland's fearless defender, while planting disturbing images of violence that foreshadow the hero's tragic corruption.",
+              "Macbeth fights in a battle and then meets three witches."
             ],
-            answer: 0,
+            answer: 2,
             explanation:
-              "Macbeth develops from an admired soldier into an isolated and violent tyrant.",
+              "This thesis is conceptual, directly answers the question and links Macbeth's heroic presentation to Shakespeare's foreshadowing of his later decline.",
             hint:
-              "Think about his reputation at the start and end."
+              "Choose the answer that combines AO1 interpretation with AO2 method."
           }
         ]
       },
