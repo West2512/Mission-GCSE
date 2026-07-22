@@ -4,6 +4,10 @@
 
 "use strict";
 
+let timerSeconds = 20 * 60;
+let timerInterval = null;
+let timerRunning = false;
+
 function renderTimer() {
   const minutes =
     Math.floor(timerSeconds / 60);

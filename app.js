@@ -2096,10 +2096,6 @@ let activityAnswered = false;
 let activityAwarded = false;
 let activityStudyMode = false;
 
-let timerSeconds = 20 * 60;
-let timerInterval = null;
-let timerRunning = false;
-
 /* =========================================================
    DOM REFERENCES
    ========================================================= */
