@@ -1052,98 +1052,108 @@ const ENGLISH_PATHWAYS = [
         type: "Quote Challenge",
         title: "Complete the Quote",
         description:
-          "Recall essential Macbeth quotations accurately.",
-        xp: 25,
+          "Type the missing words from ten essential Macbeth quotations.",
+        xp: 35,
         questions: [
           {
-            type: "multipleChoice",
-            prompt:
-              "Complete the quotation: ‘Fair is foul, and foul is…’",
-            support:
-              "Choose the missing final word.",
-            options: [
-              "lost",
-              "fair",
-              "gone",
-              "dark"
-            ],
-            answer: 1,
-            explanation:
-              "The witches say, ‘Fair is foul, and foul is fair.’",
-            hint:
-              "The phrase repeats the same two contrasting words."
+            type: "quoteInput",
+            prompt: "Fair is foul, and foul is ____.",
+            support: "The witches establish a world where appearances cannot be trusted.",
+            answerText: "fair",
+            acceptedAnswers: ["fair"],
+            fullQuote: "Fair is foul, and foul is fair.",
+            explanation: "The paradox blurs the boundary between good and evil and introduces the theme of deception.",
+            hint: "The final word repeats one of the two opposites already used."
           },
           {
-            type: "multipleChoice",
-            prompt:
-              "Complete the quotation: ‘Look like the innocent flower, but be the…’",
-            support:
-              "Lady Macbeth tells Macbeth to hide his intentions.",
-            options: [
-              "lion within it",
-              "serpent under’t",
-              "king beside it",
-              "shadow beneath"
-            ],
-            answer: 1,
-            explanation:
-              "Lady Macbeth says, ‘Look like the innocent flower, but be the serpent under’t.’",
-            hint:
-              "The image links deception with a dangerous biblical creature."
+            type: "quoteInput",
+            prompt: "For brave Macbeth — well he deserves that ____.",
+            support: "The Captain praises Macbeth before his tragic decline begins.",
+            answerText: "name",
+            acceptedAnswers: ["name"],
+            fullQuote: "For brave Macbeth — well he deserves that name.",
+            explanation: "The adjective ‘brave’ establishes Macbeth as a celebrated warrior, making his later corruption more tragic.",
+            hint: "What does Macbeth deserve because of his bravery?"
           },
           {
-            type: "multipleChoice",
-            prompt:
-              "Complete the quotation: ‘Is this a dagger which I see before me, the handle toward my…’",
-            support:
-              "Macbeth hallucinates before killing Duncan.",
-            options: [
-              "heart",
-              "hand",
-              "face",
-              "throne"
-            ],
-            answer: 1,
-            explanation:
-              "Macbeth asks whether the dagger’s handle is pointing towards his hand.",
-            hint:
-              "Which body part would reach for a dagger?"
+            type: "quoteInput",
+            prompt: "Stars, hide your ____; let not light see my black and deep desires.",
+            support: "Macbeth attempts to conceal his ambition after Malcolm is named heir.",
+            answerText: "fires",
+            acceptedAnswers: ["fires", "fire"],
+            fullQuote: "Stars, hide your fires; let not light see my black and deep desires.",
+            explanation: "The light and darkness imagery reveals that Macbeth already recognises the evil of his secret ambition.",
+            hint: "Stars give off these."
           },
           {
-            type: "multipleChoice",
-            prompt:
-              "Complete the quotation: ‘Out, damned…!’",
-            support:
-              "Lady Macbeth speaks while sleepwalking.",
-            options: [
-              "king",
-              "blood",
-              "spot",
-              "night"
-            ],
-            answer: 2,
-            explanation:
-              "Lady Macbeth cries, ‘Out, damned spot!’ as she imagines blood on her hands.",
-            hint:
-              "She believes there is a mark on her hand."
+            type: "quoteInput",
+            prompt: "Look like the innocent flower, but be the ____ under’t.",
+            support: "Lady Macbeth instructs Macbeth to disguise his murderous intentions.",
+            answerText: "serpent",
+            acceptedAnswers: ["serpent", "the serpent"],
+            fullQuote: "Look like the innocent flower, but be the serpent under’t.",
+            explanation: "The biblical image of the serpent presents deception as dangerous, sinful and deliberately tempting.",
+            hint: "Think of the creature associated with temptation in the Garden of Eden."
           },
           {
-            type: "multipleChoice",
-            prompt:
-              "Complete the quotation: ‘Life’s but a walking…’",
-            support:
-              "Macbeth reflects on the meaninglessness of life.",
-            options: [
-              "shadow",
-              "dream",
-              "storm",
-              "ghost"
-            ],
-            answer: 0,
-            explanation:
-              "Macbeth says, ‘Life’s but a walking shadow.’",
-            hint:
-              "The image suggests something insubstantial and temporary."
+            type: "quoteInput",
+            prompt: "Is this a ____ which I see before me, the handle toward my hand?",
+            support: "Macbeth hallucinates immediately before Duncan’s murder.",
+            answerText: "dagger",
+            acceptedAnswers: ["dagger", "a dagger"],
+            fullQuote: "Is this a dagger which I see before me, the handle toward my hand?",
+            explanation: "The hallucinated weapon externalises Macbeth’s violent intention and his disturbed state of mind.",
+            hint: "It is the weapon Macbeth imagines reaching towards."
+          },
+          {
+            type: "quoteInput",
+            prompt: "Will all great Neptune’s ocean wash this ____ clean from my hand?",
+            support: "Macbeth reacts to Duncan’s murder with immediate horror and guilt.",
+            answerText: "blood",
+            acceptedAnswers: ["blood", "the blood"],
+            fullQuote: "Will all great Neptune’s ocean wash this blood clean from my hand?",
+            explanation: "The hyperbole suggests Macbeth believes his guilt is so immense that even an ocean cannot cleanse it.",
+            hint: "What physical stain symbolises Macbeth’s guilt?"
+          },
+          {
+            type: "quoteInput",
+            prompt: "O, full of ____ is my mind, dear wife!",
+            support: "Macbeth reveals his fear of Banquo after becoming king.",
+            answerText: "scorpions",
+            acceptedAnswers: ["scorpions", "scorpion"],
+            fullQuote: "O, full of scorpions is my mind, dear wife!",
+            explanation: "The metaphor conveys a mind poisoned by painful, aggressive thoughts and growing paranoia.",
+            hint: "These venomous creatures suggest painful thoughts attacking his mind."
+          },
+          {
+            type: "quoteInput",
+            prompt: "Out, damned ____! Out, I say!",
+            support: "Lady Macbeth sleepwalks while imagining Duncan’s blood on her hands.",
+            answerText: "spot",
+            acceptedAnswers: ["spot", "the spot"],
+            fullQuote: "Out, damned spot! Out, I say!",
+            explanation: "The imagined spot shows that guilt has overwhelmed the woman who once dismissed blood as easily washable.",
+            hint: "She imagines a small mark on her hand."
+          },
+          {
+            type: "quoteInput",
+            prompt: "I am in blood stepped in so ____.",
+            support: "Macbeth decides that continuing violence is easier than turning back.",
+            answerText: "far",
+            acceptedAnswers: ["far", "so far"],
+            fullQuote: "I am in blood stepped in so far.",
+            explanation: "The metaphor presents Macbeth as trapped by the consequences of his own repeated violence.",
+            hint: "He believes he has travelled too great a distance to return."
+          },
+          {
+            type: "quoteInput",
+            prompt: "Life’s but a walking ____.",
+            support: "Macbeth responds to Lady Macbeth’s death with bleak nihilism.",
+            answerText: "shadow",
+            acceptedAnswers: ["shadow", "a shadow"],
+            fullQuote: "Life’s but a walking shadow.",
+            explanation: "The metaphor reduces life to something insubstantial and temporary, revealing the emptiness of Macbeth’s achievements.",
+            hint: "It follows a person but has no substance of its own."
           }
         ]
       },
@@ -3282,6 +3292,8 @@ function renderActivityQuestion() {
 
   if (question.type === "multipleChoice") {
     renderMultipleChoiceQuestion(question);
+  } else if (question.type === "quoteInput") {
+    renderQuoteInputQuestion(question);
   }
 }
 
@@ -3377,6 +3389,137 @@ function renderMultipleChoiceQuestion(question) {
         );
       });
     });
+}
+
+function renderQuoteInputQuestion(question) {
+  elements.activityQuestionArea.innerHTML = `
+    <span class="question-type-label quote-label">
+      Quote challenge
+    </span>
+
+    <h2 class="quote-prompt">${question.prompt}</h2>
+
+    <p class="question-support">
+      ${question.support}
+    </p>
+
+    <form class="quote-answer-form" id="quote-answer-form">
+      <label for="quote-answer-input">Type the missing word or words</label>
+      <div class="quote-input-row">
+        <input
+          id="quote-answer-input"
+          class="quote-answer-input"
+          type="text"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Your answer..."
+          aria-label="Missing words"
+        >
+        <button class="quote-submit-button" type="submit">Check answer</button>
+      </div>
+    </form>
+  `;
+
+  const form = document.getElementById("quote-answer-form");
+  const input = document.getElementById("quote-answer-input");
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    answerQuoteInput(input.value, question);
+  });
+
+  input.focus();
+}
+
+function normaliseQuoteAnswer(value) {
+  return value
+    .toLowerCase()
+    .replace(/[’']/g, "")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function quoteAnswerDistance(a, b) {
+  if (a === b) return 0;
+  if (!a.length) return b.length;
+  if (!b.length) return a.length;
+
+  const matrix = Array.from(
+    { length: b.length + 1 },
+    (_, row) => [row]
+  );
+
+  for (let column = 0; column <= a.length; column += 1) {
+    matrix[0][column] = column;
+  }
+
+  for (let row = 1; row <= b.length; row += 1) {
+    for (let column = 1; column <= a.length; column += 1) {
+      const cost = b[row - 1] === a[column - 1] ? 0 : 1;
+      matrix[row][column] = Math.min(
+        matrix[row - 1][column] + 1,
+        matrix[row][column - 1] + 1,
+        matrix[row - 1][column - 1] + cost
+      );
+    }
+  }
+
+  return matrix[b.length][a.length];
+}
+
+function answerQuoteInput(value, question) {
+  if (activityAnswered) return;
+
+  const submitted = normaliseQuoteAnswer(value);
+  const accepted = question.acceptedAnswers.map(normaliseQuoteAnswer);
+  const correct = accepted.includes(submitted);
+  const closestDistance = submitted
+    ? Math.min(...accepted.map(answer => quoteAnswerDistance(submitted, answer)))
+    : 99;
+  const almost = !correct && closestDistance <= 1;
+
+  if (!submitted) {
+    elements.activityFeedback.innerHTML = `
+      <div class="feedback-box hint">
+        <strong>Have a go first.</strong>
+        Type the missing word, then check your answer.
+      </div>
+    `;
+    return;
+  }
+
+  activityAnswered = true;
+
+  const input = document.getElementById("quote-answer-input");
+  const submitButton = document.querySelector(".quote-submit-button");
+  input.disabled = true;
+  submitButton.disabled = true;
+
+  if (correct) {
+    activityScore += 1;
+    input.classList.add("correct");
+    elements.activityFeedback.innerHTML = `
+      <div class="feedback-box correct quote-feedback">
+        <strong>Quote secured.</strong>
+        <span class="full-quote">“${question.fullQuote}”</span>
+        ${question.explanation}
+      </div>
+    `;
+  } else {
+    input.classList.add(almost ? "almost" : "incorrect");
+    elements.activityFeedback.innerHTML = `
+      <div class="feedback-box ${almost ? "hint" : "incorrect"} quote-feedback">
+        <strong>${almost ? "Almost — tiny spelling slip." : "Not quite."}</strong>
+        <span class="full-quote">“${question.fullQuote}”</span>
+        ${question.explanation}
+      </div>
+    `;
+  }
+
+  elements.activityScore.textContent = activityScore;
+  elements.activityNextButton.disabled = false;
+  elements.activityHintButton.disabled = true;
 }
 
 function answerMultipleChoice(selectedIndex, question) {

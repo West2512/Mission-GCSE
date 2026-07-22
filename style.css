@@ -1651,3 +1651,108 @@ button:disabled {
     min-height: auto;
   }
 }
+
+
+/* =========================================================
+   VERSION 2.1 — QUOTE CHALLENGE
+   ========================================================= */
+
+.quote-label {
+  letter-spacing: 0.12em;
+}
+
+.quote-prompt {
+  max-width: 900px;
+  font-size: clamp(1.65rem, 3vw, 2.45rem);
+  line-height: 1.35;
+}
+
+.quote-answer-form {
+  margin-top: 30px;
+  max-width: 760px;
+}
+
+.quote-answer-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--muted-text, #9bbce5);
+  font-weight: 700;
+}
+
+.quote-input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.quote-answer-input {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 18px;
+  border: 2px solid #294967;
+  border-radius: 14px;
+  background: #081728;
+  color: #ffffff;
+  font: inherit;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.quote-answer-input:focus {
+  border-color: #45dcff;
+  box-shadow: 0 0 0 4px rgba(69, 220, 255, 0.12);
+}
+
+.quote-answer-input.correct {
+  border-color: #47d69a;
+}
+
+.quote-answer-input.incorrect {
+  border-color: #ff7087;
+}
+
+.quote-answer-input.almost {
+  border-color: #ffd166;
+}
+
+.quote-submit-button {
+  padding: 0 22px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffd166, #ffad42);
+  color: #102033;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.quote-submit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.quote-submit-button:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.quote-feedback {
+  display: grid;
+  gap: 9px;
+}
+
+.full-quote {
+  display: block;
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  .quote-input-row {
+    flex-direction: column;
+  }
+
+  .quote-submit-button {
+    min-height: 52px;
+  }
+}
