@@ -294,12 +294,6 @@ const SUBJECTS = [
   }
 ];
 
-        ]
-      }
-    ]
-  }
-];
-
 const QUICK_CHALLENGES = [
   {
     pathwayId: "macbeth",
