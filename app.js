@@ -405,6 +405,7 @@ let activityScore = 0;
 let activityAnswered = false;
 let activityAwarded = false;
 let activityStudyMode = false;
+let activeActivityQuestions = [];
 
 /* =========================================================
    DOM REFERENCES
