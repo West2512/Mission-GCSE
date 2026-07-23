@@ -1082,6 +1082,186 @@ questions: [
       "This is a conceptual argument that covers the whole play rather than describing a single event.",
     hint:
       "The best thesis follows her journey from beginning to end."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "What does Lady Macbeth mean when she tells Macbeth to 'look like the innocent flower'?",
+    support:
+      "Focus on how Macbeth should appear to other people.",
+    options: [
+      "He should behave kindly and hide his true intentions",
+      "He should decorate the castle with flowers",
+      "He should refuse to speak to Duncan",
+      "He should leave Scotland immediately"
+    ],
+    answer: 0,
+    explanation:
+      "Lady Macbeth tells Macbeth to appear harmless and welcoming while secretly planning Duncan's murder.",
+    hint:
+      "Think about appearance versus reality."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "What does the imperative verb 'look' show in Lady Macbeth's advice to Macbeth?",
+    support:
+      "An imperative is a command.",
+    options: [
+      "She is uncertain and nervous",
+      "She is commanding and controlling",
+      "She is asking Macbeth for permission",
+      "She is apologising to Macbeth"
+    ],
+    answer: 1,
+    explanation:
+      "The imperative verb presents Lady Macbeth as dominant because she gives Macbeth direct instructions.",
+    hint:
+      "She is telling him what to do."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "What does the word 'serpent' suggest about Lady Macbeth's plan?",
+    support:
+      "Think about the traditional associations of serpents.",
+    options: [
+      "It is innocent and natural",
+      "It is deceptive, dangerous and evil",
+      "It is brave and honourable",
+      "It is peaceful and harmless"
+    ],
+    answer: 1,
+    explanation:
+      "The serpent suggests deception, danger and evil, linking Lady Macbeth's plan to temptation and moral corruption.",
+    hint:
+      "Think about Satan in the Garden of Eden."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Why is Lady Macbeth's use of imperatives important?",
+    support:
+      "Think about the power balance in her marriage.",
+    options: [
+      "They show that she is passive",
+      "They show that Macbeth controls her",
+      "They show that she takes control and directs Macbeth",
+      "They show that she is confused"
+    ],
+    answer: 2,
+    explanation:
+      "Her repeated commands show that she initially dominates the relationship and drives the murder plot forward.",
+    hint:
+      "She gives orders rather than suggestions."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "How does Shakespeare present Lady Macbeth's attitude towards femininity?",
+    support:
+      "Think about 'unsex me here'.",
+    options: [
+      "She fully accepts traditional feminine expectations",
+      "She rejects qualities associated with femininity because she sees them as obstacles",
+      "She wishes to become a mother",
+      "She believes women should avoid power"
+    ],
+    answer: 1,
+    explanation:
+      "Lady Macbeth rejects compassion and tenderness because she believes these qualities will prevent her from committing violence.",
+    hint:
+      "She asks the spirits to remove them."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Why might Lady Macbeth have appeared threatening to a Jacobean audience?",
+    support:
+      "Think about expectations of women at the time.",
+    options: [
+      "She obeys her husband completely",
+      "She remains silent throughout the play",
+      "She challenges gender expectations and attempts to control her husband",
+      "She refuses to become queen"
+    ],
+    answer: 2,
+    explanation:
+      "Her ambition, dominance and rejection of traditional femininity challenge Jacobean expectations of women as obedient and submissive.",
+    hint:
+      "She behaves in ways society did not expect from women."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "What does Lady Macbeth's sleepwalking reveal?",
+    support:
+      "Think about the effect of guilt on her mind.",
+    options: [
+      "She has completely forgotten Duncan's murder",
+      "She is secretly planning another murder",
+      "Her guilt has become uncontrollable and damaged her psychologically",
+      "She is pretending to be ill"
+    ],
+    answer: 2,
+    explanation:
+      "The sleepwalking scene shows that Lady Macbeth can no longer suppress her guilt, which has begun to destroy her mental stability.",
+    hint:
+      "Her mind reveals what she tried to hide."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "How does Lady Macbeth change across the play?",
+    support:
+      "Compare her behaviour before and after Duncan's murder.",
+    options: [
+      "She begins weak and becomes more powerful",
+      "She remains equally confident throughout",
+      "She begins dominant and confident but becomes isolated and overwhelmed by guilt",
+      "She becomes king after Macbeth dies"
+    ],
+    answer: 2,
+    explanation:
+      "Lady Macbeth initially appears forceful and controlled, but later guilt causes her confidence and mental stability to collapse.",
+    hint:
+      "Think about her journey from Act 1 to Act 5."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "What does Lady Macbeth's decline suggest about ambition?",
+    support:
+      "Think about Shakespeare's wider message.",
+    options: [
+      "Ambition always leads to happiness",
+      "Ambition is harmless when kept secret",
+      "Ambition without morality can lead to guilt and destruction",
+      "Ambition only affects men"
+    ],
+    answer: 2,
+    explanation:
+      "Through Lady Macbeth's decline, Shakespeare suggests that uncontrolled ambition and immoral actions bring psychological punishment.",
+    hint:
+      "Her success does not bring peace."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Which interpretation of Lady Macbeth is the most sophisticated?",
+    support:
+      "Choose the answer that explores complexity and change.",
+    options: [
+      "Lady Macbeth is simply evil from beginning to end.",
+      "Lady Macbeth is powerful because she tells Macbeth what to do.",
+      "Lady Macbeth initially appears powerful, but Shakespeare gradually reveals that her power depends on suppressing human emotion, which ultimately destroys her.",
+      "Lady Macbeth is important because she is married to Macbeth."
+    ],
+    answer: 2,
+    explanation:
+      "This interpretation is sophisticated because it explores Lady Macbeth's apparent power, its limitations and her development across the play.",
+    hint:
+      "The strongest answer shows complexity rather than giving a simple label."
   }
 ]
 },
