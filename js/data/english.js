@@ -1822,6 +1822,11 @@ const ENGLISH_PATHWAYS = [
             answer: 1,
             explanation:
               "A conclusion should reinforce your interpretation of the poem’s overall message.",
-            hint:
+             hint:
               "Return to the big idea."
           }
+        ]
+      }
+    ]
+  }
+];
