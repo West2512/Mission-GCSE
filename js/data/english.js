@@ -1721,7 +1721,7 @@ questions: [
             explanation: "The metaphor reduces life to something insubstantial and temporary, revealing the emptiness of Macbeth’s achievements.",
             hint: "It follows a person but has no substance of its own."
           },
-          
+
           {
   type: "quoteInput",
   prompt: "When you durst do it, then you were a ____.",
@@ -1731,7 +1731,7 @@ questions: [
   fullQuote: "When you durst do it, then you were a man.",
   explanation: "Lady Macbeth manipulates Macbeth by linking masculinity with violence and courage.",
   hint: "She questions whether Macbeth is truly masculine."
-},
+}
         ]
       },
       {
