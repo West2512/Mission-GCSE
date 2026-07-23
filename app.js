@@ -1323,7 +1323,10 @@ function openActivity(pathwayId, activityId) {
   activityStudyMode = Array.isArray(activity.learningCards) &&
     activity.learningCards.length > 0;
 
-    activeActivityQuestions = [...activity.questions];
+    activeActivityQuestions =
+  [...activity.questions]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 10);
 
   elements.activityHintButton.style.display = "";
   elements.activityNextButton.style.display = "";
