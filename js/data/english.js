@@ -1262,6 +1262,186 @@ questions: [
       "This interpretation is sophisticated because it explores Lady Macbeth's apparent power, its limitations and her development across the play.",
     hint:
       "The strongest answer shows complexity rather than giving a simple label."
+  },
+  {
+      type: "multipleChoice",
+    prompt:
+      "Which quotation shows Lady Macbeth rejecting traditional femininity?",
+    support:
+      "Think about one of her most famous soliloquies.",
+    options: [
+      "'Out, damned spot!'",
+      "'Unsex me here'",
+      "'Look like the innocent flower'",
+      "'What's done is done'"
+    ],
+    answer: 1,
+    explanation:
+      "'Unsex me here' shows Lady Macbeth asking to be stripped of qualities she associates with femininity.",
+    hint:
+      "It begins with 'Un...'"
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Which technique is used in 'Look like the innocent flower, but be the serpent under't'?",
+    support:
+      "Two contrasting images are placed together.",
+    options: [
+      "Simile",
+      "Contrast",
+      "Pathetic fallacy",
+      "Hyperbole"
+    ],
+    answer: 1,
+    explanation:
+      "Shakespeare contrasts innocence with evil to emphasise deception.",
+    hint:
+      "Flower vs serpent."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "What does the adjective 'innocent' suggest?",
+    support:
+      "Think about first impressions.",
+    options: [
+      "Violence",
+      "Trustworthiness and purity",
+      "Power",
+      "Revenge"
+    ],
+    answer: 1,
+    explanation:
+      "Lady Macbeth wants Macbeth to appear completely harmless so no one suspects him.",
+    hint:
+      "Someone without guilt."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Which quotation best shows Lady Macbeth manipulating Macbeth?",
+    support:
+      "Think about masculinity.",
+    options: [
+      "'When you durst do it, then you were a man'",
+      "'Fair is foul'",
+      "'Is this a dagger...?'",
+      "'None of woman born...'"
+    ],
+    answer: 0,
+    explanation:
+      "She attacks Macbeth's masculinity to pressure him into murdering Duncan.",
+    hint:
+      "It contains the word 'man'."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "What is Lady Macbeth's greatest strength at the start of the play?",
+    support:
+      "Think about her personality.",
+    options: [
+      "Her physical strength",
+      "Her determination",
+      "Her kindness",
+      "Her honesty"
+    ],
+    answer: 1,
+    explanation:
+      "Her determination drives the murder plot before guilt begins to weaken her.",
+    hint:
+      "She never gives up in Act 1."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Which quotation best shows Lady Macbeth's guilt?",
+    support:
+      "Think about the sleepwalking scene.",
+    options: [
+      "'Out, damned spot!'",
+      "'Stars, hide your fires'",
+      "'If chance will have me king'",
+      "'Lesser than Macbeth'"
+    ],
+    answer: 0,
+    explanation:
+      "She imagines blood on her hands that she cannot remove, showing overwhelming guilt.",
+    hint:
+      "It mentions a spot."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Why is blood an important symbol for Lady Macbeth?",
+    support:
+      "Think beyond literal blood.",
+    options: [
+      "It symbolises guilt that cannot be escaped",
+      "It symbolises wealth",
+      "It symbolises nature",
+      "It symbolises friendship"
+    ],
+    answer: 0,
+    explanation:
+      "Blood becomes a symbol of guilt and the lasting consequences of murder.",
+    hint:
+      "It stays with her."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Which statement best describes Lady Macbeth by the end of the play?",
+    support:
+      "Think about Act 5.",
+    options: [
+      "Confident and ambitious",
+      "Powerful and respected",
+      "Mentally broken by guilt",
+      "Celebrated as Scotland's greatest queen"
+    ],
+    answer: 2,
+    explanation:
+      "Lady Macbeth's ambition has given way to overwhelming guilt and psychological collapse.",
+    hint:
+      "Compare her with Act 1."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Why is Lady Macbeth considered a tragic character?",
+    support:
+      "Think about how she changes.",
+    options: [
+      "She never changes.",
+      "She causes her own downfall through ambition and guilt.",
+      "She wins everything she wants.",
+      "She is always innocent."
+    ],
+    answer: 1,
+    explanation:
+      "Although she begins as a powerful manipulator, her ambition ultimately contributes to her tragic downfall.",
+    hint:
+      "Think about the consequences of her choices."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Which conclusion would earn the highest marks?",
+    support:
+      "Choose the most conceptual answer.",
+    options: [
+      "Lady Macbeth is evil.",
+      "Lady Macbeth changes.",
+      "Through Lady Macbeth, Shakespeare warns that unchecked ambition and the rejection of morality ultimately destroy both power and peace of mind.",
+      "Lady Macbeth is married to Macbeth."
+    ],
+    answer: 2,
+    explanation:
+      "This links character, theme and Shakespeare's message, creating a conceptual conclusion.",
+    hint:
+      "Look for the answer that explains Shakespeare's overall purpose."
   }
 ]
 },
