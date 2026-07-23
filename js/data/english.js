@@ -901,7 +901,43 @@ const ENGLISH_PATHWAYS = [
   description:
     "Explore how Lady Macbeth uses ambition, manipulation and deception before guilt destroys her confidence.",
   xp: 40,
-  learningCards: [],
+ learningCards: [
+  {
+    eyebrow: "Character",
+    title: "Lady Macbeth drives the murder plot",
+    body: "After reading Macbeth’s letter, Lady Macbeth immediately begins planning Duncan’s murder. While Macbeth hesitates, she becomes the driving force behind the crime."
+  },
+  {
+    eyebrow: "Key quotation",
+    title: "“Unsex me here”",
+    body: "Lady Macbeth asks the spirits to remove the qualities traditionally associated with femininity. She believes compassion will prevent her from carrying out the cruelty needed to gain power."
+  },
+  {
+    eyebrow: "Writer’s method",
+    title: "“Look like the innocent flower, but be the serpent under’t”",
+    body: "The contrast between the innocent flower and the dangerous serpent presents deception as central to Lady Macbeth’s plan. The serpent also suggests temptation and evil."
+  },
+  {
+    eyebrow: "Manipulation",
+    title: "“When you durst do it, then you were a man”",
+    body: "Lady Macbeth attacks Macbeth’s masculinity when he considers abandoning the murder. She manipulates his pride by linking courage and manhood with violence."
+  },
+  {
+    eyebrow: "Deeper interpretation",
+    title: "Her power is temporary",
+    body: "Lady Macbeth appears commanding before Duncan’s murder, but she cannot control its psychological consequences. Macbeth becomes more independent and violent while she becomes isolated and overwhelmed by guilt."
+  },
+  {
+    eyebrow: "Context",
+    title: "She challenges Jacobean expectations",
+    body: "Women were generally expected to be obedient, gentle and submissive. Lady Macbeth’s rejection of femininity and dominance over her husband may therefore have appeared deeply unnatural and threatening."
+  },
+  {
+    eyebrow: "Exam-ready thesis",
+    title: "A strong whole-play argument",
+    body: "Shakespeare initially presents Lady Macbeth as an intelligent and manipulative woman who rejects traditional femininity in pursuit of power, before revealing that ambition without morality leads to guilt and psychological destruction."
+  }
+],
   questions: []
 },
       {
