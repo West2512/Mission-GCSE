@@ -1595,11 +1595,11 @@ questions: [
 ]
 },
       {
-        id: "macbeth-quotes",
-        type: "Quote Challenge",
-        title: "Complete the Quote",
-        description:
-          "Type the missing words from ten essential Macbeth quotations.",
+          id: "macbeth-quotes",
+  type: "Quote Challenge",
+  title: "Complete the Quote",
+  description: "Complete key quotations from Macbeth.",
+  questionsPerAttempt: 10,
         xp: 35,
         questions: [
             //Question 1
