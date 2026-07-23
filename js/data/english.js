@@ -2977,6 +2977,306 @@ questions: [
     "The play explores how ambition, deception, guilt and tyranny combine to destroy both Macbeth and Scotland.",
   hint:
     "Think about the play's overall warning."
+},
+
+//Question 31
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best represents the corrupting nature of ambition?",
+  support:
+    "Think about Macbeth recognising his own flaw.",
+  options: [
+    "Vaulting ambition.",
+    "Out, damned spot!",
+    "Tomorrow, and tomorrow...",
+    "There's daggers in men's smiles."
+  ],
+  answer: 0,
+  explanation:
+    "Macbeth admits ambition is the only reason for murdering Duncan.",
+  hint:
+    "The quotation names the flaw directly."
+},
+
+//Question 32
+{
+  type: "multipleChoice",
+  prompt:
+    "Which theme is most clearly shown by 'There's daggers in men's smiles'?",
+  support:
+    "Think about hidden intentions.",
+  options: [
+    "Appearance versus reality",
+    "Nature",
+    "Kingship",
+    "Loyalty"
+  ],
+  answer: 0,
+  explanation:
+    "Friendly appearances conceal deadly intentions.",
+  hint:
+    "A smile hides something dangerous."
+},
+
+//Question 33
+{
+  type: "multipleChoice",
+  prompt:
+    "Why is sleep an important symbol?",
+  support:
+    "Think about Macbeth after Duncan's murder.",
+  options: [
+    "It represents innocence and peace.",
+    "It represents power.",
+    "It represents wealth.",
+    "It represents revenge."
+  ],
+  answer: 0,
+  explanation:
+    "Sleep symbolises peace of mind, something Macbeth loses forever.",
+  hint:
+    "Macbeth 'murders' this."
+},
+
+//Question 34
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best supports the supernatural theme?",
+  support:
+    "Think about the witches' influence.",
+  options: [
+    "Fair is foul, and foul is fair.",
+    "Bleed, bleed, poor country!",
+    "Out, damned spot!",
+    "Lay on, Macduff!"
+  ],
+  answer: 0,
+  explanation:
+    "The witches introduce supernatural disorder from the opening scene.",
+  hint:
+    "It's the play's opening chant."
+},
+
+//Question 35
+{
+  type: "multipleChoice",
+  prompt:
+    "Why does Shakespeare include the witches?",
+  support:
+    "Think about their dramatic purpose.",
+  options: [
+    "To tempt Macbeth and create moral uncertainty.",
+    "To make the audience laugh.",
+    "To help Duncan.",
+    "To protect Banquo."
+  ],
+  answer: 0,
+  explanation:
+    "The witches tempt Macbeth without forcing his choices.",
+  hint:
+    "They influence rather than control."
+},
+
+//Question 36
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best supports the theme of guilt?",
+  support:
+    "Choose the strongest evidence.",
+  options: [
+    "All the perfumes of Arabia will not sweeten this little hand.",
+    "If chance will have me king.",
+    "Brave Macbeth.",
+    "Bellona's bridegroom."
+  ],
+  answer: 0,
+  explanation:
+    "Lady Macbeth realises nothing can remove her guilt.",
+  hint:
+    "It mentions perfume."
+},
+
+//Question 37
+{
+  type: "multipleChoice",
+  prompt:
+    "Why is Malcolm important to the theme of kingship?",
+  support:
+    "Think about the ending.",
+  options: [
+    "He restores rightful rule.",
+    "He encourages Macbeth.",
+    "He helps the witches.",
+    "He becomes a tyrant."
+  ],
+  answer: 0,
+  explanation:
+    "Malcolm restores order after Macbeth's tyranny.",
+  hint:
+    "He becomes king."
+},
+
+//Question 38
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best links appearance versus reality and deception?",
+  support:
+    "Think about pretending.",
+  options: [
+    "Look like the innocent flower, but be the serpent under't.",
+    "Tomorrow, and tomorrow...",
+    "Life's but a walking shadow.",
+    "Out, out, brief candle!"
+  ],
+  answer: 0,
+  explanation:
+    "Lady Macbeth tells Macbeth to hide evil behind an innocent appearance.",
+  hint:
+    "Flower and serpent."
+},
+
+//Question 39
+{
+  type: "multipleChoice",
+  prompt:
+    "What does Shakespeare suggest about power gained through violence?",
+  support:
+    "Think about Macbeth's reign.",
+  options: [
+    "It creates fear rather than security.",
+    "It guarantees happiness.",
+    "It earns respect.",
+    "It solves every problem."
+  ],
+  answer: 0,
+  explanation:
+    "Macbeth becomes increasingly paranoid despite becoming king.",
+  hint:
+    "Does he ever feel safe?"
+},
+
+//Question 40
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best represents moral corruption?",
+  support:
+    "Choose the quotation showing good becoming evil.",
+  options: [
+    "Fair is foul, and foul is fair.",
+    "Lay on, Macduff!",
+    "Brave Macbeth.",
+    "Bleed, bleed, poor country!"
+  ],
+  answer: 0,
+  explanation:
+    "The paradox reflects the collapse of moral boundaries.",
+  hint:
+    "Good and evil swap places."
+},
+
+//Question 41
+{
+  type: "multipleChoice",
+  prompt:
+    "Why is blood repeatedly used throughout the play?",
+  support:
+    "Think symbolically.",
+  options: [
+    "To remind the audience that violent actions have lasting consequences.",
+    "To describe battles only.",
+    "To make scenes frightening.",
+    "To represent wealth."
+  ],
+  answer: 0,
+  explanation:
+    "Blood develops into a symbol of guilt as well as violence.",
+  hint:
+    "It never truly disappears."
+},
+
+//Question 42
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best shows fate versus free will?",
+  support:
+    "Think about Macbeth's first response to prophecy.",
+  options: [
+    "If chance will have me king, chance may crown me.",
+    "Out, damned spot!",
+    "Bleed, bleed, poor country!",
+    "Sleep no more!"
+  ],
+  answer: 0,
+  explanation:
+    "Initially Macbeth considers allowing fate to act without intervention.",
+  hint:
+    "It begins with 'If chance...'"
+},
+
+//Question 43
+{
+  type: "multipleChoice",
+  prompt:
+    "What is Shakespeare's overall message about guilt?",
+  support:
+    "Think about Macbeth and Lady Macbeth.",
+  options: [
+    "Guilt cannot simply be hidden or ignored.",
+    "Guilt disappears with time.",
+    "Only weak people feel guilty.",
+    "Power removes guilt."
+  ],
+  answer: 0,
+  explanation:
+    "Both characters are psychologically destroyed by guilt.",
+  hint:
+    "Neither escapes it."
+},
+
+//Question 44
+{
+  type: "multipleChoice",
+  prompt:
+    "Which theme links Macbeth and Lady Macbeth most strongly?",
+  support:
+    "Think about what motivates both characters.",
+  options: [
+    "Ambition",
+    "Romance",
+    "Friendship",
+    "Forgiveness"
+  ],
+  answer: 0,
+  explanation:
+    "Their shared ambition drives the tragedy.",
+  hint:
+    "It's the play's central theme."
+},
+
+//Question 45
+{
+  type: "multipleChoice",
+  prompt:
+    "Which statement best summarises Shakespeare's message?",
+  support:
+    "Choose the most conceptual answer.",
+  options: [
+    "Unchecked ambition and the abuse of power destroy individuals, relationships and nations.",
+    "Power always brings happiness.",
+    "Violence is necessary for success.",
+    "The witches control everything."
+  ],
+  answer: 0,
+  explanation:
+    "The tragedy shows the destructive consequences of ambition without morality.",
+  hint:
+    "Think about the whole play."
 }
         ]
       },
