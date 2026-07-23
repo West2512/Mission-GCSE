@@ -2379,7 +2379,7 @@ questions: [
           "Connect quotations to ambition, guilt, power and the supernatural.",
         xp: 30,
         questions: [
-            //Question 11
+            //Question 1
           {
             type: "multipleChoice",
             prompt:
@@ -2399,7 +2399,7 @@ questions: [
               "The correct answer names the theme directly."
           },
 
-          //Question 12
+          //Question 2
           {
             type: "multipleChoice",
             prompt:
@@ -2419,7 +2419,7 @@ questions: [
               "The blood is not really there, but she still sees it."
           },
 
-          //Question 13
+          //Question 3
           {
             type: "multipleChoice",
             prompt:
@@ -2439,7 +2439,7 @@ questions: [
               "They challenge the natural order."
           },
 
-          //Question 14
+          //Question 4
           {
             type: "multipleChoice",
             prompt:
@@ -2459,7 +2459,7 @@ questions: [
               "The murder attacks both political and religious order."
           },
 
-          //Question 15
+          //Question 5
           {
             type: "multipleChoice",
             prompt:
@@ -2477,7 +2477,207 @@ questions: [
               "Macbeth’s ambition leads to violence, isolation and self-destruction.",
             hint:
               "Consider everything Macbeth loses."
-          }
+          },
+
+          //Question 6
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best supports the theme of appearance versus reality?",
+  support:
+    "Think about hiding true intentions.",
+  options: [
+    "False face must hide what the false heart doth know.",
+    "Out, damned spot!",
+    "Life's but a walking shadow.",
+    "Tomorrow, and tomorrow, and tomorrow."
+  ],
+  answer: 0,
+  explanation:
+    "Macbeth recognises that appearances can disguise dangerous intentions.",
+  hint:
+    "Which quote is literally about pretending?"
+},
+
+//Question 7
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best supports the theme of guilt?",
+  support:
+    "Choose the quotation showing guilt cannot be escaped.",
+  options: [
+    "Will all great Neptune's ocean wash this blood clean from my hand?",
+    "Brave Macbeth.",
+    "If chance will have me king.",
+    "Bellona's bridegroom."
+  ],
+  answer: 0,
+  explanation:
+    "Macbeth believes nothing can remove the guilt of murdering Duncan.",
+  hint:
+    "Think about blood."
+},
+
+//Question 8
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best supports the theme of the supernatural?",
+  support:
+    "Think about who influences Macbeth's actions.",
+  options: [
+    "By the pricking of my thumbs...",
+    "Stars, hide your fires.",
+    "Sleep no more!",
+    "Out, out, brief candle!"
+  ],
+  answer: 0,
+  explanation:
+    "The witches represent supernatural forces that tempt Macbeth towards evil.",
+  hint:
+    "Who says it?"
+},
+
+//Question 9
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best supports the theme of kingship?",
+  support:
+    "Think about Macbeth's worries after becoming king.",
+  options: [
+    "Upon my head they placed a fruitless crown.",
+    "Look like the innocent flower.",
+    "Fair is foul.",
+    "Out, damned spot!"
+  ],
+  answer: 0,
+  explanation:
+    "The crown symbolises Macbeth's insecure and ultimately unsuccessful kingship.",
+  hint:
+    "Which object represents being king?"
+},
+
+//Question 10
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best shows ambition leading to guilt?",
+  support:
+    "Think about the consequences of Duncan's murder.",
+  options: [
+    "Will all great Neptune's ocean wash this blood clean from my hand?",
+    "For brave Macbeth.",
+    "None of woman born.",
+    "Lay on, Macduff!"
+  ],
+  answer: 0,
+  explanation:
+    "Macbeth's ambition drives him to murder, but his immediate guilt overwhelms him.",
+  hint:
+    "Ambition comes first, guilt follows."
+},
+
+//Question 11
+{
+  type: "multipleChoice",
+  prompt:
+    "Which theme is most clearly shown by 'Sleep no more! Macbeth does murder sleep'?",
+  support:
+    "Think about what sleep symbolises.",
+  options: [
+    "Guilt",
+    "Friendship",
+    "Nature",
+    "Comedy"
+  ],
+  answer: 0,
+  explanation:
+    "Sleep symbolises innocence and peace, both of which Macbeth loses after murdering Duncan.",
+  hint:
+    "Macbeth can no longer rest."
+},
+
+//Question 12
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best supports the theme of deception?",
+  support:
+    "Choose the quotation encouraging dishonesty.",
+  options: [
+    "Look like the innocent flower, but be the serpent under't.",
+    "Tomorrow, and tomorrow...",
+    "Life's but a walking shadow.",
+    "Out, out, brief candle!"
+  ],
+  answer: 0,
+  explanation:
+    "Lady Macbeth encourages Macbeth to disguise his murderous intentions.",
+  hint:
+    "Flower and serpent."
+},
+
+//Question 13
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best represents tyranny?",
+  support:
+    "Think about how Scotland views Macbeth.",
+  options: [
+    "This tyrant, whose sole name blisters our tongues.",
+    "If chance will have me king.",
+    "Brave Macbeth.",
+    "Bellona's bridegroom."
+  ],
+  answer: 0,
+  explanation:
+    "By the end of the play Macbeth is feared as a brutal tyrant.",
+  hint:
+    "The answer literally contains the word 'tyrant'."
+},
+
+//Question 14
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best represents fate versus free will?",
+  support:
+    "Think about Macbeth's first reaction to the witches.",
+  options: [
+    "If chance will have me king, chance may crown me.",
+    "Out, damned spot!",
+    "Tomorrow, and tomorrow...",
+    "False face must hide..."
+  ],
+  answer: 0,
+  explanation:
+    "Initially Macbeth considers allowing fate to determine his future rather than acting himself.",
+  hint:
+    "The quotation begins with 'If chance...'."
+},
+
+//Question 15
+{
+  type: "multipleChoice",
+  prompt:
+    "Which overall message does Shakespeare present through Macbeth's themes?",
+  support:
+    "Think about the whole play.",
+  options: [
+    "Unchecked ambition destroys both individuals and society.",
+    "Power always brings happiness.",
+    "Violence solves political problems.",
+    "Prophecies should always be trusted."
+  ],
+  answer: 0,
+  explanation:
+    "Across the play Shakespeare explores how ambition, guilt and abuse of power lead to destruction.",
+  hint:
+    "Think about Macbeth's journey from hero to tyrant."
+}
         ]
       },
       {
