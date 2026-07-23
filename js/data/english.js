@@ -938,7 +938,62 @@ const ENGLISH_PATHWAYS = [
     body: "Shakespeare initially presents Lady Macbeth as an intelligent and manipulative woman who rejects traditional femininity in pursuit of power, before revealing that ambition without morality leads to guilt and psychological destruction."
   }
 ],
-  questions: []
+questions: [
+  {
+    type: "multipleChoice",
+    prompt:
+      "What is Lady Macbeth’s immediate reaction after reading Macbeth’s letter?",
+    support:
+      "Think about how quickly she begins considering Duncan’s death.",
+    options: [
+      "She warns Macbeth to ignore the witches",
+      "She begins planning how Macbeth can become king",
+      "She decides to confess everything to Duncan",
+      "She asks Banquo for advice"
+    ],
+    answer: 1,
+    explanation:
+      "Lady Macbeth immediately begins planning how Macbeth can gain the crown and prepares herself for Duncan’s murder.",
+    hint:
+      "She wants the prophecy to become reality."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Why does Lady Macbeth ask the spirits to 'unsex me here'?",
+    support:
+      "Think about what she believes compassion will stop her doing.",
+    options: [
+      "She wants to become a soldier",
+      "She believes feminine qualities will prevent her committing cruelty",
+      "She wants magical powers",
+      "She wishes to become queen immediately"
+    ],
+    answer: 1,
+    explanation:
+      "Lady Macbeth believes compassion and tenderness will stop her carrying out murder, so she asks for those qualities to be removed.",
+    hint:
+      "She wants to remove pity."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Which theme is most clearly shown by 'Look like the innocent flower, but be the serpent under’t'?",
+    support:
+      "Think about hiding true intentions.",
+    options: [
+      "Appearance versus reality",
+      "Friendship",
+      "Nature",
+      "Justice"
+    ],
+    answer: 0,
+    explanation:
+      "Lady Macbeth tells Macbeth to appear innocent while secretly planning murder. Shakespeare develops the theme of appearance versus reality.",
+    hint:
+      "Outside and inside are completely different."
+  }
+]
 },
       {
         id: "macbeth-quotes",
