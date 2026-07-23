@@ -1792,6 +1792,126 @@ questions: [
   fullQuote: "Tomorrow, and tomorrow, and tomorrow.",
   explanation: "The repetition creates a slow, monotonous rhythm that reflects Macbeth's despair and hopelessness.",
   hint: "The same word is repeated three times."
+},
+
+//Question 17
+{
+  type: "quoteInput",
+  prompt: "Sleep no more! Macbeth does murder ____.",
+  support: "After killing Duncan, Macbeth believes he has destroyed his own peace forever.",
+  answerText: "sleep",
+  acceptedAnswers: ["sleep"],
+  fullQuote: "Sleep no more! Macbeth does murder sleep.",
+  explanation: "Sleep symbolises innocence and peace. Macbeth realises that guilt will haunt him for the rest of his life.",
+  hint: "What peaceful human activity has Macbeth destroyed?"
+},
+
+//Question 18
+{
+  type: "quoteInput",
+  prompt: "Methought I heard a voice cry, 'Sleep no more! Macbeth does murder ____.'",
+  support: "Macbeth hears an imagined voice immediately after Duncan's murder.",
+  answerText: "sleep",
+  acceptedAnswers: ["sleep"],
+  fullQuote: "Sleep no more! Macbeth does murder sleep.",
+  explanation: "The repeated image reinforces Shakespeare's idea that guilt destroys inner peace.",
+  hint: "Same missing word as Question 17."
+},
+
+//Question 19
+{
+  type: "quoteInput",
+  prompt: "A little ____ clears us of this deed.",
+  support: "Lady Macbeth believes guilt can simply be washed away.",
+  answerText: "water",
+  acceptedAnswers: ["water"],
+  fullQuote: "A little water clears us of this deed.",
+  explanation: "Lady Macbeth underestimates the psychological effects of guilt, making her later breakdown even more tragic.",
+  hint: "What does she think will remove the evidence?"
+},
+
+//Question 20
+{
+  type: "quoteInput",
+  prompt: "What's done cannot be ____.",
+  support: "Lady Macbeth sleepwalks, haunted by memories of Duncan's murder.",
+  answerText: "undone",
+  acceptedAnswers: ["undone"],
+  fullQuote: "What's done cannot be undone.",
+  explanation: "Lady Macbeth finally accepts that actions have permanent consequences.",
+  hint: "She realises there is no way to reverse the past."
+},
+
+//Question 21
+{
+  type: "quoteInput",
+  prompt: "I have no spur to prick the sides of my intent, but only vaulting ____.",
+  support: "Macbeth admits he has no good reason to murder Duncan.",
+  answerText: "ambition",
+  acceptedAnswers: ["ambition"],
+  fullQuote: "I have no spur to prick the sides of my intent, but only vaulting ambition.",
+  explanation: "Shakespeare identifies unchecked ambition as Macbeth's fatal flaw.",
+  hint: "It's the play's central tragic flaw."
+},
+
+//Question 22
+{
+  type: "quoteInput",
+  prompt: "Come, you spirits... unsex me ____.",
+  support: "Lady Macbeth calls upon evil spirits to remove her compassion.",
+  answerText: "here",
+  acceptedAnswers: ["here"],
+  fullQuote: "Come, you spirits... unsex me here.",
+  explanation: "Lady Macbeth rejects traditional femininity in pursuit of power.",
+  hint: "One short word completes the famous quotation."
+},
+
+//Question 23
+{
+  type: "quoteInput",
+  prompt: "Come, thick ____.",
+  support: "Lady Macbeth calls for darkness to hide the murder she is planning.",
+  answerText: "night",
+  acceptedAnswers: ["night"],
+  fullQuote: "Come, thick night.",
+  explanation: "Darkness symbolises evil, secrecy and the concealment of sin.",
+  hint: "She wants darkness to fall."
+},
+
+//Question 24
+{
+  type: "quoteInput",
+  prompt: "Upon my head they placed a fruitless ____.",
+  support: "Macbeth reflects that he has no heir to inherit his throne.",
+  answerText: "crown",
+  acceptedAnswers: ["crown"],
+  fullQuote: "Upon my head they placed a fruitless crown.",
+  explanation: "The image highlights Macbeth's insecurity and fear that Banquo's descendants will become kings.",
+  hint: "What symbol of kingship is 'fruitless'?"
+},
+
+//Question 25
+{
+  type: "quoteInput",
+  prompt: "And put a barren ____ in my gripe.",
+  support: "Macbeth continues his complaint about having no dynasty.",
+  answerText: "sceptre",
+  acceptedAnswers: ["sceptre", "scepter"],
+  fullQuote: "And put a barren sceptre in my gripe.",
+  explanation: "The barren sceptre symbolises a kingship that will not continue through Macbeth's family.",
+  hint: "It is the ceremonial staff carried by a monarch."
+},
+
+//Question 26
+{
+  type: "quoteInput",
+  prompt: "Macbeth shall never vanquished be until Great Birnam Wood to high Dunsinane Hill shall come against ____.",
+  support: "The witches give Macbeth another misleading prophecy.",
+  answerText: "him",
+  acceptedAnswers: ["him"],
+  fullQuote: "Macbeth shall never vanquished be until Great Birnam Wood to high Dunsinane Hill shall come against him.",
+  explanation: "Macbeth wrongly believes this prophecy is impossible, making him dangerously overconfident.",
+  hint: "The prophecy says the forest will come against who?"
 }
         ]
       },
