@@ -2033,6 +2033,174 @@ questions: [
   explanation: "Malcolm's final judgement sums up Shakespeare's moral message about tyranny and evil.",
   hint: "Who is described as fiend-like?"
 },
+
+//Question 37
+{
+  type: "quoteInput",
+  prompt: "If chance will have me king, why, chance may ____ me.",
+  support: "Macbeth initially considers letting fate take its course.",
+  answerText: "crown",
+  acceptedAnswers: ["crown"],
+  fullQuote: "If chance will have me king, why, chance may crown me.",
+  explanation: "At first Macbeth is prepared to let fate decide, showing how his ambition develops over time.",
+  hint: "What might fate do to Macbeth?"
+},
+
+//Question 38
+{
+  type: "quoteInput",
+  prompt: "Nothing is but what is not.",
+  support: "Macbeth struggles to distinguish reality from imagination after hearing the witches.",
+  answerText: "not",
+  acceptedAnswers: ["not"],
+  fullQuote: "Nothing is but what is not.",
+  explanation: "The paradox reflects Macbeth's confused state of mind and the play's theme of appearance versus reality.",
+  hint: "The missing word is repeated."
+},
+
+//Question 39
+{
+  type: "quoteInput",
+  prompt: "Yet do I fear thy nature; it is too full o' the milk of human ____.",
+  support: "Lady Macbeth doubts Macbeth's ruthlessness.",
+  answerText: "kindness",
+  acceptedAnswers: ["kindness"],
+  fullQuote: "Yet do I fear thy nature; it is too full o' the milk of human kindness.",
+  explanation: "Lady Macbeth believes compassion is a weakness that will stop Macbeth seizing power.",
+  hint: "What quality does Lady Macbeth think Macbeth has too much of?"
+},
+
+//Question 40
+{
+  type: "quoteInput",
+  prompt: "Come to my woman's breasts, and take my ____ for gall.",
+  support: "Lady Macbeth rejects her femininity to gain cruelty.",
+  answerText: "milk",
+  acceptedAnswers: ["milk"],
+  fullQuote: "Come to my woman's breasts, and take my milk for gall.",
+  explanation: "Milk symbolises nurture, which Lady Macbeth wishes to replace with bitterness and cruelty.",
+  hint: "What normally comes from a mother's breast?"
+},
+
+//Question 41
+{
+  type: "quoteInput",
+  prompt: "Screw your courage to the sticking-place, and we'll not ____.",
+  support: "Lady Macbeth persuades Macbeth to kill Duncan.",
+  answerText: "fail",
+  acceptedAnswers: ["fail"],
+  fullQuote: "Screw your courage to the sticking-place, and we'll not fail.",
+  explanation: "Lady Macbeth appears confident and determined, contrasting Macbeth's hesitation.",
+  hint: "What does Lady Macbeth insist won't happen?"
+},
+
+//Question 42
+{
+  type: "quoteInput",
+  prompt: "Had he not resembled my father as he slept, I had done ____.",
+  support: "Lady Macbeth admits she could not kill Duncan herself.",
+  answerText: "it",
+  acceptedAnswers: ["it"],
+  fullQuote: "Had he not resembled my father as he slept, I had done it.",
+  explanation: "This brief moment reveals Lady Macbeth's remaining humanity.",
+  hint: "A tiny one-word answer."
+},
+
+//Question 43
+{
+  type: "quoteInput",
+  prompt: "O, horror, horror, horror! Tongue nor heart cannot conceive nor ____ thee!",
+  support: "Macduff discovers Duncan's body.",
+  answerText: "name",
+  acceptedAnswers: ["name"],
+  fullQuote: "O, horror, horror, horror! Tongue nor heart cannot conceive nor name thee!",
+  explanation: "Macduff's repetition conveys genuine shock and the scale of Duncan's murder.",
+  hint: "He cannot even describe it."
+},
+
+//Question 44
+{
+  type: "quoteInput",
+  prompt: "There's daggers in men's ____.",
+  support: "Donalbain fears betrayal after Duncan's murder.",
+  answerText: "smiles",
+  acceptedAnswers: ["smiles", "smile"],
+  fullQuote: "There's daggers in men's smiles.",
+  explanation: "The metaphor reinforces the theme that appearances can hide deadly intentions.",
+  hint: "Think of a facial expression."
+},
+
+//Question 45
+{
+  type: "quoteInput",
+  prompt: "Be bloody, bold, and resolute; laugh to scorn the power of ____.",
+  support: "The witches' apparition encourages Macbeth's false confidence.",
+  answerText: "man",
+  acceptedAnswers: ["man"],
+  fullQuote: "Be bloody, bold, and resolute; laugh to scorn the power of man.",
+  explanation: "The prophecy manipulates Macbeth into believing no ordinary person can defeat him.",
+  hint: "Who does Macbeth think cannot harm him?"
+},
+
+//Question 46
+{
+  type: "quoteInput",
+  prompt: "The castle of Macduff I will surprise... give to the edge o' the sword his wife, his babes, and all unfortunate ____.",
+  support: "Macbeth orders the slaughter of Macduff's family.",
+  answerText: "souls",
+  acceptedAnswers: ["souls", "soul"],
+  fullQuote: "Give to the edge o' the sword his wife, his babes, and all unfortunate souls.",
+  explanation: "This order demonstrates Macbeth's complete descent into tyranny.",
+  hint: "A word referring to people or spirits."
+},
+
+//Question 47
+{
+  type: "quoteInput",
+  prompt: "All the perfumes of ____ will not sweeten this little hand.",
+  support: "Lady Macbeth's guilt overwhelms her during the sleepwalking scene.",
+  answerText: "Arabia",
+  acceptedAnswers: ["arabia"],
+  fullQuote: "All the perfumes of Arabia will not sweeten this little hand.",
+  explanation: "The hyperbole shows that nothing can erase Lady Macbeth's guilt.",
+  hint: "A famous region associated with spices and perfumes."
+},
+
+//Question 48
+{
+  type: "quoteInput",
+  prompt: "Lay on, Macduff, and damned be him that first cries, 'Hold, enough!'",
+  support: "Macbeth refuses to surrender in the final battle.",
+  answerText: "Hold",
+  acceptedAnswers: ["hold"],
+  fullQuote: "Lay on, Macduff, and damned be him that first cries, 'Hold, enough!'",
+  explanation: "Even at the end, Macbeth clings to his warrior identity.",
+  hint: "It's the first word inside the quotation marks."
+},
+
+//Question 49
+{
+  type: "quoteInput",
+  prompt: "Angels are bright still, though the brightest fell.",
+  support: "Malcolm warns Macduff that appearances can deceive.",
+  answerText: "fell",
+  acceptedAnswers: ["fell", "fallen"],
+  fullQuote: "Angels are bright still, though the brightest fell.",
+  explanation: "The allusion to Lucifer reinforces the theme that evil can hide behind beauty.",
+  hint: "What happened to the brightest angel?"
+},
+
+//Question 50
+{
+  type: "quoteInput",
+  prompt: "This tyrant, whose sole name blisters our ____.",
+  support: "Malcolm describes the fear Macbeth has created across Scotland.",
+  answerText: "tongues",
+  acceptedAnswers: ["tongues", "tongue"],
+  fullQuote: "This tyrant, whose sole name blisters our tongues.",
+  explanation: "Malcolm shows that Macbeth has become so feared that even speaking his name is painful.",
+  hint: "What do we use to speak?"
+}
         ]
       },
       {
