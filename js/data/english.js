@@ -1912,7 +1912,127 @@ questions: [
   fullQuote: "Macbeth shall never vanquished be until Great Birnam Wood to high Dunsinane Hill shall come against him.",
   explanation: "Macbeth wrongly believes this prophecy is impossible, making him dangerously overconfident.",
   hint: "The prophecy says the forest will come against who?"
-}
+},
+
+//Question 27
+{
+  type: "quoteInput",
+  prompt: "The instruments of darkness tell us ____.",
+  support: "Banquo warns Macbeth not to trust the witches completely.",
+  answerText: "truths",
+  acceptedAnswers: ["truths", "the truth", "truth"],
+  fullQuote: "The instruments of darkness tell us truths.",
+  explanation: "Banquo recognises that evil can mix truth with lies in order to tempt people towards destruction.",
+  hint: "What do the witches sometimes tell?"
+},
+
+//Question 28
+{
+  type: "quoteInput",
+  prompt: "To betray's in deepest consequence our ____.",
+  support: "Macbeth reflects on why Duncan should not be murdered.",
+  answerText: "judgement",
+  acceptedAnswers: ["judgement", "judgment"],
+  fullQuote: "To betray's in deepest consequence our judgement.",
+  explanation: "Macbeth knows that committing evil brings moral consequences.",
+  hint: "Think about morality and consequences."
+},
+
+//Question 29
+{
+  type: "quoteInput",
+  prompt: "There's no art to find the mind's construction in the ____.",
+  support: "Duncan explains how difficult it is to judge a person's true character.",
+  answerText: "face",
+  acceptedAnswers: ["face", "the face"],
+  fullQuote: "There's no art to find the mind's construction in the face.",
+  explanation: "Shakespeare introduces the theme of appearance versus reality long before Duncan is murdered.",
+  hint: "What part of a person can be deceptive?"
+},
+
+//Question 30
+{
+  type: "quoteInput",
+  prompt: "Be innocent of the knowledge, dearest ____.",
+  support: "Macbeth hides his plans to murder Banquo from Lady Macbeth.",
+  answerText: "chuck",
+  acceptedAnswers: ["chuck"],
+  fullQuote: "Be innocent of the knowledge, dearest chuck.",
+  explanation: "Macbeth has become independent and secretive, reversing the power dynamic in their relationship.",
+  hint: "It's an affectionate nickname."
+},
+
+//Question 31
+{
+  type: "quoteInput",
+  prompt: "Cabined, cribbed, confined, ____.",
+  support: "Macbeth feels trapped by fear after becoming king.",
+  answerText: "bound",
+  acceptedAnswers: ["bound"],
+  fullQuote: "Cabined, cribbed, confined, bound.",
+  explanation: "The list of restrictive words reflects Macbeth's growing paranoia.",
+  hint: "The final word also suggests being unable to escape."
+},
+
+//Question 32
+{
+  type: "quoteInput",
+  prompt: "Bleed, bleed, poor ____!",
+  support: "Macduff mourns for Scotland under Macbeth's rule.",
+  answerText: "country",
+  acceptedAnswers: ["country", "scotland"],
+  fullQuote: "Bleed, bleed, poor country!",
+  explanation: "Macduff personifies Scotland as a wounded victim suffering under tyranny.",
+  hint: "Who is suffering because of Macbeth?"
+},
+
+//Question 33
+{
+  type: "quoteInput",
+  prompt: "Front to front bring thou this fiend of Scotland and ____.",
+  support: "Macduff prepares to confront Macbeth in the final battle.",
+  answerText: "myself",
+  acceptedAnswers: ["myself"],
+  fullQuote: "Front to front bring thou this fiend of Scotland and myself.",
+  explanation: "Macduff sees Macbeth as evil itself and accepts responsibility for defeating him.",
+  hint: "Who does Macduff want brought face to face with Macbeth?"
+},
+
+//Question 34
+{
+  type: "quoteInput",
+  prompt: "Macduff was from his mother's womb untimely ____.",
+  support: "Macduff reveals why the witches' prophecy does not protect Macbeth.",
+  answerText: "ripped",
+  acceptedAnswers: ["ripped"],
+  fullQuote: "Macduff was from his mother's womb untimely ripped.",
+  explanation: "The final prophecy is fulfilled through careful wording rather than supernatural impossibility.",
+  hint: "How was Macduff born?"
+},
+
+//Question 35
+{
+  type: "quoteInput",
+  prompt: "Turn, hell-hound, ____!",
+  support: "Macduff challenges Macbeth during their final confrontation.",
+  answerText: "turn",
+  acceptedAnswers: ["turn"],
+  fullQuote: "Turn, hell-hound, turn!",
+  explanation: "Macduff compares Macbeth to a creature from Hell, emphasising how far he has fallen.",
+  hint: "The same word appears twice."
+},
+
+//Question 36
+{
+  type: "quoteInput",
+  prompt: "This dead butcher and his fiend-like ____.",
+  support: "Malcolm judges Macbeth and Lady Macbeth after their deaths.",
+  answerText: "queen",
+  acceptedAnswers: ["queen"],
+  fullQuote: "This dead butcher and his fiend-like queen.",
+  explanation: "Malcolm's final judgement sums up Shakespeare's moral message about tyranny and evil.",
+  hint: "Who is described as fiend-like?"
+},
         ]
       },
       {
