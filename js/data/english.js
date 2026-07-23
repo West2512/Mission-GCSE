@@ -894,6 +894,16 @@ const ENGLISH_PATHWAYS = [
           }
         ]
        },
+       {
+  id: "macbeth-lady-macbeth",
+  type: "Mission 2 · Retrieval",
+  title: "The Mastermind",
+  description:
+    "Explore how Lady Macbeth uses ambition, manipulation and deception before guilt destroys her confidence.",
+  xp: 40,
+  learningCards: [],
+  questions: []
+},
       {
         id: "macbeth-quotes",
         type: "Quote Challenge",
