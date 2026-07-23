@@ -992,7 +992,7 @@ questions: [
       "Lady Macbeth tells Macbeth to appear innocent while secretly planning murder. Shakespeare develops the theme of appearance versus reality.",
     hint:
       "Outside and inside are completely different."
-  }
+  },
     {
     type: "multipleChoice",
     prompt:
