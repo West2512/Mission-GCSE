@@ -1326,7 +1326,7 @@ function openActivity(pathwayId, activityId) {
     activeActivityQuestions =
   [...activity.questions]
     .sort(() => Math.random() - 0.5)
-    .slice(0, 10);
+    .slice(0, activity.questionsPerAttempt || 10);
 
   elements.activityHintButton.style.display = "";
   elements.activityNextButton.style.display = "";
