@@ -3277,6 +3277,106 @@ questions: [
     "The tragedy shows the destructive consequences of ambition without morality.",
   hint:
     "Think about the whole play."
+},
+
+//Question 46
+{
+  type: "multipleChoice",
+  prompt:
+    "Which character best represents the consequences of unchecked ambition?",
+  support:
+    "Think about who changes the most throughout the play.",
+  options: [
+    "Macbeth",
+    "Banquo",
+    "Macduff",
+    "Malcolm"
+  ],
+  answer: 0,
+  explanation:
+    "Macbeth's ambition transforms him from a respected warrior into a paranoid tyrant.",
+  hint:
+    "He's the tragic hero."
+},
+
+//Question 47
+{
+  type: "multipleChoice",
+  prompt:
+    "Why would a Jacobean audience fear the murder of King Duncan?",
+  support:
+    "Think about beliefs during King James I's reign.",
+  options: [
+    "It violated the Divine Right of Kings and the natural order.",
+    "It meant Scotland would lose a battle.",
+    "It prevented Malcolm becoming king immediately.",
+    "It upset the witches."
+  ],
+  answer: 0,
+  explanation:
+    "Jacobean audiences believed kings were chosen by God, so regicide was seen as both a political and religious crime.",
+  hint:
+    "Think about God's chosen ruler."
+},
+
+//Question 48
+{
+  type: "multipleChoice",
+  prompt:
+    "Which theme is explored through the contrast between Duncan and Macbeth?",
+  support:
+    "Compare how each man rules Scotland.",
+  options: [
+    "Kingship",
+    "Love",
+    "Humour",
+    "Friendship"
+  ],
+  answer: 0,
+  explanation:
+    "Shakespeare contrasts Duncan's fair and legitimate rule with Macbeth's violent tyranny.",
+  hint:
+    "Both characters are kings."
+},
+
+//Question 49
+{
+  type: "multipleChoice",
+  prompt:
+    "Which statement best explains Shakespeare's use of the supernatural?",
+  support:
+    "Think beyond simply making the play frightening.",
+  options: [
+    "It explores temptation, fate and the consequences of immoral choices.",
+    "It provides comic relief.",
+    "It explains every event in the play.",
+    "It replaces the need for human characters."
+  ],
+  answer: 0,
+  explanation:
+    "The witches tempt Macbeth, but Shakespeare shows that individuals remain responsible for their own decisions.",
+  hint:
+    "The witches influence—but don't control."
+},
+
+//Question 50
+{
+  type: "multipleChoice",
+  prompt:
+    "Which sentence best summarises Shakespeare's overall message in Macbeth?",
+  support:
+    "Choose the most complete interpretation.",
+  options: [
+    "Unchecked ambition, deception and the abuse of power destroy both individuals and society, while rightful leadership restores order.",
+    "Power always leads to happiness if someone is brave enough.",
+    "Fate controls every decision humans make.",
+    "Violence is necessary to become a successful ruler."
+  ],
+  answer: 0,
+  explanation:
+    "Throughout the play, Shakespeare warns that ambition without morality leads to guilt, tyranny and destruction, but order can be restored through rightful leadership.",
+  hint:
+    "Think about the journey from Duncan to Malcolm."
 }
         ]
       },
