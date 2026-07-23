@@ -1591,6 +1591,174 @@ questions: [
   answer: 1,
   explanation: "A top-grade response recognises that Shakespeare uses Lady Macbeth to explore ambition, power and moral corruption.",
   hint: "Think beyond 'good' or 'bad'."
+},
+
+//Question 39
+{
+  question: "Why is Lady Macbeth's line 'unsex me here' shocking to a Jacobean audience?",
+  options: [
+    "It suggests she wants to become physically stronger.",
+    "It rejects traditional expectations of women and asks to abandon feminine qualities.",
+    "It shows she wants to become queen immediately.",
+    "It proves she hates Macbeth."
+  ],
+  answer: 1,
+  explanation: "Lady Macbeth rejects the qualities expected of women in Jacobean society, asking instead for cruelty and determination.",
+  hint: "Think about gender expectations in Shakespeare's time."
+},
+
+//Question 40
+{
+  question: "Why does Shakespeare make Lady Macbeth appear stronger than Macbeth early in the play?",
+  options: [
+    "To create humour.",
+    "To highlight the reversal of expected gender roles before power shifts later.",
+    "Because Macbeth is not an important character.",
+    "To show Duncan dislikes Macbeth."
+  ],
+  answer: 1,
+  explanation: "Their relationship changes dramatically across the play, making Lady Macbeth's later collapse even more tragic.",
+  hint: "Consider how their relationship develops."
+},
+
+//Question 41
+{
+  question: "What is ironic about Lady Macbeth's advice to 'look like the innocent flower'?",
+  options: [
+    "She loves gardening.",
+    "She encourages deception while pretending honesty herself.",
+    "Macbeth refuses to listen.",
+    "Duncan understands the warning."
+  ],
+  answer: 1,
+  explanation: "Appearance versus reality is one of the play's central themes.",
+  hint: "Think about deception."
+},
+
+//Question 42
+{
+  question: "Why does Shakespeare reduce Lady Macbeth's role after Duncan's murder?",
+  options: [
+    "He forgot about her.",
+    "To show Macbeth becoming independent while Lady Macbeth loses influence.",
+    "Because she leaves Scotland.",
+    "Because she becomes queen."
+  ],
+  answer: 1,
+  explanation: "The power balance reverses after Macbeth becomes king.",
+  hint: "Who starts making decisions alone?"
+},
+
+//Question 43
+{
+  question: "What does Lady Macbeth's sleepwalking reveal?",
+  options: [
+    "She is pretending to be ill.",
+    "Her guilt has become impossible to control, even unconsciously.",
+    "She is possessed by witches.",
+    "She wants attention."
+  ],
+  answer: 1,
+  explanation: "Her subconscious reveals the guilt she tried to suppress.",
+  hint: "Think about what happens when she is asleep."
+},
+
+//Question 44
+{
+  question: "Which theme is most closely linked to Lady Macbeth's repeated references to blood?",
+  options: [
+    "Friendship",
+    "Guilt",
+    "Nature",
+    "Comedy"
+  ],
+  answer: 1,
+  explanation: "Blood becomes Shakespeare's most powerful symbol of guilt.",
+  hint: "Why can't she wash her hands clean?"
+},
+
+//Question 45
+{
+  question: "How might Shakespeare use Lady Macbeth to warn his audience?",
+  options: [
+    "Power gained through ambition and violence destroys those who seek it.",
+    "Queens should rule Scotland.",
+    "Marriage is dangerous.",
+    "Sleep should be avoided."
+  ],
+  answer: 0,
+  explanation: "Lady Macbeth's downfall reinforces Shakespeare's moral message about unchecked ambition.",
+  hint: "Think about Shakespeare's overall message."
+},
+
+//Question 46
+{
+  question: "Which word best describes Lady Macbeth at the beginning of the play?",
+  options: [
+    "Passive",
+    "Manipulative",
+    "Timid",
+    "Careless"
+  ],
+  answer: 1,
+  explanation: "She manipulates Macbeth using insults, persuasion and emotional pressure.",
+  hint: "She influences Macbeth's decisions."
+},
+
+//Question 47
+{
+  question: "Which word best describes Lady Macbeth by the end of the play?",
+  options: [
+    "Triumphant",
+    "Confident",
+    "Broken",
+    "Powerful"
+  ],
+  answer: 2,
+  explanation: "The confident woman from Act 1 has been destroyed by overwhelming guilt.",
+  hint: "Think about the sleepwalking scene."
+},
+
+//Question 48
+{
+  question: "Why is Lady Macbeth often described as a tragic character?",
+  options: [
+    "She never changes.",
+    "Her own choices ultimately lead to her downfall.",
+    "She wins everything she wanted.",
+    "She defeats Macbeth."
+  ],
+  answer: 1,
+  explanation: "Like Macbeth, her flaws and decisions lead to tragedy.",
+  hint: "Who is responsible for her downfall?"
+},
+
+//Question 49
+{
+  question: "Which interpretation best fits Lady Macbeth across the whole play?",
+  options: [
+    "She remains completely evil throughout.",
+    "She begins powerful but is ultimately destroyed by guilt and ambition.",
+    "She is never important.",
+    "She only exists to support Macbeth."
+  ],
+  answer: 1,
+  explanation: "A top-grade response recognises Lady Macbeth as a complex character whose confidence collapses.",
+  hint: "Think about her complete journey."
+},
+
+//Question 50
+{
+  question: "Which conclusion would achieve the highest marks in an exam?",
+  options: [
+    "Lady Macbeth is a villain who gets what she deserves.",
+    "Lady Macbeth is ambitious.",
+    "Through Lady Macbeth's rise and fall, Shakespeare explores how the pursuit of power without morality destroys identity, relationships and peace of mind.",
+    "Lady Macbeth is Macbeth's wife."
+  ],
+  answer: 2,
+  explanation: "This conceptual conclusion links character, themes and Shakespeare's wider message, exactly what top-band essays aim to do.",
+  hint: "Look for the answer that combines character, theme and Shakespeare's purpose."
 }
 ]
 },
