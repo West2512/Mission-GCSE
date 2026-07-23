@@ -1359,19 +1359,19 @@ function renderActivityQuestion() {
   }
 
   if (
-    activityQuestionIndex >= activity.questions.length
+    activityQuestionIndex >= activeActivityQuestions.length
   ) {
     completeActivityScreen(activity);
     return;
   }
 
   const question =
-    activity.questions[activityQuestionIndex];
+    activeActivityQuestions[activityQuestionIndex];
 
   activityAnswered = false;
 
   elements.activityQuestionNumber.textContent =
-    `${activityQuestionIndex + 1} / ${activity.questions.length}`;
+    `${activityQuestionIndex + 1} / ${activeActivityQuestions.length}`;
 
   elements.activityScore.textContent =
     activityScore;
@@ -1379,7 +1379,7 @@ function renderActivityQuestion() {
   const progress =
     Math.round(
       (activityQuestionIndex /
-        activity.questions.length) *
+        activeActivityQuestions.length) *
         100
     );
 
@@ -1392,7 +1392,7 @@ function renderActivityQuestion() {
 
   elements.activityNextButton.textContent =
     activityQuestionIndex ===
-    activity.questions.length - 1
+    activeActivityQuestions.length - 1
       ? "Finish activity"
       : "Next question";
 
