@@ -1722,6 +1722,7 @@ questions: [
             hint: "It follows a person but has no substance of its own."
           },
 
+          //Question 11
           {
   type: "quoteInput",
   prompt: "When you durst do it, then you were a ____.",
@@ -1731,6 +1732,66 @@ questions: [
   fullQuote: "When you durst do it, then you were a man.",
   explanation: "Lady Macbeth manipulates Macbeth by linking masculinity with violence and courage.",
   hint: "She questions whether Macbeth is truly masculine."
+},
+
+//Question 12
+{
+  type: "quoteInput",
+  prompt: "False face must hide what the false ____ doth know.",
+  support: "Macbeth resolves to disguise his true intentions after deciding to murder Duncan.",
+  answerText: "heart",
+  acceptedAnswers: ["heart", "the heart"],
+  fullQuote: "False face must hide what the false heart doth know.",
+  explanation: "The repetition of 'false' emphasises deception and the split between Macbeth's outward appearance and inner thoughts.",
+  hint: "Which part of the body represents his true feelings?"
+},
+
+//Question 13
+{
+  type: "quoteInput",
+  prompt: "None of woman born shall ____ Macbeth.",
+  support: "The witches' prophecy gives Macbeth false confidence before the final battle.",
+  answerText: "harm",
+  acceptedAnswers: ["harm"],
+  fullQuote: "None of woman born shall harm Macbeth.",
+  explanation: "Macbeth misunderstands the prophecy, believing himself to be invincible.",
+  hint: "The prophecy suggests nobody can do this to Macbeth."
+},
+
+//Question 14
+{
+  type: "quoteInput",
+  prompt: "Out, out, brief ____!",
+  support: "Macbeth reflects on the meaninglessness of life after Lady Macbeth's death.",
+  answerText: "candle",
+  acceptedAnswers: ["candle", "the candle"],
+  fullQuote: "Out, out, brief candle!",
+  explanation: "The candle symbolises the fragility and shortness of life.",
+  hint: "Think of something small that gives light."
+},
+
+//Question 15
+{
+  type: "quoteInput",
+  prompt: "By the pricking of my ____, something wicked this way comes.",
+  support: "The Second Witch senses Macbeth approaching after his transformation into a tyrant.",
+  answerText: "thumbs",
+  acceptedAnswers: ["thumbs", "thumb"],
+  fullQuote: "By the pricking of my thumbs, something wicked this way comes.",
+  explanation: "The witches now describe Macbeth himself as 'wicked', showing how completely he has changed.",
+  hint: "It's part of the hand."
+},
+
+//Question 16
+{
+  type: "quoteInput",
+  prompt: "Tomorrow, and tomorrow, and ____.",
+  support: "Macbeth laments the repetitive, empty nature of life near the end of the play.",
+  answerText: "tomorrow",
+  acceptedAnswers: ["tomorrow"],
+  fullQuote: "Tomorrow, and tomorrow, and tomorrow.",
+  explanation: "The repetition creates a slow, monotonous rhythm that reflects Macbeth's despair and hopelessness.",
+  hint: "The same word is repeated three times."
 }
         ]
       },
