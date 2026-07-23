@@ -1442,7 +1442,156 @@ questions: [
       "This links character, theme and Shakespeare's message, creating a conceptual conclusion.",
     hint:
       "Look for the answer that explains Shakespeare's overall purpose."
-  }
+  },
+  {
+  type: "multipleChoice",
+  prompt: "What does Lady Macbeth believe will stop Macbeth from becoming king?",
+  support: "Think about what she believes is his weakness.",
+  options: [
+    "His lack of intelligence",
+    "His kindness and morality",
+    "His age",
+    "His loyalty to Banquo"
+  ],
+  answer: 1,
+  explanation: "She believes Macbeth is 'too full o' the milk of human kindness' to murder Duncan.",
+  hint: "She criticises his character."
+},
+
+{
+  type: "multipleChoice",
+  prompt: "Why does Lady Macbeth ask the spirits to 'unsex me here'?",
+  support: "Think about gender expectations.",
+  options: [
+    "She wants to become physically male.",
+    "She wants to remove feminine weakness.",
+    "She wants to disguise herself.",
+    "She wants to frighten Macbeth."
+  ],
+  answer: 1,
+  explanation: "She rejects traditional femininity because she believes it prevents cruelty.",
+  hint: "She wants to become ruthless."
+},
+
+{
+  type: "multipleChoice",
+  prompt: "What emotion dominates Lady Macbeth after Duncan's murder?",
+  support: "Think about Act 2.",
+  options: [
+    "Joy",
+    "Fear",
+    "Calm determination",
+    "Excitement"
+  ],
+  answer: 2,
+  explanation: "She remains calm while Macbeth begins to panic.",
+  hint: "She takes control."
+},
+
+{
+  type: "multipleChoice",
+  prompt: "Which quotation best shows Lady Macbeth manipulating Macbeth?",
+  support: "Choose the strongest example.",
+  options: [
+    "Out, damned spot!",
+    "When you durst do it, then you were a man.",
+    "Tomorrow and tomorrow and tomorrow.",
+    "Lay on, Macduff."
+  ],
+  answer: 1,
+  explanation: "She attacks his masculinity to pressure him into murder.",
+  hint: "She questions his courage."
+},
+
+{
+  type: "multipleChoice",
+  prompt: "Lady Macbeth's sleepwalking symbolises...",
+  support: "Think beyond the literal action.",
+  options: [
+    "Physical illness",
+    "Hidden guilt overwhelming her mind",
+    "Old age",
+    "A curse from the witches"
+  ],
+  answer: 1,
+  explanation: "Her subconscious reveals the guilt she tried to suppress.",
+  hint: "She cannot escape her conscience."
+},
+
+{
+  type: "multipleChoice",
+  prompt: "Why is Lady Macbeth's decline surprising?",
+  support: "Compare her at the beginning and end.",
+  options: [
+    "She becomes kinder than Duncan.",
+    "She changes from powerful to broken.",
+    "She leaves Scotland.",
+    "She joins Malcolm."
+  ],
+  answer: 1,
+  explanation: "Shakespeare contrasts her early confidence with complete psychological collapse.",
+  hint: "Think character development."
+},
+
+{
+  type: "multipleChoice",
+  prompt: "What is Shakespeare suggesting through Lady Macbeth's downfall?",
+  support: "Think about the play's moral message.",
+  options: [
+    "Crime has lasting psychological consequences.",
+    "Women should rule Scotland.",
+    "Kings are always weak.",
+    "Magic always wins."
+  ],
+  answer: 0,
+  explanation: "Her guilt demonstrates that evil actions destroy the mind.",
+  hint: "Actions have consequences."
+},
+
+{
+  type: "multipleChoice",
+  prompt: "Which theme is MOST closely linked to Lady Macbeth?",
+  support: "Choose the best answer.",
+  options: [
+    "Love",
+    "Ambition",
+    "Nature",
+    "Comedy"
+  ],
+  answer: 1,
+  explanation: "Her ambition drives the plot and influences Macbeth's decisions.",
+  hint: "It's one of the play's biggest ideas."
+},
+
+{
+  type: "multipleChoice",
+  prompt: "How would a Jacobean audience most likely react to Lady Macbeth?",
+  support: "Think about beliefs in 1606.",
+  options: [
+    "They would admire her independence.",
+    "They would see her as dangerous and unnatural.",
+    "They would pity her immediately.",
+    "They would find her funny."
+  ],
+  answer: 1,
+  explanation: "A woman rejecting traditional gender roles would appear deeply threatening.",
+  hint: "Consider Jacobean expectations."
+},
+
+{
+  type: "multipleChoice",
+  prompt: "Which Grade 9 idea best explains Lady Macbeth's character?",
+  support: "Choose the most sophisticated interpretation.",
+  options: [
+    "She is simply evil.",
+    "She represents how unchecked ambition destroys humanity.",
+    "She only follows Macbeth.",
+    "She enjoys being queen."
+  ],
+  answer: 1,
+  explanation: "A top-grade response recognises that Shakespeare uses Lady Macbeth to explore ambition, power and moral corruption.",
+  hint: "Think beyond 'good' or 'bad'."
+}
 ]
 },
       {
@@ -1453,6 +1602,7 @@ questions: [
           "Type the missing words from ten essential Macbeth quotations.",
         xp: 35,
         questions: [
+            //Question 1
           {
             type: "quoteInput",
             prompt: "Fair is foul, and foul is ____.",
@@ -1463,6 +1613,8 @@ questions: [
             explanation: "The paradox blurs the boundary between good and evil and introduces the theme of deception.",
             hint: "The final word repeats one of the two opposites already used."
           },
+
+          //Question 2
           {
             type: "quoteInput",
             prompt: "For brave Macbeth — well he deserves that ____.",
@@ -1473,6 +1625,8 @@ questions: [
             explanation: "The adjective ‘brave’ establishes Macbeth as a celebrated warrior, making his later corruption more tragic.",
             hint: "What does Macbeth deserve because of his bravery?"
           },
+
+          //Question 3
           {
             type: "quoteInput",
             prompt: "Stars, hide your ____; let not light see my black and deep desires.",
@@ -1483,6 +1637,8 @@ questions: [
             explanation: "The light and darkness imagery reveals that Macbeth already recognises the evil of his secret ambition.",
             hint: "Stars give off these."
           },
+
+          //Question 4
           {
             type: "quoteInput",
             prompt: "Look like the innocent flower, but be the ____ under’t.",
@@ -1493,6 +1649,8 @@ questions: [
             explanation: "The biblical image of the serpent presents deception as dangerous, sinful and deliberately tempting.",
             hint: "Think of the creature associated with temptation in the Garden of Eden."
           },
+
+          //Question 5
           {
             type: "quoteInput",
             prompt: "Is this a ____ which I see before me, the handle toward my hand?",
@@ -1503,6 +1661,8 @@ questions: [
             explanation: "The hallucinated weapon externalises Macbeth’s violent intention and his disturbed state of mind.",
             hint: "It is the weapon Macbeth imagines reaching towards."
           },
+
+          //Question 6
           {
             type: "quoteInput",
             prompt: "Will all great Neptune’s ocean wash this ____ clean from my hand?",
@@ -1513,6 +1673,8 @@ questions: [
             explanation: "The hyperbole suggests Macbeth believes his guilt is so immense that even an ocean cannot cleanse it.",
             hint: "What physical stain symbolises Macbeth’s guilt?"
           },
+
+          //Question 7
           {
             type: "quoteInput",
             prompt: "O, full of ____ is my mind, dear wife!",
@@ -1523,6 +1685,8 @@ questions: [
             explanation: "The metaphor conveys a mind poisoned by painful, aggressive thoughts and growing paranoia.",
             hint: "These venomous creatures suggest painful thoughts attacking his mind."
           },
+
+          //Question 8
           {
             type: "quoteInput",
             prompt: "Out, damned ____! Out, I say!",
@@ -1533,6 +1697,8 @@ questions: [
             explanation: "The imagined spot shows that guilt has overwhelmed the woman who once dismissed blood as easily washable.",
             hint: "She imagines a small mark on her hand."
           },
+
+          //Question 9
           {
             type: "quoteInput",
             prompt: "I am in blood stepped in so ____.",
@@ -1543,6 +1709,8 @@ questions: [
             explanation: "The metaphor presents Macbeth as trapped by the consequences of his own repeated violence.",
             hint: "He believes he has travelled too great a distance to return."
           },
+
+          //Question 10
           {
             type: "quoteInput",
             prompt: "Life’s but a walking ____.",
@@ -1563,6 +1731,7 @@ questions: [
           "Connect quotations to ambition, guilt, power and the supernatural.",
         xp: 30,
         questions: [
+            //Question 11
           {
             type: "multipleChoice",
             prompt:
@@ -1581,6 +1750,8 @@ questions: [
             hint:
               "The correct answer names the theme directly."
           },
+
+          //Question 12
           {
             type: "multipleChoice",
             prompt:
@@ -1599,6 +1770,8 @@ questions: [
             hint:
               "The blood is not really there, but she still sees it."
           },
+
+          //Question 13
           {
             type: "multipleChoice",
             prompt:
@@ -1617,6 +1790,8 @@ questions: [
             hint:
               "They challenge the natural order."
           },
+
+          //Question 14
           {
             type: "multipleChoice",
             prompt:
@@ -1635,6 +1810,8 @@ questions: [
             hint:
               "The murder attacks both political and religious order."
           },
+
+          //Question 15
           {
             type: "multipleChoice",
             prompt:
@@ -1663,6 +1840,7 @@ questions: [
           "Combine character, quotation and theme knowledge in the final challenge.",
         xp: 50,
         questions: [
+            //Question 16
           {
             type: "multipleChoice",
             prompt:
@@ -1681,6 +1859,8 @@ questions: [
             hint:
               "Think about the Captain’s report."
           },
+
+          //Question 17
           {
             type: "multipleChoice",
             prompt:
@@ -1699,6 +1879,8 @@ questions: [
             hint:
               "This person is trying to persuade him to kill Duncan."
           },
+
+          //Question 18
           {
             type: "multipleChoice",
             prompt:
@@ -1717,6 +1899,8 @@ questions: [
             hint:
               "Macbeth and Lady Macbeth both imagine it on their hands."
           },
+
+          //Question 19
           {
             type: "multipleChoice",
             prompt:
@@ -1735,6 +1919,8 @@ questions: [
             hint:
               "Banquo says Macbeth may have ‘played’ something to gain the crown."
           },
+
+          //Question 20
           {
             type: "multipleChoice",
             prompt:
@@ -1753,6 +1939,8 @@ questions: [
             hint:
               "Her mind cannot contain what she has done."
           },
+
+          //Question 21
           {
             type: "multipleChoice",
             prompt:
@@ -1771,6 +1959,8 @@ questions: [
             hint:
               "The witches use language with more than one possible meaning."
           },
+
+          //Question 22
           {
             type: "multipleChoice",
             prompt:
@@ -1789,6 +1979,8 @@ questions: [
             hint:
               "He chooses to fight even when the prophecies collapse."
           },
+
+          //Question23
           {
             type: "multipleChoice",
             prompt:
@@ -1807,6 +1999,8 @@ questions: [
             hint:
               "His face and heart communicate different things."
           },
+
+          //Question 24
           {
             type: "multipleChoice",
             prompt:
@@ -1825,6 +2019,8 @@ questions: [
             hint:
               "Scotland moves away from chaos."
           },
+
+          //Question 25
           {
             type: "multipleChoice",
             prompt:
@@ -1864,6 +2060,8 @@ questions: [
           "Track how Scrooge changes from isolation to generosity.",
         xp: 20,
         questions: [
+
+            //Question 26
           {
             type: "multipleChoice",
             prompt:
@@ -1882,6 +2080,8 @@ questions: [
             hint:
               "The image suggests something shut tightly."
           },
+
+          //Question 27
           {
             type: "multipleChoice",
             prompt:
@@ -1900,6 +2100,8 @@ questions: [
             hint:
               "He was Scrooge’s former business partner."
           },
+
+          //Question 28
           {
             type: "multipleChoice",
             prompt:
@@ -1918,6 +2120,8 @@ questions: [
             hint:
               "These scenes help explain how Scrooge became isolated."
           },
+
+          //Question 29
           {
             type: "multipleChoice",
             prompt:
@@ -1936,6 +2140,8 @@ questions: [
             hint:
               "His health is affected by the family’s lack of money."
           },
+
+          //Question 30
           {
             type: "multipleChoice",
             prompt:
@@ -1964,6 +2170,7 @@ questions: [
           "Recall key quotations and connect them to Dickens’ ideas.",
         xp: 25,
         questions: [
+            //Question 31
           {
             type: "multipleChoice",
             prompt:
@@ -1982,6 +2189,8 @@ questions: [
             hint:
               "This institution was feared by the Victorian poor."
           },
+
+          //Question 32
           {
             type: "multipleChoice",
             prompt:
@@ -2000,6 +2209,8 @@ questions: [
             hint:
               "He realises people mattered more than profit."
           },
+
+          //Question 33
           {
             type: "multipleChoice",
             prompt:
@@ -2018,6 +2229,8 @@ questions: [
             hint:
               "The missing word means extreme need."
           },
+
+          //Question 34
           {
             type: "multipleChoice",
             prompt:
@@ -2036,6 +2249,8 @@ questions: [
             hint:
               "He wants the values of Christmas to become part of him."
           },
+
+          //Question 35
           {
             type: "multipleChoice",
             prompt:
@@ -2075,6 +2290,7 @@ questions: [
           "Match quotations and ideas to the correct anthology poem.",
         xp: 20,
         questions: [
+            //Question 36
           {
             type: "multipleChoice",
             prompt:
@@ -2093,6 +2309,8 @@ questions: [
             hint:
               "The poem describes a broken statue."
           },
+
+          //Question 37
           {
             type: "multipleChoice",
             prompt:
@@ -2111,6 +2329,8 @@ questions: [
             hint:
               "The repeated phrase ‘But nothing happens’ appears in this poem."
           },
+
+          //Question 38
           {
             type: "multipleChoice",
             prompt:
@@ -2129,6 +2349,8 @@ questions: [
             hint:
               "The title suggests something that does not go away."
           },
+
+          //Question 39
           {
             type: "multipleChoice",
             prompt:
@@ -2147,6 +2369,8 @@ questions: [
             hint:
               "The poem repeatedly uses the word ‘chartered’."
           },
+
+          //Question 1
           {
             type: "multipleChoice",
             prompt:
