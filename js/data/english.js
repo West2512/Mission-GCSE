@@ -2677,6 +2677,306 @@ questions: [
     "Across the play Shakespeare explores how ambition, guilt and abuse of power lead to destruction.",
   hint:
     "Think about Macbeth's journey from hero to tyrant."
+},
+
+//Question 16
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best supports the theme of appearance versus reality?",
+  support:
+    "Choose the quotation where appearances deliberately hide the truth.",
+  options: [
+    "There's no art to find the mind's construction in the face.",
+    "Out, damned spot!",
+    "Tomorrow, and tomorrow, and tomorrow.",
+    "Lay on, Macduff!"
+  ],
+  answer: 0,
+  explanation:
+    "Duncan recognises that appearances cannot reveal a person's true intentions.",
+  hint:
+    "It mentions someone's face."
+},
+
+//Question 17
+{
+  type: "multipleChoice",
+  prompt:
+    "Which theme is most closely linked to 'Stars, hide your fires'?",
+  support:
+    "Think about what Macbeth wants to hide.",
+  options: [
+    "Ambition",
+    "Friendship",
+    "Justice",
+    "Nature"
+  ],
+  answer: 0,
+  explanation:
+    "Macbeth wants to conceal his ambitious desires before murdering Duncan.",
+  hint:
+    "It's Macbeth's tragic flaw."
+},
+
+//Question 18
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best shows guilt affecting Lady Macbeth?",
+  support:
+    "Think about the sleepwalking scene.",
+  options: [
+    "All the perfumes of Arabia will not sweeten this little hand.",
+    "If chance will have me king.",
+    "Brave Macbeth.",
+    "Bellona's bridegroom."
+  ],
+  answer: 0,
+  explanation:
+    "Lady Macbeth believes nothing can remove the guilt of Duncan's murder.",
+  hint:
+    "It mentions perfume."
+},
+
+//Question 19
+{
+  type: "multipleChoice",
+  prompt:
+    "What does blood symbolise throughout Macbeth?",
+  support:
+    "Think beyond literal violence.",
+  options: [
+    "Guilt and the consequences of violence",
+    "Love",
+    "Hope",
+    "Friendship"
+  ],
+  answer: 0,
+  explanation:
+    "Blood becomes Shakespeare's recurring symbol of guilt and moral corruption.",
+  hint:
+    "Macbeth and Lady Macbeth both imagine it."
+},
+
+//Question 20
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best supports the theme of tyranny?",
+  support:
+    "Think about Scotland under Macbeth's rule.",
+  options: [
+    "Bleed, bleed, poor country!",
+    "Fair is foul.",
+    "Out, damned spot!",
+    "Stars, hide your fires."
+  ],
+  answer: 0,
+  explanation:
+    "Macduff presents Scotland as suffering under Macbeth's brutal rule.",
+  hint:
+    "The country is described as bleeding."
+},
+
+//Question 21
+{
+  type: "multipleChoice",
+  prompt:
+    "Why are the witches important to the play's themes?",
+  support:
+    "Think about their influence on Macbeth.",
+  options: [
+    "They encourage ambition and moral corruption.",
+    "They restore order.",
+    "They protect Duncan.",
+    "They defeat Macbeth."
+  ],
+  answer: 0,
+  explanation:
+    "The witches tempt Macbeth but never force his actions, raising questions about free will.",
+  hint:
+    "They tempt rather than command."
+},
+
+//Question 22
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best links ambition and kingship?",
+  support:
+    "Think about Macbeth after becoming king.",
+  options: [
+    "Upon my head they placed a fruitless crown.",
+    "Out, damned spot!",
+    "Tomorrow and tomorrow.",
+    "Look like the innocent flower."
+  ],
+  answer: 0,
+  explanation:
+    "Macbeth's crown represents power gained through ambition but lacking security.",
+  hint:
+    "It's about a crown."
+},
+
+//Question 23
+{
+  type: "multipleChoice",
+  prompt:
+    "What is Shakespeare's message about deception?",
+  support:
+    "Think about the consequences of pretending.",
+  options: [
+    "Deception destroys trust and leads to tragedy.",
+    "Deception always succeeds.",
+    "Deception is necessary for good leadership.",
+    "Deception is humorous."
+  ],
+  answer: 0,
+  explanation:
+    "Nearly every act of deception in Macbeth creates further violence and suffering.",
+  hint:
+    "Think about the ending."
+},
+
+//Question 24
+{
+  type: "multipleChoice",
+  prompt:
+    "Which method is used in 'Fair is foul, and foul is fair'?",
+  support:
+    "Think about contradictory ideas.",
+  options: [
+    "Paradox",
+    "Simile",
+    "Onomatopoeia",
+    "Pathetic fallacy"
+  ],
+  answer: 0,
+  explanation:
+    "The paradox immediately establishes uncertainty and moral confusion.",
+  hint:
+    "Two opposite ideas exist together."
+},
+
+//Question 25
+{
+  type: "multipleChoice",
+  prompt:
+    "Why is the theme of kingship important?",
+  support:
+    "Think about Duncan and Malcolm.",
+  options: [
+    "Shakespeare contrasts rightful and corrupt rulers.",
+    "It only explains battles.",
+    "It introduces comedy.",
+    "It has little impact."
+  ],
+  answer: 0,
+  explanation:
+    "The play contrasts Duncan's legitimate rule with Macbeth's tyranny before order is restored by Malcolm.",
+  hint:
+    "Think about good kings and bad kings."
+},
+
+//Question 26
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best supports fate versus free will?",
+  support:
+    "Choose the quotation showing Macbeth considering fate.",
+  options: [
+    "If chance will have me king, chance may crown me.",
+    "Out, damned spot!",
+    "Sleep no more!",
+    "Bleed, bleed, poor country!"
+  ],
+  answer: 0,
+  explanation:
+    "Macbeth initially considers allowing fate to determine his future.",
+  hint:
+    "It begins 'If chance...'"
+},
+
+//Question 27
+{
+  type: "multipleChoice",
+  prompt:
+    "Why does Shakespeare repeatedly use darkness imagery?",
+  support:
+    "Think about evil actions.",
+  options: [
+    "To conceal sin and moral corruption.",
+    "To describe Scotland's weather.",
+    "To make scenes shorter.",
+    "To create comedy."
+  ],
+  answer: 0,
+  explanation:
+    "Darkness becomes associated with secrecy, murder and evil.",
+  hint:
+    "Characters often want night to hide them."
+},
+
+//Question 28
+{
+  type: "multipleChoice",
+  prompt:
+    "Which quotation best represents Macbeth's loss of peace?",
+  support:
+    "Think about innocence.",
+  options: [
+    "Sleep no more! Macbeth does murder sleep.",
+    "Brave Macbeth.",
+    "Fair is foul.",
+    "Lay on, Macduff!"
+  ],
+  answer: 0,
+  explanation:
+    "Sleep symbolises innocence and peace, both destroyed by Macbeth's crime.",
+  hint:
+    "Think about what everyone needs every night."
+},
+
+//Question 29
+{
+  type: "multipleChoice",
+  prompt:
+    "Which theme becomes stronger as the play progresses?",
+  support:
+    "Think about Macbeth's rule.",
+  options: [
+    "Tyranny",
+    "Comedy",
+    "Romance",
+    "Forgiveness"
+  ],
+  answer: 0,
+  explanation:
+    "Macbeth becomes increasingly violent and oppressive after becoming king.",
+  hint:
+    "Scotland suffers under his rule."
+},
+
+//Question 30
+{
+  type: "multipleChoice",
+  prompt:
+    "Which overall statement best sums up Shakespeare's exploration of theme?",
+  support:
+    "Choose the most conceptual answer.",
+  options: [
+    "Unchecked ambition, deception and abuse of power destroy both individuals and society.",
+    "The supernatural controls everyone's actions.",
+    "Kings should never fight.",
+    "Violence always solves problems."
+  ],
+  answer: 0,
+  explanation:
+    "The play explores how ambition, deception, guilt and tyranny combine to destroy both Macbeth and Scotland.",
+  hint:
+    "Think about the play's overall warning."
 }
         ]
       },
