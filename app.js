@@ -1323,8 +1323,21 @@ function openActivity(pathwayId, activityId) {
   activityStudyMode = Array.isArray(activity.learningCards) &&
     activity.learningCards.length > 0;
 
-    activeActivityQuestions =
-  [...activity.questions]
+// Build the question list
+let questionSource = [];
+
+if (activity.questionPool) {
+    activity.questionPool.forEach(id => {
+        const sourceActivity = currentPathway.activities.find(a => a.id === id);
+        if (sourceActivity?.questions) {
+            questionSource.push(...sourceActivity.questions);
+        }
+    });
+} else {
+    questionSource = [...activity.questions];
+}
+
+activeActivityQuestions = questionSource
     .sort(() => Math.random() - 0.5)
     .slice(0, activity.questionsPerAttempt || 10);
 
