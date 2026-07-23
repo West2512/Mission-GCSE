@@ -993,6 +993,96 @@ questions: [
     hint:
       "Outside and inside are completely different."
   }
+    {
+    type: "multipleChoice",
+    prompt:
+      "Why is the image of the serpent especially significant to a Jacobean audience?",
+    support:
+      "Think about the Bible.",
+    options: [
+      "It represents Scotland",
+      "It symbolises temptation, deception and Satan",
+      "It represents Macbeth's bravery",
+      "It symbolises the king"
+    ],
+    answer: 1,
+    explanation:
+      "The serpent recalls Satan in the Garden of Eden, linking Lady Macbeth's plan with temptation and evil.",
+    hint:
+      "Think about Adam and Eve."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "How does Lady Macbeth manipulate Macbeth?",
+    support:
+      "Think about how she attacks his identity.",
+    options: [
+      "She questions his intelligence",
+      "She questions his masculinity",
+      "She questions his loyalty to Scotland",
+      "She questions his family"
+    ],
+    answer: 1,
+    explanation:
+      "Lady Macbeth questions Macbeth's masculinity to pressure him into murdering Duncan.",
+    hint:
+      "She repeatedly tells him what a 'real man' would do."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "What does Macbeth mean when he says Lady Macbeth is 'too full o' the milk of human kindness'?",
+    support:
+      "Think about kindness rather than weakness.",
+    options: [
+      "She is too compassionate to act cruelly",
+      "She drinks too much milk",
+      "She is physically weak",
+      "She is too young"
+    ],
+    answer: 0,
+    explanation:
+      "Macbeth believes kindness and compassion prevent someone from committing terrible crimes.",
+    hint:
+      "Focus on 'human kindness'."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "What happens to Lady Macbeth after Duncan's murder?",
+    support:
+      "Compare her confidence at the beginning with later in the play.",
+    options: [
+      "She becomes more powerful",
+      "She becomes overwhelmed by guilt",
+      "She becomes Queen Regent",
+      "She leaves Scotland"
+    ],
+    answer: 1,
+    explanation:
+      "Shakespeare gradually shows Lady Macbeth's confidence collapsing under the weight of guilt.",
+    hint:
+      "Think about the sleepwalking scene."
+  },
+  {
+    type: "multipleChoice",
+    prompt:
+      "Which thesis would achieve the highest marks?",
+    support:
+      "Choose the answer that follows Lady Macbeth's development across the whole play.",
+    options: [
+      "Lady Macbeth is evil.",
+      "Lady Macbeth wants Macbeth to become king.",
+      "Shakespeare presents Lady Macbeth as a manipulative figure who rejects traditional femininity before showing guilt destroying her confidence.",
+      "Lady Macbeth is Macbeth's wife."
+    ],
+    answer: 2,
+    explanation:
+      "This is a conceptual argument that covers the whole play rather than describing a single event.",
+    hint:
+      "The best thesis follows her journey from beginning to end."
+  }
 ]
 },
       {
